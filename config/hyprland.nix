@@ -2,7 +2,7 @@
   enable = true;
   settings = {
     "$mod" = "SUPER";
-    "$term" = "wezterm --always-new-process";
+    "$term" = "alacritty";
     "$menu" = "rofi";
     bind =
       [
@@ -38,14 +38,14 @@
   };
   extraConfig = ''
 
-  #Autostarting
-  exec-once = mako
-  exec-once = hyprctl setcursor Bibata-Modern-Classic 24
+    #Autostarting
+    exec-once = mako
+    exec-once = hyprctl setcursor Bibata-Modern-Classic 24
 
-  input {
-    kb_layout = gb
-    follow_mouse = 1
-  }
+    input {
+      kb_layout = gb
+      follow_mouse = 1
+    }
 
   '';
 }

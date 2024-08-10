@@ -127,6 +127,7 @@
       enableFishIntegration = true;
     };
     nixvim = import ./config/nixvim.nix;
+    waybar = import ./config/waybar.nix;
   };
 
   services = {
