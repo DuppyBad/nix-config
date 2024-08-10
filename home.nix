@@ -150,7 +150,7 @@
     # pretty command prompt
     starship = {enable = true;};
     # fish-shell, no more zsh we're in the future
-    fish = import ./config/fish.nix;
+    fish = import ./config/fish.nix {inherit pkgs; };
     nix-index = {enable = true;};
   };
 
