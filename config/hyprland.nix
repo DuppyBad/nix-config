@@ -2,7 +2,7 @@
   enable = true;
   settings = {
     "$mod" = "SUPER";
-    "$term" = "alacritty";
+    "$term" = "wezterm";
     "$menu" = "rofi";
     bind =
       [
@@ -30,4 +30,7 @@
           10)
       );
   };
+  # Autostarting
+  exec-once = mako
+  exec-once = hyprctl setcursor Bibata-Modern-Classic 24
 }

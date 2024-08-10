@@ -89,6 +89,10 @@
 
     # window manager related tools
     hyprlock
+    sww
+    waybar
+    # notification daemon
+    mako
 
     # security tools
     seclists
@@ -102,6 +106,7 @@
     gdb
     pwndbg
   ];
+
 
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
@@ -123,6 +128,9 @@
     nixvim = import ./config/nixvim.nix;
   };
 
+  services = {
+    mako = {enable =  true;};
+  };
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

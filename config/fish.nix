@@ -10,6 +10,9 @@
     "ls" = "eza";
     "la" = "eza --all --icons --git";
   };
+  shellAbbrs = {
+    nhs = "nh os switch /etc/nixos";
+  };
   plugins = [
     {
       name = "grc";
