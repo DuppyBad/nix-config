@@ -11,8 +11,8 @@
     "la" = "eza --all --icons --git";
   };
   shellAbbrs = {
-    nhs = "nh os switch /etc/nixos";
-    nhb = "nh os boot /etc/nixos";
+    nhs = "nh os switch /etc/nixos/flake.nix";
+    nhb = "nh os boot /etc/nixos/flake.nix";
   };
   plugins = [
     {
