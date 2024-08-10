@@ -145,21 +145,11 @@
   programs = {
     # alacritty - a cross-platform, GPU-accelerated terminal emulator
     alacritty = import ./config/alacritty.nix;
+    git = import ./config/git.nix;
   };
 
   programs.nix-index = {
     enable = true;
-  };
-
-  # basic configuration of git, imagine if we had our kyrios domain set properly
-  programs.git = {
-    enable = true;
-    userName = "kyrios";
-    userEmail = "kyrios@tinybrain.ltd";
-    extraConfig = {
-      init.defaultBranch = "main";
-      safe.directory = "/home/kyrios/.config/nixos/system";
-    };
   };
 
   # starship - an customizable prompt for any shell
