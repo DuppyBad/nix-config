@@ -11,7 +11,13 @@
         "$mod, F, fullscreen"
         "$mod, V, togglefloating"
         "$mod, Tab, workspace, e+1"
-        "$mod, Tab, workspace, e-1"
+        "$mod SHIFT, Tab, workspace, e-1"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ]
       ++ (
         #functional workspace defintion
@@ -30,7 +36,15 @@
           10)
       );
   };
-  # Autostarting
-#  exec-once = mako
-#  exec-once = hyprctl setcursor Bibata-Modern-Classic 24
+  extraConfig = ''
+  #Autostarting
+  exec-once = mako
+  exec-once = hyprctl setcursor Bibata-Modern-Classic 24
+
+  input {
+    kb_layout = gb
+    follow_mouse = 1
+  }
+
+  '';
 }

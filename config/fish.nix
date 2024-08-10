@@ -12,6 +12,7 @@
   };
   shellAbbrs = {
     nhs = "nh os switch /etc/nixos";
+    nhb = "nh os boot /etc/nixos";
   };
   plugins = [
     {

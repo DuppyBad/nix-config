@@ -107,6 +107,7 @@
     pwndbg
   ];
 
+  # Potential script location
 
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
