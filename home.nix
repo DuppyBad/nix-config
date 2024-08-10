@@ -33,6 +33,7 @@
     wl-clipboard # cmd-line copy-paste for wayland
     tealdeer # rust tldr implementation
     grc # output colouriser
+    lazygit # git tui tools
 
     # networking tools
     mtr # A network diagnostic tool
@@ -146,15 +147,11 @@
     # alacritty - a cross-platform, GPU-accelerated terminal emulator
     alacritty = import ./config/alacritty.nix;
     git = import ./config/git.nix;
-  };
-
-  programs.nix-index = {
-    enable = true;
-  };
-
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
+    # pretty command prompt
+    starship = {enable = true;};
+    # fish-shell, no more zsh we're in the future
+    fish = import ./config/fish.nix;
+    nix-index = {enable = true;};
   };
 
   # nixvim - a Neovim configuration system for nix
@@ -242,30 +239,6 @@
     plugins.lsp.servers.rust-analyzer.installRustc = false;
   };
 
-  # fish-shell, no more zsh we're in the future
-  programs.fish = {
-    enable = true;
-    shellAliases = {
-      "..." = "cd ../..";
-      "v" = "nvim";
-      "vi" = "nvim";
-      "ga" = "git add *";
-      "g" = "git";
-      "copy" = "wl-copy";
-      "ls" = "eza";
-      "la" = "eza --all --icons --git";
-    };
-    plugins = [
-      {
-        name = "grc";
-        src = pkgs.fishPlugins.grc.src;
-      }
-      {
-        name = "fzf-fish";
-        src = pkgs.fishPlugins.fzf-fish.src;
-      }
-    ];
-  };
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

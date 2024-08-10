@@ -13,8 +13,18 @@
   # Enable flakes 
   nix.settings.experimental-features = [ "flakes" "nix-command"];
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    plymouth = {
+      enable = true;
+      font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
+      themePackages = [pkgs.catppuccin-plymouth];
+      theme = "catppuccin-mocha";
+    };
+  };
 
   # Setting up the garbage collector
   nix.gc = {
