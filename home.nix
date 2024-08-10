@@ -89,7 +89,7 @@
 
     # window manager related tools
     hyprlock
-    sww
+    swww
     waybar
     # notification daemon
     mako

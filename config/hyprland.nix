@@ -31,6 +31,6 @@
       );
   };
   # Autostarting
-  exec-once = mako
-  exec-once = hyprctl setcursor Bibata-Modern-Classic 24
+#  exec-once = mako
+#  exec-once = hyprctl setcursor Bibata-Modern-Classic 24
 }
