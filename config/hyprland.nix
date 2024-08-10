@@ -2,7 +2,7 @@
   enable = true;
   settings = {
     "$mod" = "SUPER";
-    "$term" = "wezterm";
+    "$term" = "wezterm --always-new-process";
     "$menu" = "rofi";
     bind =
       [
@@ -37,7 +37,6 @@
       );
   };
   extraConfig = ''
-  disable_hyprland_logo = false
 
   #Autostarting
   exec-once = mako
