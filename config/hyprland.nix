@@ -17,7 +17,7 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
+        "$mod, mouse:273, resizewindowpixel"
       ]
       ++ (
         #functional workspace defintion
@@ -37,6 +37,8 @@
       );
   };
   extraConfig = ''
+  disable_hyprland_logo = false
+
   #Autostarting
   exec-once = mako
   exec-once = hyprctl setcursor Bibata-Modern-Classic 24
