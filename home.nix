@@ -103,39 +103,7 @@
     pwndbg
   ];
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = {
-      "$mod" = "SUPER";
-      "$term" = "alacritty";
-      "$menu" = "rofi";
-      bind =
-        [
-          "$mod, return, exec, $term"
-          "$mod, Q, killactive"
-          "$mod, F, fullscreen"
-          "$mod, V, togglefloating"
-          "$mod, Tab, workspace, e+1"
-          "$mod, Tab, workspace, e-1"
-        ]
-        ++ (
-          #functional workspace defintion
-          # binds $mod + {1..10} to the workspace corresponding
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
-    };
-  };
+  wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
   programs = {
     # alacritty - a cross-platform, GPU-accelerated terminal emulator
@@ -154,7 +122,6 @@
     };
     nixvim = import ./config/nixvim.nix;
   };
-
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
