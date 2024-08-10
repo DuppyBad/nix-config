@@ -103,12 +103,6 @@
     pwndbg
   ];
 
-  programs.zoxide = {
-    enable = true;
-    # defaults to true anyway, just for testing
-    enableFishIntegration = true;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -150,8 +144,13 @@
     # pretty command prompt
     starship = {enable = true;};
     # fish-shell, no more zsh we're in the future
-    fish = import ./config/fish.nix {inherit pkgs; };
+    fish = import ./config/fish.nix {inherit pkgs;};
     nix-index = {enable = true;};
+    wezterm = import ./config/wezterm.nix;
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 
   # nixvim - a Neovim configuration system for nix
