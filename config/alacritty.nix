@@ -10,7 +10,7 @@
       normal.family = "JetBrains Mono Nerd Font";
       bold.family = "JetBrains Mono Nerd Font";
       italic.family = "JetBrains Mono Nerd Font";
-      size = 13.5;
+      size = 14;
     };
     colors = {
       primary = {
