@@ -34,6 +34,9 @@
     dates = "weekly";
     options = "--delete-older-than 1w";
   };
+  
+  # setting hardware time for dual boot config
+  time.hardwareClockInLocalTime = true;
 
   nix.settings.auto-optimise-store = true;
 

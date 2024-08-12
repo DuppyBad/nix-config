@@ -128,6 +128,7 @@
     };
     nixvim = import ./config/nixvim.nix;
   #  waybar = import ./config/waybar.nix;
+    kitty = {enable = true;};
   };
 
   services = {
