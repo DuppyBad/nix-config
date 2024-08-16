@@ -10,6 +10,7 @@
     # Nixvim because we NEED more vim power
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -17,6 +18,7 @@
     nixpkgs,
     home-manager,
     nixvim,
+    catppuccin,
     ...
   } @inputs: {
    nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {

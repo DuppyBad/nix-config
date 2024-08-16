@@ -12,6 +12,12 @@
 
   home.username = "kyrios";
   home.homeDirectory = "/home/kyrios";
+  # colour theming stuff
+  catppucin = {
+    enable = true;
+    accent = "mauve"; #mauve is default, here for clarity
+    flavor = "mocha"; # mocha is also default
+  };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # archives
