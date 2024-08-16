@@ -28,6 +28,8 @@
     };
   };
 
+  environment.etc.hosts.mode = "0644";
+
   # Setting up the garbage collector
   nix.gc = {
     automatic = true;
@@ -117,7 +119,6 @@
     wget
     git
     fish
-    wezterm
     acpi
     wireplumber
   ];

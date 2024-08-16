@@ -27,6 +27,8 @@
        # We still need the non-flake config so import it
        ./system/configuration.nix
 
+      # module order example
+      catppuccin.nixosModules.catppuccin
 
        # home manager as a module
        home-manager.nixosModules.home-manager
@@ -34,7 +36,12 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
-          home-manager.users.kyrios = import ./home.nix;
+          home-manager.users.kyrios = {
+            imports = [
+              ./home.nix
+              catppuccin.homeManagerModules.catppuccin
+            ];
+          };
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
        }

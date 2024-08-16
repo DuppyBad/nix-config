@@ -13,7 +13,7 @@
   home.username = "kyrios";
   home.homeDirectory = "/home/kyrios";
   # colour theming stuff
-  catppucin = {
+  catppuccin = {
     enable = true;
     accent = "mauve"; #mauve is default, here for clarity
     flavor = "mocha"; # mocha is also default
@@ -119,7 +119,8 @@
 
   programs = {
     # alacritty - a cross-platform, GPU-accelerated terminal emulator
-    alacritty = import ./config/alacritty.nix;
+    #alacritty = import ./config/alacritty.nix;
+    alacritty = {enable = true;};
     git = import ./config/git.nix;
     # pretty command prompt
     starship = {enable = true;};
@@ -127,7 +128,9 @@
     fish = import ./config/fish.nix {inherit pkgs;};
     nix-index = {enable = true;};
     # TODO wezterm deviates a bit from declaration, hardcoded lua file for config
-    wezterm = import ./config/wezterm.nix;
+    # wezterm is kinda annoying with wayland and it wants to build itself on rebuild? stop
+    #wezterm = import ./config/wezterm.nix;
+    wezterm = {enable = false;};
     zoxide = {
       enable = true;
       enableFishIntegration = true;
