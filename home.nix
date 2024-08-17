@@ -132,7 +132,7 @@
       enable = true;
       enableFishIntegration = true;
     };
-   # nixvim = import ./config/nixvim.nix;
+    nixvim = import ./config/nixvim.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = {enable = true;};
   };
