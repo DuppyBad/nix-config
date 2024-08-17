@@ -6,9 +6,6 @@
 }:
 # Contains the full per user configuration
 {
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-  ];
 
   home.username = "kyrios";
   home.homeDirectory = "/home/kyrios";
@@ -62,6 +59,8 @@
     which
     tree
     du-dust # Rust powered du alternative
+    yazi # terminal file manager 
+    zathura # pdf/document reader
 
     # nix related
     #
@@ -119,8 +118,7 @@
 
   programs = {
     # alacritty - a cross-platform, GPU-accelerated terminal emulator
-    #alacritty = import ./config/alacritty.nix;
-    alacritty = {enable = true;};
+    alacritty = import ./config/alacritty.nix;
     git = import ./config/git.nix;
     # pretty command prompt
     starship = {enable = true;};
@@ -135,7 +133,7 @@
       enable = true;
       enableFishIntegration = true;
     };
-    nixvim = import ./config/nixvim.nix;
+    #nixvim = import ./config/nixvim.nix;
   #  waybar = import ./config/waybar.nix;
     kitty = {enable = true;};
   };

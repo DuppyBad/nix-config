@@ -1,5 +1,6 @@
 {
   enable = true;
+  catppuccin.enable = false;
   settings = {
     "$mod" = "SUPER";
     "$term" = "alacritty";
