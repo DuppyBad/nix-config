@@ -9,6 +9,7 @@
     "copy" = "wl-copy";
     "ls" = "eza";
     "la" = "eza --all --icons --git";
+    "gc" = "git commit";
   };
   shellAbbrs = {
     nhs = "nh os switch /home/kyrios/.config/nixos/";
