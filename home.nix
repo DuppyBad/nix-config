@@ -6,7 +6,6 @@
 }:
 # Contains the full per user configuration
 {
-
   home.username = "kyrios";
   home.homeDirectory = "/home/kyrios";
   # colour theming stuff
@@ -59,7 +58,7 @@
     which
     tree
     du-dust # Rust powered du alternative
-    yazi # terminal file manager 
+    yazi # terminal file manager
     zathura # pdf/document reader
 
     # nix related
@@ -133,13 +132,13 @@
       enable = true;
       enableFishIntegration = true;
     };
-    #nixvim = import ./config/nixvim.nix;
-  #  waybar = import ./config/waybar.nix;
+   # nixvim = import ./config/nixvim.nix;
+    #  waybar = import ./config/waybar.nix;
     kitty = {enable = true;};
   };
 
   services = {
-    mako = {enable =  true;};
+    mako = {enable = true;};
   };
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

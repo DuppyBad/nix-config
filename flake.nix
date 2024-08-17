@@ -11,32 +11,29 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
-    nixvim-config.url = "github:duppybad/nixvim-config";
+    #nixvim-config.url = "github:duppybad/nixvim-config";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nixvim,
     catppuccin,
-    nixvim-config,
     ...
-  } @inputs: {
-   nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
-     system = "x86_64-linux";
-     overlays.additions = final: _prev: {
-       nixvim = nixvim-config.packages.${_prev.system.default};
-     };
-     modules = [
-       # We still need the non-flake config so import it
-       ./system/configuration.nix
+  } @ inputs: {
+    nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        # We still need the non-flake config so import it
+        ./system/configuration.nix
 
-      # module order example
-      catppuccin.nixosModules.catppuccin
+        # module order example
+        catppuccin.nixosModules.catppuccin
 
-       # home manager as a module
-       home-manager.nixosModules.home-manager
-       {
+        # home manager as a module
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {inherit inputs;};
@@ -44,12 +41,13 @@
             imports = [
               ./home.nix
               catppuccin.homeManagerModules.catppuccin
+	      nixvim.homeManagerModules.nixvim
             ];
           };
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-       }
-     ];
-   };
+        }
+      ];
+    };
   };
 }
