@@ -17,8 +17,13 @@
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
+        grub = {
+          enable = true;
+          efiSupport = true;
+          device = "nodev";
+        };
       efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
     };
     plymouth = {
       enable = true;
@@ -27,7 +32,8 @@
       theme = "catppuccin-macchiato";
     };
   };
-
+  
+  # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
 
   # Setting up the garbage collector
