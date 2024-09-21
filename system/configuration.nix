@@ -21,9 +21,10 @@
         enable = true;
         efiSupport = true;
         device = "nodev";
-        efi.canTouchEfiVariables = true;
+        useOSProber = true;
       };
       efi.efiSysMountPoint = "/boot/efi";
+      efi.canTouchEfiVariables = true;
     };
     plymouth = {
       enable = true;
