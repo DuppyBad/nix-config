@@ -17,12 +17,12 @@
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
-        grub = {
-          enable = true;
-          efiSupport = true;
-          device = "nodev";
-        };
-      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        efi.canTouchEfiVariables = true;
+      };
       efi.efiSysMountPoint = "/boot/efi";
     };
     plymouth = {
@@ -32,7 +32,7 @@
       theme = "catppuccin-macchiato";
     };
   };
-  
+
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
 
