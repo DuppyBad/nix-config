@@ -22,6 +22,8 @@
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
+        catppuccin.enable = true;
+        catppuccin.flavor = "mocha";
       };
       efi.efiSysMountPoint = "/boot/efi";
       efi.canTouchEfiVariables = true;
