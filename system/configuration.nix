@@ -82,8 +82,7 @@
     xkb.layout = "gb";
   };
 
-  programs.hyprland.enable = false;
-  programs.sway.enable = true;
+  programs.hyprland.enable = true;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
@@ -133,7 +132,10 @@
     wireplumber
   ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki"];})
+    noto-fonts
+    noto-fonts-cjk
+    cm_unicode
   ];
 
   programs.fish.enable = true;
