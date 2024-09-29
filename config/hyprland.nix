@@ -1,6 +1,6 @@
 {
   enable = true;
-  catppuccin.enable = false;
+  catppuccin.enable = true;
   settings = {
     "$mod" = "SUPER";
     "$term" = "alacritty";
@@ -48,5 +48,8 @@
       follow_mouse = 1
     }
 
+    cursor {
+      no_hardware_cursors = true
+    }
   '';
 }
