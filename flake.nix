@@ -8,10 +8,10 @@
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # Nixvim because we NEED more vim power
-    # nixvim.url = "github:nix-community/nixvim";
-    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    #nixvim.url = "github:nix-community/nixvim";
+    #nixvim.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
-    #nixvim-config.url = "github:duppybad/nixvim-config";
+    nixvim-config.url = "github:duppybad/nixvim-config";
   };
 
   outputs = {
@@ -19,9 +19,13 @@
     nixpkgs,
     home-manager,
     #  nixvim,
+    nixvim-config,
     catppuccin,
     ...
   } @ inputs: {
+    overlays.additions = final: _prev: {
+      nixvim = nixvim-config.packages.${_prev.system}.default;
+    };
     nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -41,8 +45,7 @@
             imports = [
               ./home.nix
               catppuccin.homeManagerModules.catppuccin
-
-              #           nixvim.homeManagerModules.nixvim
+              #nixvim.homeManagerModules.nixvim
             ];
           };
 
