@@ -72,6 +72,7 @@
     hugo # static site generator
     glow # markdown previewer in terminal
     vscode-fhs # intermediary while we work on nixvim
+    neovim
 
     btop # replacement of htop/nmon
     iotop # io monitoring
@@ -97,6 +98,8 @@
     mako
 
     # Programming tools
+    nodejs
+    python3
 
     # security tools
     seclists
@@ -129,6 +132,7 @@
     # wezterm is kinda annoying with wayland and it wants to build itself on rebuild? stop
     #wezterm = import ./config/wezterm.nix;
     wezterm = {enable = false;};
+    neovim.defaultEditor = true;
     zoxide = {
       enable = true;
       enableFishIntegration = true;
