@@ -95,9 +95,6 @@
   # services.printing.enable = true;
 
   # testing video drivers
-  hardware.opengl = {
-    enable = true;
-  };
 
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -107,7 +104,6 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-
   };
 
   # Enable sound.

@@ -45,7 +45,7 @@
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
-    ipcalc # it is a calculator for the IPv4/v6 addresses
+    ipcalc # it is a calculator for IPv4/v6 addresses
     openvpn # standard tunnelling application
 
     # media
@@ -62,13 +62,11 @@
     zathura # pdf/document reader
 
     # nix related
-    #
-    # it provides the command `nom` works just like `nix`
-    # with more details log output
     nix-output-monitor
-    alejandra
+    alejandra # styler
     nvd # for cool diffs
     nh # for nom/nvd integration
+    cachix # binary cache
 
     # productivity
     hugo # static site generator
@@ -97,6 +95,8 @@
     waybar
     # notification daemon
     mako
+
+    # Programming tools
 
     # security tools
     seclists
@@ -133,7 +133,8 @@
       enable = true;
       enableFishIntegration = true;
     };
-    nixvim = import ./config/nixvim.nix;
+    # nixvim = import ./config/nixvim.nix;
+    nvf = {enable = true;};
     #  waybar = import ./config/waybar.nix;
     kitty = {enable = true;};
   };

@@ -5,7 +5,6 @@
     "$mod" = "SUPER";
     "$term" = "alacritty";
     "$menu" = "rofi";
-    
 
     bind =
       [

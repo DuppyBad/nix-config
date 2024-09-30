@@ -8,9 +8,10 @@
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # Nixvim because we NEED more vim power
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.url = "github:nix-community/nixvim";
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
+    nvf.url = "github:notashelf/nvf";
     #nixvim-config.url = "github:duppybad/nixvim-config";
   };
 
@@ -18,7 +19,8 @@
     self,
     nixpkgs,
     home-manager,
-    nixvim,
+    #  nixvim,
+    nvf,
     catppuccin,
     ...
   } @ inputs: {
@@ -41,7 +43,9 @@
             imports = [
               ./home.nix
               catppuccin.homeManagerModules.catppuccin
-              nixvim.homeManagerModules.nixvim
+              nvf.homeManagerModules.default
+
+              #           nixvim.homeManagerModules.nixvim
             ];
           };
 
