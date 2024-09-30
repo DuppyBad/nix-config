@@ -94,6 +94,22 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  # testing video drivers
+  hardware.opengl = {
+    enable = true;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+
+  };
+
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR

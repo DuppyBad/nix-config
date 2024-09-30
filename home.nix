@@ -113,7 +113,7 @@
 
   # Potential script location
 
-  wayland.windowManager.hyprland = {enable = false;}; #import ./config/hyprland.nix;
+  wayland.windowManager.hyprland = import ./config/hyprland.nix;
   wayland.windowManager.sway = {enable = true;};
 
   programs = {

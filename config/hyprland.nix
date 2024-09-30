@@ -5,6 +5,8 @@
     "$mod" = "SUPER";
     "$term" = "alacritty";
     "$menu" = "rofi";
+    
+
     bind =
       [
         "$mod, return, exec, $term"
@@ -38,7 +40,9 @@
       );
   };
   extraConfig = ''
-
+    # cringe since it is specific to REAL hardware, breaks when distributed. can we specify via nix variables? TODO
+    monitor = DP-3,2560x1440@239.96, 0x0, 1
+    monitor = HDMI-A-5,1366x768@59.96400, 2560x0 ,1
     #Autostarting
     exec-once = mako
     exec-once = hyprctl setcursor Bibata-Modern-Classic 24
@@ -46,10 +50,6 @@
     input {
       kb_layout = gb
       follow_mouse = 1
-    }
-
-    cursor {
-      no_hardware_cursors = true
     }
   '';
 }
