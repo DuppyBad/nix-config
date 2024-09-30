@@ -66,7 +66,7 @@
     alejandra # styler
     nvd # for cool diffs
     nh # for nom/nvd integration
-    cachix # binary cache
+    #cachix # binary cache
 
     # productivity
     hugo # static site generator
@@ -134,7 +134,7 @@
       enableFishIntegration = true;
     };
     # nixvim = import ./config/nixvim.nix;
-    nvf = {enable = true;};
+   # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = {enable = true;};
   };
