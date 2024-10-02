@@ -72,8 +72,6 @@
     hugo # static site generator
     glow # markdown previewer in terminal
     vscode-fhs # intermediary while we work on nixvim
-    neovim
-
     btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
@@ -137,7 +135,7 @@
       enable = true;
       enableFishIntegration = true;
     };
-    # nixvim = import ./config/nixvim.nix;
+    nixvim = import ./config/nixvim.nix;
     # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = {enable = true;};
