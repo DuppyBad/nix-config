@@ -143,7 +143,7 @@
     wireplumber
   ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki"];})
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
     noto-fonts
     noto-fonts-cjk
     cm_unicode

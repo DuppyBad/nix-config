@@ -138,7 +138,7 @@
     nixvim = import ./config/nixvim.nix;
     # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
-    kitty = {enable = true;};
+    kitty = import ./config/kitty.nix ;
   };
 
   services = {
