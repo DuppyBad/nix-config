@@ -117,7 +117,6 @@
   # Potential script location
 
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
-  wayland.windowManager.sway = {enable = true;};
 
   programs = {
     # alacritty - a cross-platform, GPU-accelerated terminal emulator

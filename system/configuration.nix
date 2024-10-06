@@ -82,7 +82,7 @@
     xkb.layout = "gb";
   };
 
-  programs.hyprland.enable = true;
+  programs.hyprland.enable = false;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
