@@ -92,7 +92,8 @@
     # window manager related tools
     hyprlock
     swww
-    waybar
+    eww # widgets to replace waybar
+    # waybar
     # notification daemon
     mako
 

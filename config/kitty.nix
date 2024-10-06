@@ -2,7 +2,7 @@
   enable = true;
   font = {
     name = "Iosevka Nerd Font";
-    size = 14;
+    size = 16;
   };
   settings = {
     background_opacity = "0.8";
