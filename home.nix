@@ -15,11 +15,6 @@
     flavor = "mocha"; # mocha is also default
     pointerCursor.enable = true;
   };
-  gtk.catppucin = {
-    enable = true;
-    gnomeShellTheme = true;
-    icon.enable = true;
-  };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # archives
