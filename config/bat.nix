@@ -1,4 +1,4 @@
-{
+{pkgs, ...}:{
   enable = true;
   themes = {
     catppuccin_mocha = {
@@ -11,4 +11,5 @@
       file = "Catppuccin Mocha.tmTheme";
     };
   };
+  theme = "catppuccin_mocha";
 }

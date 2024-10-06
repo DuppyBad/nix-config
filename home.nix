@@ -135,7 +135,7 @@
     # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = import ./config/kitty.nix;
-    bat = import .config/bat.nix {inherit pkgs;};
+    bat = import ./config/bat.nix {inherit pkgs;};
   };
 
   services = {
