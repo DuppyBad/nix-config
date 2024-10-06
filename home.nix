@@ -66,7 +66,7 @@
     alejandra # styler
     nvd # for cool diffs
     nh # for nom/nvd integration
-    #cachix # binary cache
+    #cachix # binary cache ; TODO fix why this is being weird on enable
 
     # productivity
     hugo # static site generator
@@ -75,6 +75,7 @@
     btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
+    presenterm # cmd line slideshows
 
     # system call monitoring
     strace # system call monitoring
@@ -138,7 +139,7 @@
     nixvim = import ./config/nixvim.nix;
     # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
-    kitty = import ./config/kitty.nix ;
+    kitty = import ./config/kitty.nix;
   };
 
   services = {
