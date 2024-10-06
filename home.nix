@@ -50,7 +50,6 @@
 
     # media
     spotify # it's spotify. may my music be free one day.
-    spicetify-cli # it's spotify but pretty. may my music be tui only one day.
     playerctl # commandline controls for mpris media
 
     # misc
@@ -127,10 +126,6 @@
     # fish-shell, no more zsh we're in the future
     fish = import ./config/fish.nix {inherit pkgs;};
     nix-index = {enable = true;};
-    # TODO wezterm deviates a bit from declaration, hardcoded lua file for config
-    # wezterm is kinda annoying with wayland and it wants to build itself on rebuild? stop
-    #wezterm = import ./config/wezterm.nix;
-    wezterm = {enable = false;};
     neovim.defaultEditor = true;
     zoxide = {
       enable = true;
@@ -140,6 +135,7 @@
     # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = import ./config/kitty.nix;
+    bat = import .config/bat.nix {inherit pkgs;};
   };
 
   services = {
