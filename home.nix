@@ -13,6 +13,12 @@
     enable = true;
     accent = "mauve"; #mauve is default, here for clarity
     flavor = "mocha"; # mocha is also default
+    pointerCursor.enable = true;
+  };
+  gtk.catppucin = {
+    enable = true;
+    gnomeShellTheme = true;
+    icon.enable = true;
   };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -31,7 +37,7 @@
     zoxide # directory change helper
     teehee # Modal alternative to xxd
     grimblast # Screenshot helper for hyprland
-    bat # the better cat
+    # bat # the better cat
     wl-clipboard # cmd-line copy-paste for wayland
     tealdeer # rust tldr implementation
     grc # output colouriser
@@ -135,7 +141,9 @@
     # nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = import ./config/kitty.nix;
-    bat = import ./config/bat.nix {inherit pkgs;};
+    bat = import ./config/bat.nix;
+    lazygit = {enable = true;};
+    bottom = {enable = true;};
   };
 
   services = {
