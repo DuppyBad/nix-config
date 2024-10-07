@@ -148,7 +148,10 @@
   # Set the default editor to neovim
   environment.variables.EDITOR = "nvim";
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+    noto-fonts
+    noto-fonts-cjk
+    cm_unicode
   ];
   # Enabling fish, may fall back to zsh if posix compliance becomes a real issue
   programs.fish.enable = true;
