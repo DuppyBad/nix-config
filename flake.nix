@@ -30,8 +30,8 @@
       system = "x86_64-linux";
       modules = [
         # We still need the non-flake config so import it
-        ./system/configuration.nix
-
+        ./hosts/mekhanes/configuration.nix
+        #TODO context switch based on host in use
         # module order example
         catppuccin.nixosModules.catppuccin
 
