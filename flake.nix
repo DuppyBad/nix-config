@@ -2,12 +2,9 @@
   description = "Mekhanes Control";
 
   inputs = {
-    # NixOS official package source, unstable because we are bleeding edge fanatics
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # Home manager etc goes here later
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # Nixvim because we NEED more vim power
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
