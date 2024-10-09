@@ -1,15 +1,19 @@
 {
-  description = "Mekhanes Control";
+  description = "NixOS system config control";
 
   inputs = {
     # NixOS official package source, unstable because we are bleeding edge fanatics
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-mamager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # Everything that isn't nixpkgs
+    home-mamager= {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
     catppuccin.url = "github:catppuccin/nix";
-    nixvim-config.url = "github:duppybad/nixvim-config";
   };
 
   outputs = {
@@ -17,12 +21,11 @@
     nixpkgs,
     home-manager,
     nixvim,
-    nixvim-config,
     catppuccin,
     ...
   } @ inputs: {
     overlays.additions = final: _prev: {
-      nixvim = nixvim-config.packages.${_prev.system}.default;
+    #  nixvim = nixvim-config.packages.${_prev.system}.default;
     };
     nixosConfigurations = {
       # Desktop config for mekhanes 
