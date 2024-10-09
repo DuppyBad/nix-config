@@ -24,6 +24,17 @@
     overlays.additions = final: _prev: {
       nixvim = nixvim-config.packages.${_prev.system}.default;
     };
+    nixosConfigurations = {
+      # Desktop config for mekhanes 
+      mekhanes = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/mekhanes/configuration.nix];
+      };
+      machina = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/mekhanes/configuration.nix];
+      };
+
+
+    };
     nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -32,7 +43,6 @@
         #TODO context switch based on host in use
         # module order example
         catppuccin.nixosModules.catppuccin
-
         # home manager as a module
         home-manager.nixosModules.home-manager
         {
@@ -56,6 +66,7 @@
       modules = [
         ./hosts/machina/configuration.nix
         # Make home manager common? make the users common? Don't reuse full paragraphs
+
       ];
     };
   };
