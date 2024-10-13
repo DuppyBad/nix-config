@@ -96,7 +96,6 @@
 
   # testing video drivers
 
-
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR

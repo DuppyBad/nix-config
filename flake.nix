@@ -24,13 +24,26 @@
     catppuccin,
     ...
   } @ inputs: {
-    overlays.additions = final: _prev: {
-    #  nixvim = nixvim-config.packages.${_prev.system}.default;
-    };
     nixosConfigurations = {
       # Desktop config for mekhanes 
       mekhanes = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/mekhanes/configuration.nix];
+        modules = [
+          ./hosts/mekhanes/configuration.nix
+          catppuccin.nixosModules.catppuccin
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages =  true;
+              extraSpecialArgs = {inherit inputs;};
+              users.kyrios = {
+                imports = [
+                  ./home.nix
+                ];
+              };
+            };
+          }
+        ];
+
       };
       machina = nixpkgs.lib.nixosSystem {
         modules = [./hosts/machina/configuration.nix];
