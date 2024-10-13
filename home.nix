@@ -50,7 +50,7 @@
     openvpn # standard tunnelling application
 
     # media
-    spotify # it's spotify. may my music be free one day.
+    # spotify # it's spotify. may my music be free one day.
     playerctl # commandline controls for mpris media
 
     # misc
@@ -139,6 +139,21 @@
     bat = import ./config/bat.nix;
     lazygit = {enable = true;};
     bottom = {enable = true;};
+    spicetify = let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        fullAppDisplay
+        keyboardShortcut
+        fullAlbumDate
+        powerBar
+        volumePercentage
+        beautifulLyrics
+      ];
+      theme = spicePkgs.themes.comfy;
+      colorScheme = "catppuccin-mocha";
+    };
   };
 
   services = {
