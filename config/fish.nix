@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   enable = true;
+  interactiveShellInit = ''
+    set fish_greeting # greeting becomes empty string
+  '';
   shellAliases = {
     "..." = "cd ../..";
     "v" = "nvim";

@@ -36,6 +36,7 @@
     tealdeer # rust tldr implementation
     grc # output colouriser
     lazygit # git tui tools
+    tmux # it's tmux
 
     # networking tools
     mtr # A network diagnostic tool
