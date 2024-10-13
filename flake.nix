@@ -33,7 +33,7 @@
         modules = [./hosts/mekhanes/configuration.nix];
       };
       machina = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/mekhanes/configuration.nix];
+        modules = [./hosts/machina/configuration.nix];
       };
 
 
