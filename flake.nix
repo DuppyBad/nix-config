@@ -9,6 +9,10 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
     nixvim-config.url = "github:duppybad/nixvim-config";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -18,6 +22,7 @@
     nixvim,
     nixvim-config,
     catppuccin,
+    spicetify-nix,
     ...
   } @ inputs: {
     overlays.additions = final: _prev: {
@@ -31,6 +36,7 @@
 
         # module order example
         catppuccin.nixosModules.catppuccin
+        inputs.spicetify-nix.nixosModules.default
 
         # home manager as a module
         home-manager.nixosModules.home-manager
@@ -43,6 +49,7 @@
               ./home.nix
               catppuccin.homeManagerModules.catppuccin
               nixvim.homeManagerModules.nixvim
+              inputs.spicetify-nix.homeManagerModules.default
             ];
           };
 
