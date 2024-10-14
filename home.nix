@@ -6,8 +6,10 @@
 }:
 # Contains the full per user configuration
 {
-  home.username = "kyrios";
-  home.homeDirectory = "/home/kyrios";
+  home = {
+    username = "kyrios";
+    homeDirectory = "/home/kyrios";
+  };
   # colour theming stuff
   catppuccin = {
     enable = true;
