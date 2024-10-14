@@ -37,7 +37,7 @@
               extraSpecialArgs = {inherit inputs;};
               users.kyrios = {
                 imports = [
-                  ./home.nix
+                  ./home/home.nix
                 ];
               };
             };
