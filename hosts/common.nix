@@ -20,8 +20,16 @@
     experimental-features = ["flakes" "nix-command"];
   };
   
+  nixpkgs.config.allowUnfree = true;
   time.timeZone = "Europe/London";
   i18n.defaultLocate = "en_GB.UTF-8";
   console.keyMap = "uk";
+  
+  fonts.packages = with pkgs; [
+  (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+  noto-fonts
+  noto-fonts-cjk
+  cm_unicode
+  ];
 
 }
