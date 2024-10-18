@@ -53,6 +53,10 @@
 
   virtualisation.docker.enable = true;
 
+  # When we have to run random binaries
+
+  programs.nix-ld.enable = true;
+
   networking.hostName = "mekhanes"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

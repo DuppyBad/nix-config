@@ -13,6 +13,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    textfox.url = "github:adriankarlen/textfox";
   };
 
   outputs = {
@@ -23,6 +24,7 @@
     nixvim-config,
     catppuccin,
     spicetify-nix,
+    textfox,
     ...
   } @ inputs: {
     overlays.additions = final: _prev: {
@@ -50,6 +52,7 @@
               catppuccin.homeManagerModules.catppuccin
               nixvim.homeManagerModules.nixvim
               inputs.spicetify-nix.homeManagerModules.default
+              inputs.textfox.homeManagerModules.default
             ];
           };
 

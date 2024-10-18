@@ -9,12 +9,18 @@
   home = {
     username = "kyrios";
     homeDirectory = "/home/kyrios";
+    # Don't you dare change the stateVersion
+    stateVersion = "23.11";
   };
   # colour theming stuff
   catppuccin = {
     enable = true;
     accent = "mauve"; #mauve is default, here for clarity
     flavor = "mocha"; # mocha is also default
+  };
+  textfox = {
+    enable = true;
+    profile = "primary";
   };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -33,7 +39,6 @@
     zoxide # directory change helper
     teehee # Modal alternative to xxd
     grimblast # Screenshot helper for hyprland
-    # bat # the better cat
     wl-clipboard # cmd-line copy-paste for wayland
     tealdeer # rust tldr implementation
     grc # output colouriser
@@ -115,6 +120,9 @@
     pwntools
     gdb
     pwndbg
+
+    # compat
+    ungoogled-chromium # so that I can access evil website that mandate chrome
   ];
 
   # Potential script location
@@ -122,12 +130,9 @@
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
   programs = {
-    # alacritty - a cross-platform, GPU-accelerated terminal emulator
     alacritty = import ./config/alacritty.nix;
     git = import ./config/git.nix;
-    # pretty command prompt
     starship = {enable = true;};
-    # fish-shell, no more zsh we're in the future
     fish = import ./config/fish.nix {inherit pkgs;};
     nix-index = {enable = true;};
     neovim.defaultEditor = true;
@@ -157,21 +162,13 @@
       theme = spicePkgs.themes.comfy;
       colorScheme = "catppuccin-mocha";
     };
+    # Let home-manager manage itself
+    home-manager = {
+      enable = true;
+    };
   };
 
   services = {
     mako = {enable = true;};
   };
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
-
-  # Let home Manager install and manage itself.
-  home.stateVersion = "23.11";
-  programs.home-manager.enable = true;
 }
