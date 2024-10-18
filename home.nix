@@ -39,6 +39,7 @@
     grc # output colouriser
     lazygit # git tui tools
     tmux # it's tmux
+    docker-compose # to make docker easier
 
     # networking tools
     mtr # A network diagnostic tool
