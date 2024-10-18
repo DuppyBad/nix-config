@@ -13,7 +13,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    textfox.url = "github:adriankarlen/textfox";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = {
@@ -24,7 +24,6 @@
     nixvim-config,
     catppuccin,
     spicetify-nix,
-    textfox,
     ...
   } @ inputs: {
     overlays.additions = final: _prev: {
@@ -52,7 +51,6 @@
               catppuccin.homeManagerModules.catppuccin
               nixvim.homeManagerModules.nixvim
               inputs.spicetify-nix.homeManagerModules.default
-              inputs.textfox.homeManagerModules.default
             ];
           };
 
