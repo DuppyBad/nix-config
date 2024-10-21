@@ -1,5 +1,5 @@
 {
-  description = "NixOS system config control";
+  description = "Kyrios' attempt at reaching Gnosis(It's a terrible flake)";
 
   inputs = {
     # NixOS official package source, unstable because we are bleeding edge fanatics
@@ -13,6 +13,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
       };
+    #TODO Move to NVF
     catppuccin.url = "github:catppuccin/nix";
   };
 
