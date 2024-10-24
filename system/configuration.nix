@@ -107,6 +107,7 @@
     fish
     acpi
     wireplumber
+    factorio
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})

@@ -119,10 +119,6 @@
 
     # compat
     ungoogled-chromium # so that I can access evil website that mandate chrome
-
-    # gaming
-    lutris
-    factorio
   ];
 
   # Potential script location
