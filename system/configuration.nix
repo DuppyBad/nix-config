@@ -36,6 +36,15 @@
     };
   };
 
+  #temp factorio
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    factorio = pkgs.factorio.override {
+      username = "ExKyrios";
+      token = "ea162edef5c09cb6ed8b0554a232cb";
+    };
+  };
+
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
 
