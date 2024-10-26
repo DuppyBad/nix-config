@@ -2,6 +2,10 @@
 
 ## Kyrios' personal device config as a flake
 
+when paths randomly break(?!)
+``sudo nix-store --repair --verify --check-contents``
+
+
 TODO
 
 - [x] modularise home.nix

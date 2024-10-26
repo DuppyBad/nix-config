@@ -79,6 +79,7 @@
   };
 
   programs.hyprland.enable = true;
+  programs.steam.enable = true;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
