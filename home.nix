@@ -147,6 +147,7 @@
     bat = import ./config/bat.nix;
     lazygit = {enable = true;};
     bottom = {enable = true;};
+    steam = import .config/steam.nix;
     #TODO export this to it's own file
     spicetify = let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
