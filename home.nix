@@ -119,6 +119,10 @@
 
     # compat
     ungoogled-chromium # so that I can access evil website that mandate chrome
+    
+    # gaming
+
+    lutris
   ];
 
   # Potential script location
@@ -143,6 +147,7 @@
     bat = import ./config/bat.nix;
     lazygit = {enable = true;};
     bottom = {enable = true;};
+    #TODO export this to it's own file
     spicetify = let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
     in {
@@ -163,7 +168,6 @@
       enable = true;
     };
   };
-
   services = {
     mako = {enable = true;};
   };
