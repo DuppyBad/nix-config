@@ -77,15 +77,16 @@
     xkb.layout = "gb";
   };
 
-  programs.hyprland.enable = false;
+  programs.hyprland.enable = true;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    audio.enable = true;
   };
-  hardware.pulseaudio.enable = false;
   users.users.kyrios = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"]; # Enable ‘sudo’ for the user.
@@ -108,6 +109,7 @@
     acpi
     wireplumber
     factorio
+    pavucontrol
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
