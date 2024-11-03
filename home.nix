@@ -62,7 +62,7 @@
     which
     tree
     du-dust # Rust powered du alternative
-    yazi # terminal file manager
+    # yazi # terminal file manager
     zathura # pdf/document reader
 
     # nix related
@@ -122,7 +122,7 @@
     
     # gaming
 
-    lutris
+    # lutris
   ];
 
   # Potential script location
