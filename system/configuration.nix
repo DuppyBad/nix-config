@@ -36,15 +36,6 @@
     };
   };
 
-  #temp factorio
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    factorio = pkgs.factorio.override {
-      username = "ExKyrios";
-      token = "ea162edef5c09cb6ed8b0554a232cb";
-    };
-  };
-
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
   environment.variables.EDITOR = "nvim";
@@ -86,9 +77,14 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
     pulse.enable = true;
-    audio.enable = true;
+    # config for low latency output
   };
+
   users.users.kyrios = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"]; # Enable ‘sudo’ for the user.
@@ -110,7 +106,7 @@
     fish
     acpi
     wireplumber
-    factorio
+    steam-run-native
     pavucontrol
   ];
   fonts.packages = with pkgs; [
