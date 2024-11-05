@@ -56,9 +56,11 @@
   # Nvidia pain
   hardware = {
     graphics.enable = true;
-    nvidia.open = false;
+    nvidia = {
+      open = false;
+      modesetting.enable = true;
+    };
   };
-
   services.xserver.videoDrivers = ["nvidia"];
 
   networking = {

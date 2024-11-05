@@ -26,6 +26,10 @@
     unzip
     p7zip
 
+
+    # LSPs
+    nil
+
     # utils
     fd # Like find, but good
     ripgrep # recursively searches directories for a regex pattern
@@ -67,10 +71,11 @@
 
     # nix related
     nix-output-monitor
-    alejandra # styler
+    alejandra # formatter
     nvd # for cool diffs
     nh # for nom/nvd integration
     #cachix # binary cache ; TODO fix why this is being weird on enable
+    fuzzel
 
     # productivity
     hugo # static site generator
@@ -101,6 +106,7 @@
     # waybar
     # notification daemon
     mako
+    niri # test new wm
 
     # Programming tools
     nodejs
