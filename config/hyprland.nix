@@ -4,13 +4,14 @@
   settings = {
     "$mod" = "SUPER";
     "$term" = "alacritty";
-    "$menu" = "rofi";
+    "$menu" = "fuzzel";
 
     bind =
       [
         "$mod, return, exec, $term"
         "$mod, Q, killactive"
         "$mod, F, fullscreen"
+        "$mod, D, exec, $menu"
         "$mod, V, togglefloating"
         "$mod, Tab, workspace, e+1"
         "$mod SHIFT, Tab, workspace, e-1"
