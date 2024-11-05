@@ -38,7 +38,6 @@
     fzf # A command-line fuzzy finder
     zoxide # directory change helper
     teehee # Modal alternative to xxd
-    grimblast # Screenshot helper for hyprland
     wl-clipboard # cmd-line copy-paste for wayland
     tealdeer # rust tldr implementation
     grc # output colouriser
@@ -111,9 +110,9 @@
     catppuccin-cursors.mochaDark
     gnome-themes-extra
     fuzzel
+    hyprpicker
 
     # Programming tools
-    nodejs
     python3
 
     # security tools

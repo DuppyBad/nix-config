@@ -7,6 +7,33 @@
     "$mod" = "SUPER";
     "$term" = "kitty";
     "$menu" = "fuzzel";
+    
+    decoration = {
+      rounding = 8;
+      blur = {
+        enabled = true;
+      };
+    };
+
+    animations = {
+      enabled = true;
+      bezier = [
+      "sine, 0.37, 0, 0.63, 1"
+      "ease, .4,0.02,0.21,0.99"
+      ];
+      animation = [
+        "border, 1, 6, default"
+        "fade, 1, 3, ease"
+        "windows, 1, 3, sine, slide"
+        "windowsOut, 1, 3, ease, slide"
+        "workspaces, 1, 2, ease"
+      ];
+    };
+
+    dwindle = {
+      pseudotile = true;
+      preserve_split = true;
+    };
 
     bindm = 
       [
@@ -26,8 +53,18 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+        "$mod SHIFT, P, exec, hyprpicker -a"
         "$mod SHIFT, S, exec, grimblast --notify copy area"
+        ",Print, exec, grimblast --notify --cursor copy screen"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioStop, exec, playerctl stop"
+        ",XF86AudioPlay, exec, playerctl play-pause"
+        ",XF86AudioPrev, exec, playerctl previous"
+        ",XF86AudioNext, exec, playerctl next"
       ]
+      # TODO bind media buttons to playerctl
       ++ (
         #functional workspace defintion
         # taken from wiki.hyprland.org
