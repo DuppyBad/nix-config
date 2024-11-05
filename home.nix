@@ -80,6 +80,7 @@
     iotop # io monitoring
     iftop # network monitoring
     presenterm # cmd line slideshows
+    helix # editor
 
     # system call monitoring
     strace # system call monitoring
@@ -130,6 +131,7 @@
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
   programs = {
+    helix = import ./config/helix.nix;
     alacritty = import ./config/alacritty.nix;
     git = import ./config/git.nix;
     starship = {enable = true;};

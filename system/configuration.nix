@@ -52,6 +52,15 @@
   virtualisation.docker.enable = true;
   # When we have to run random binaries
   programs.nix-ld.enable = true;
+
+  # Nvidia pain
+  hardware = {
+    graphics.enable = true;
+    nvidia.open = false;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
+
   networking = {
     hostName = "mekhanes";
     nameservers = ["9.9.9.9" "1.1.1.1"];
