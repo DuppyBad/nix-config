@@ -75,7 +75,6 @@
     nvd # for cool diffs
     nh # for nom/nvd integration
     #cachix # binary cache ; TODO fix why this is being weird on enable
-    fuzzel
 
     # productivity
     hugo # static site generator
@@ -108,6 +107,10 @@
     mako
     niri # test new wm
     hyprpanel
+    grimblast
+    catppuccin-cursors.mochaDark
+    gnome-themes-extra
+    fuzzel
 
     # Programming tools
     nodejs
