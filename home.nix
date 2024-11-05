@@ -107,6 +107,7 @@
     # notification daemon
     mako
     niri # test new wm
+    hyprpanel
 
     # Programming tools
     nodejs

@@ -3,7 +3,7 @@
   catppuccin.enable = true;
   settings = {
     "$mod" = "SUPER";
-    "$term" = "alacritty";
+    "$term" = "kitty";
     "$menu" = "fuzzel";
 
     bind =

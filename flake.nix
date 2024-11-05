@@ -9,6 +9,7 @@
     nixvim-config,
     catppuccin,
     spicetify-nix,
+    hyprpanel,
     ...
   } @ inputs: {
     overlays.additions = final: _prev: {
@@ -26,6 +27,9 @@
 
         # home manager as a module
         home-manager.nixosModules.home-manager
+        # hyprpanel test
+
+        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -59,5 +63,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 }
