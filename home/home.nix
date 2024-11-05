@@ -26,7 +26,6 @@
     unzip
     p7zip
 
-
     # LSPs
     nil
 
@@ -129,7 +128,7 @@
 
     # compat
     ungoogled-chromium # so that I can access evil website that mandate chrome
-    
+
     # gaming
 
     # lutris

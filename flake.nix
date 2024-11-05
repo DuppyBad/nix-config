@@ -48,7 +48,6 @@
       modules = [
         ./hosts/machina/configuration.nix
         # Make home manager common? make the users common? Don't reuse full paragraphs
-
       ];
     };
   };

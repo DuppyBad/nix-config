@@ -7,7 +7,7 @@
     "$mod" = "SUPER";
     "$term" = "kitty";
     "$menu" = "fuzzel";
-    
+
     decoration = {
       rounding = 8;
       blur = {
@@ -18,8 +18,8 @@
     animations = {
       enabled = true;
       bezier = [
-      "sine, 0.37, 0, 0.63, 1"
-      "ease, .4,0.02,0.21,0.99"
+        "sine, 0.37, 0, 0.63, 1"
+        "ease, .4,0.02,0.21,0.99"
       ];
       animation = [
         "border, 1, 6, default"
@@ -35,11 +35,10 @@
       preserve_split = true;
     };
 
-    bindm = 
-      [
+    bindm = [
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
-      ];
+    ];
     bind =
       [
         "$mod, return, exec, $term"
@@ -91,8 +90,8 @@
     exec-once = hyprpanel
     # horrible gtk force theming, definitely a more elegant solution possible
     exec-once = gsettings set org.gnome.desktop.interface cursor-theme catppuccin-mocha-dark-cursors
-    exec-once = gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark 
-    exec-once = gsettings set org.gnome.desktop.interface color-scheme prefer-dark 
+    exec-once = gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+    exec-once = gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
     env = HYPRCURSOR_THEME, catppuccin-mocha-dark-cursors
     env = HYPRCURSOR_SIZE, 28
