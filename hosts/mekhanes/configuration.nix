@@ -38,6 +38,7 @@
 
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
+  environment.variables.EDITOR = "nvim";
 
   # Setting up the garbage collector
   nix.gc = {
@@ -45,35 +46,32 @@
     dates = "weekly";
     options = "--delete-older-than 1w";
   };
-
   # setting hardware time for dual boot config
   time.hardwareClockInLocalTime = true;
-
   nix.settings.auto-optimise-store = true;
+  virtualisation.docker.enable = true;
+  # When we have to run random binaries
+  programs.nix-ld.enable = true;
 
-  networking.hostName = "mekhanes"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # Nvidia pain
+  hardware = {
+    graphics.enable = true;
+    nvidia = {
+      open = false;
+      modesetting.enable = true;
+    };
+  };
+  services.xserver.videoDrivers = ["nvidia"];
+
+  networking = {
+    hostName = "mekhanes";
+    nameservers = ["9.9.9.9" "1.1.1.1"];
+  };
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
   # Set your time zone.
   time.timeZone = "Europe/London";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
   # temporary gnome whilst we get setup
   services.xserver = {
     enable = true;
@@ -82,37 +80,25 @@
     xkb.layout = "gb";
   };
 
-  programs.hyprland.enable = false;
+  programs.hyprland.enable = true;
+  programs.steam.enable = true;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # testing video drivers
-
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
     pulse.enable = true;
+    # config for low latency output
   };
-  hardware.pulseaudio.enable = false;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kyrios = {
     isNormalUser = true;
-    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker"]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       fastfetch
@@ -120,7 +106,6 @@
       vesktop
     ];
   };
-
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
@@ -132,6 +117,8 @@
     fish
     acpi
     wireplumber
+    steam-run-native
+    pavucontrol
   ];
   programs.fish.enable = true;
   # Some programs need SUID wrappers, can be configured further or are

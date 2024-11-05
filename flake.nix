@@ -1,57 +1,16 @@
 {
   description = "Kyrios' attempt at reaching Gnosis(It's a terrible flake)";
 
-  inputs = {
-    # NixOS official package source, unstable because we are bleeding edge fanatics
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # Everything that isn't nixpkgs
-    home-mamager= {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-      };
-    #TODO Move to NVF
-    catppuccin.url = "github:catppuccin/nix";
-  };
-
   outputs = {
     self,
     nixpkgs,
     home-manager,
     nixvim,
     catppuccin,
+    spicetify-nix,
+    hyprpanel,
     ...
   } @ inputs: {
-    nixosConfigurations = {
-      # Desktop config for mekhanes 
-      mekhanes = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/mekhanes/configuration.nix
-          catppuccin.nixosModules.catppuccin
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages =  true;
-              extraSpecialArgs = {inherit inputs;};
-              users.kyrios = {
-                imports = [
-                  ./home/home.nix
-                ];
-              };
-            };
-          }
-        ];
-
-      };
-      machina = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/machina/configuration.nix];
-      };
-
-
-    };
     nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -62,15 +21,21 @@
         catppuccin.nixosModules.catppuccin
         # home manager as a module
         home-manager.nixosModules.home-manager
+        # hyprpanel test
+
+        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {inherit inputs;};
+          };
           home-manager.users.kyrios = {
             imports = [
               ./home.nix
               catppuccin.homeManagerModules.catppuccin
               nixvim.homeManagerModules.nixvim
+              inputs.spicetify-nix.homeManagerModules.default
             ];
           };
 
@@ -86,5 +51,20 @@
 
       ];
     };
+  };
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-mamager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
+    nixvim-config.url = "github:duppybad/nixvim-config";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 }

@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   enable = true;
+  interactiveShellInit = ''
+    set fish_greeting # greeting becomes empty string
+  '';
   shellAliases = {
     "..." = "cd ../..";
     "v" = "nvim";
@@ -10,6 +13,7 @@
     "ls" = "eza";
     "la" = "eza --all --icons --git";
     "gc" = "git commit";
+    "lgit" = "lazygit";
   };
   shellAbbrs = {
     nhs = "nh os switch /home/kyrios/.config/nixos/";

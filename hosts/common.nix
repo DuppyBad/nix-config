@@ -28,7 +28,7 @@
   fonts.packages = with pkgs; [
   (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
   noto-fonts
-  noto-fonts-cjk
+  noto-fonts-cjk-sans
   cm_unicode
   ];
 

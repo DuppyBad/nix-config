@@ -6,8 +6,12 @@
 }:
 # Contains the full per user configuration
 {
-  home.username = "kyrios";
-  home.homeDirectory = "/home/kyrios";
+  home = {
+    username = "kyrios";
+    homeDirectory = "/home/kyrios";
+    # Don't you dare change the stateVersion
+    stateVersion = "23.11";
+  };
   # colour theming stuff
   catppuccin = {
     enable = true;
@@ -22,6 +26,10 @@
     unzip
     p7zip
 
+
+    # LSPs
+    nil
+
     # utils
     fd # Like find, but good
     ripgrep # recursively searches directories for a regex pattern
@@ -30,12 +38,12 @@
     fzf # A command-line fuzzy finder
     zoxide # directory change helper
     teehee # Modal alternative to xxd
-    grimblast # Screenshot helper for hyprland
-    # bat # the better cat
     wl-clipboard # cmd-line copy-paste for wayland
     tealdeer # rust tldr implementation
     grc # output colouriser
     lazygit # git tui tools
+    tmux # it's tmux
+    docker-compose # to make docker easier
 
     # networking tools
     mtr # A network diagnostic tool
@@ -49,7 +57,7 @@
     openvpn # standard tunnelling application
 
     # media
-    spotify # it's spotify. may my music be free one day.
+    # spotify # it's spotify. may my music be free one day.
     playerctl # commandline controls for mpris media
 
     # misc
@@ -57,12 +65,12 @@
     which
     tree
     du-dust # Rust powered du alternative
-    yazi # terminal file manager
+    # yazi # terminal file manager
     zathura # pdf/document reader
 
     # nix related
     nix-output-monitor
-    alejandra # styler
+    alejandra # formatter
     nvd # for cool diffs
     nh # for nom/nvd integration
     #cachix # binary cache ; TODO fix why this is being weird on enable
@@ -75,6 +83,7 @@
     iotop # io monitoring
     iftop # network monitoring
     presenterm # cmd line slideshows
+    helix # editor
 
     # system call monitoring
     strace # system call monitoring
@@ -95,9 +104,15 @@
     # waybar
     # notification daemon
     mako
+    niri # test new wm
+    hyprpanel
+    grimblast
+    catppuccin-cursors.mochaDark
+    gnome-themes-extra
+    fuzzel
+    hyprpicker
 
     # Programming tools
-    nodejs
     python3
 
     # security tools
@@ -111,6 +126,13 @@
     pwntools
     gdb
     pwndbg
+
+    # compat
+    ungoogled-chromium # so that I can access evil website that mandate chrome
+    
+    # gaming
+
+    # lutris
   ];
 
   # Potential script location
@@ -118,12 +140,10 @@
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
   programs = {
-    # alacritty - a cross-platform, GPU-accelerated terminal emulator
+    helix = import ./config/helix.nix;
     alacritty = import ./config/alacritty.nix;
     git = import ./config/git.nix;
-    # pretty command prompt
     starship = {enable = true;};
-    # fish-shell, no more zsh we're in the future
     fish = import ./config/fish.nix {inherit pkgs;};
     nix-index = {enable = true;};
     neovim.defaultEditor = true;
@@ -138,21 +158,28 @@
     bat = import ./config/bat.nix;
     lazygit = {enable = true;};
     bottom = {enable = true;};
+    #TODO export this to it's own file
+    spicetify = let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        fullAppDisplay
+        keyboardShortcut
+        fullAlbumDate
+        powerBar
+        volumePercentage
+        beautifulLyrics
+      ];
+      theme = spicePkgs.themes.comfy;
+      colorScheme = "catppuccin-mocha";
+    };
+    # Let home-manager manage itself
+    home-manager = {
+      enable = true;
+    };
   };
-
   services = {
     mako = {enable = true;};
   };
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
-
-  # Let home Manager install and manage itself.
-  home.stateVersion = "23.11";
-  programs.home-manager.enable = true;
 }

@@ -1,16 +1,51 @@
 {
   enable = true;
   catppuccin.enable = true;
+  xwayland.enable = true;
+  systemd.enable = true;
   settings = {
     "$mod" = "SUPER";
-    "$term" = "alacritty";
-    "$menu" = "rofi";
+    "$term" = "kitty";
+    "$menu" = "fuzzel";
+    
+    decoration = {
+      rounding = 8;
+      blur = {
+        enabled = true;
+      };
+    };
 
+    animations = {
+      enabled = true;
+      bezier = [
+      "sine, 0.37, 0, 0.63, 1"
+      "ease, .4,0.02,0.21,0.99"
+      ];
+      animation = [
+        "border, 1, 6, default"
+        "fade, 1, 3, ease"
+        "windows, 1, 3, sine, slide"
+        "windowsOut, 1, 3, ease, slide"
+        "workspaces, 1, 2, ease"
+      ];
+    };
+
+    dwindle = {
+      pseudotile = true;
+      preserve_split = true;
+    };
+
+    bindm = 
+      [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+      ];
     bind =
       [
         "$mod, return, exec, $term"
         "$mod, Q, killactive"
         "$mod, F, fullscreen"
+        "$mod, D, exec, $menu"
         "$mod, V, togglefloating"
         "$mod, Tab, workspace, e+1"
         "$mod SHIFT, Tab, workspace, e-1"
@@ -18,11 +53,21 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindowpixel"
+        "$mod SHIFT, P, exec, hyprpicker -a"
+        "$mod SHIFT, S, exec, grimblast --notify copy area"
+        ",Print, exec, grimblast --notify --cursor copy screen"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioStop, exec, playerctl stop"
+        ",XF86AudioPlay, exec, playerctl play-pause"
+        ",XF86AudioPrev, exec, playerctl previous"
+        ",XF86AudioNext, exec, playerctl next"
       ]
+      # TODO bind media buttons to playerctl
       ++ (
         #functional workspace defintion
+        # taken from wiki.hyprland.org
         # binds $mod + {1..10} to the workspace corresponding
         builtins.concatLists (builtins.genList (
             x: let
@@ -32,7 +77,7 @@
                 builtins.toString (x + 1 - (c * 10));
             in [
               "$mod, ${ws}, workspace, ${toString (x + 1)}"
-              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
             ]
           )
           10)
@@ -43,12 +88,26 @@
     monitor = DP-3,2560x1440@239.96, 0x0, 1
     monitor = HDMI-A-5,1366x768@59.96400, 2560x0 ,1
     #Autostarting
-    exec-once = mako
-    exec-once = hyprctl setcursor Bibata-Modern-Classic 24
+    exec-once = hyprpanel
+    # horrible gtk force theming, definitely a more elegant solution possible
+    exec-once = gsettings set org.gnome.desktop.interface cursor-theme catppuccin-mocha-dark-cursors
+    exec-once = gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark 
+    exec-once = gsettings set org.gnome.desktop.interface color-scheme prefer-dark 
+
+    env = HYPRCURSOR_THEME, catppuccin-mocha-dark-cursors
+    env = HYPRCURSOR_SIZE, 28
+    env = XCURSOR_THEME, catppuccin-mocha-dark-cursors
+    env = XCURSOR_SIZE, 28
 
     input {
       kb_layout = gb
       follow_mouse = 1
     }
+
+    # nvidia hardware cursors are evil
+    cursor {
+      no_hardware_cursors = true
+    }
+
   '';
 }
