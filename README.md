@@ -9,6 +9,6 @@ when paths randomly break(?!)
 TODO
 
 - [x] modularise home.nix
-- [ ] get a tiling window manager fully functioning
+- [x] get a tiling window manager fully functioning
 - [ ] host specfic specifications
 
