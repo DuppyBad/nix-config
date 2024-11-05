@@ -7,14 +7,14 @@
       opacity = 0.9;
     };
     font = {
-      normal.family = "JetBrains Mono Nerd Font";
-      bold.family = "JetBrains Mono Nerd Font";
-      italic.family = "JetBrains Mono Nerd Font";
+      normal.family = "Iosevka Nerd Font";
+      bold.family = "Iosevka Nerd Font";
+      italic.family = "Iosevka Nerd Font";
       size = 14;
     };
     scrolling.multiplier = 5;
     selection.save_to_clipboard = true;
-    shell = {
+    terminal.shell = {
       program = "fish";
     };
   };
