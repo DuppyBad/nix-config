@@ -26,7 +26,6 @@
     unzip
     p7zip
 
-
     # LSPs
     nil
 
@@ -57,7 +56,6 @@
     openvpn # standard tunnelling application
 
     # media
-    # spotify # it's spotify. may my music be free one day.
     playerctl # commandline controls for mpris media
 
     # misc
@@ -129,7 +127,7 @@
 
     # compat
     ungoogled-chromium # so that I can access evil website that mandate chrome
-    
+
     # gaming
 
     # lutris
@@ -151,8 +149,8 @@
       enable = true;
       enableFishIntegration = true;
     };
-    nixvim = import ./config/nixvim.nix;
-    # nvf = import ./config/nvf.nix;
+    #nixvim = import ./config/nixvim.nix;
+    nvf = import ./config/nvf.nix;
     #  waybar = import ./config/waybar.nix;
     kitty = import ./config/kitty.nix;
     bat = import ./config/bat.nix;

@@ -1,6 +1,8 @@
 {
   enable = true;
-  languages.language = [{
-    name = "nix";
-  }];
+  languages.language = [
+    {
+      name = "nix";
+    }
+  ];
 }

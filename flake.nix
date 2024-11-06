@@ -1,20 +1,16 @@
 {
-  description = "Mekhanes Control";
+  description = "Luminary Control";
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    nixvim,
-    nixvim-config,
     catppuccin,
     spicetify-nix,
     hyprpanel,
+    nvf,
     ...
   } @ inputs: {
-    overlays.additions = final: _prev: {
-      nixvim = nixvim-config.packages.${_prev.system}.default;
-    };
     nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -24,11 +20,10 @@
         # module order example
         catppuccin.nixosModules.catppuccin
         inputs.spicetify-nix.nixosModules.default
-
+        inputs.nvf.nixosModules.default
         # home manager as a module
         home-manager.nixosModules.home-manager
         # hyprpanel test
-
         {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         {
           home-manager = {
@@ -40,8 +35,8 @@
             imports = [
               ./home.nix
               catppuccin.homeManagerModules.catppuccin
-              nixvim.homeManagerModules.nixvim
               inputs.spicetify-nix.homeManagerModules.default
+              nvf.homeManagerModules.default
             ];
           };
 
@@ -54,8 +49,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
     nixvim-config.url = "github:duppybad/nixvim-config";
     spicetify-nix = {
@@ -64,5 +57,8 @@
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    nvf = {
+      url = "github:notashelf/nvf";
+    };
   };
 }

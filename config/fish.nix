@@ -6,7 +6,6 @@
   shellAliases = {
     "..." = "cd ../..";
     "v" = "nvim";
-    "vi" = "nvim";
     "ga" = "git add *";
     "g" = "git";
     "copy" = "wl-copy";
