@@ -4,8 +4,26 @@
     vim = {
       viAlias = true;
       vimAlias = false;
-      lsp.enable = true;
 
+      spellcheck = {
+        enable = true;
+        ignoredFiletypes = ["markdown" "gitcommit" "toggleterm"];
+      };
+
+      lsp = {
+        formatOnSave = true;
+        lspkind.enable = true;
+        lightbulb.enable = false;
+        lspSignature.enable = true;
+        lsplines.enable = true;
+      };
+
+      debugger = {
+        nvim-dap = {
+          enable = true;
+          ui.enable = true;
+        };
+      };
       languages = {
         enableLSP = true;
         enableFormat = true;
@@ -13,6 +31,9 @@
         enableExtraDiagnostics = true;
         nix.enable = true;
         python.enable = true;
+        markdown.enable = true;
+        bash.enable = true;
+        html.enable = true;
       };
       visuals = {
         enable = true;
@@ -20,6 +41,7 @@
         scrollBar.enable = true;
         smoothScroll.enable = true;
         fidget-nvim.enable = true;
+        indentBlankline.enable = true;
 
         cursorline = {
           enable = true;
@@ -37,7 +59,7 @@
       theme = {
         enable = true;
         name = "catppuccin";
-        style =  "mocha";
+        style = "mocha";
         transparent = false;
       };
       autopairs.enable = true;
@@ -61,46 +83,46 @@
         whichKey.enable = true;
         cheatsheet.enable = true;
       };
-     telescope.enable = true;
-     
-     git = {
-       enable = true;
-       gitsigns.enable = true;
-     };
+      telescope.enable = true;
 
-     terminal = {
-       toggleterm = {
-         enable = true;
-         lazygit.enable = true;
-       };
-     };
-     ui ={
-       borders.enable = true;
-       noice.enable = true;
-       colorizer.enable = true;
-       breadcrumbs = {
-         enable = true;
-       };
-       smartcolumn = {
-         enable = true;
-       };
-       fastaction.enable = true;
-     };
-     comments = {
-       comment-nvim.enable = true;
-     };
-   maps.normal = {
-    "<leader>w" = {
+      git = {
+        enable = true;
+        gitsigns.enable = true;
+      };
+
+      terminal = {
+        toggleterm = {
+          enable = true;
+          lazygit.enable = true;
+        };
+      };
+      ui = {
+        borders.enable = true;
+        noice.enable = true;
+        colorizer.enable = true;
+        breadcrumbs = {
+          enable = true;
+        };
+        smartcolumn = {
+          enable = true;
+        };
+        fastaction.enable = true;
+      };
+      comments = {
+        comment-nvim.enable = true;
+      };
+      maps.normal = {
+        "<leader>w" = {
           action = ":w<CR>";
           silent = true;
-          desc =  "Save current file";
+          desc = "Save current file";
         };
-    "<leader>wq" = {
+        "<leader>wq" = {
           action = ":wqa<CR>";
           silent = true;
           desc = "Save all files and quit";
         };
-      }; 
+      };
     };
   };
 }
