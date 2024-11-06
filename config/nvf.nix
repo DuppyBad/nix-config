@@ -6,7 +6,7 @@
       vimAlias = false;
 
       spellcheck = {
-        enable = true;
+        enable = false;
         ignoredFiletypes = ["markdown" "gitcommit" "toggleterm"];
       };
 
@@ -88,6 +88,10 @@
       git = {
         enable = true;
         gitsigns.enable = true;
+      };
+
+      notify = {
+        nvim-notify.enable = true;
       };
 
       terminal = {
