@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -27,7 +26,7 @@
     p7zip
 
     # LSPs
-    nil
+    #nvf handles their install for now
 
     # utils
     fd # Like find, but good
@@ -97,12 +96,6 @@
 
     # window manager related tools
     hyprlock
-    swww
-    eww # widgets to replace waybar
-    # waybar
-    # notification daemon
-    mako
-    niri # test new wm
     hyprpanel
     grimblast
     catppuccin-cursors.mochaDark
@@ -133,8 +126,6 @@
     # lutris
   ];
 
-  # Potential script location
-
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
 
   programs = {
@@ -149,9 +140,7 @@
       enable = true;
       enableFishIntegration = true;
     };
-    #nixvim = import ./config/nixvim.nix;
     nvf = import ./config/nvf.nix;
-    #  waybar = import ./config/waybar.nix;
     kitty = import ./config/kitty.nix;
     bat = import ./config/bat.nix;
     lazygit = {enable = true;};
@@ -176,8 +165,5 @@
     home-manager = {
       enable = true;
     };
-  };
-  services = {
-    mako = {enable = true;};
   };
 }
