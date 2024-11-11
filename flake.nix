@@ -43,11 +43,18 @@
         }
       ];
     };
-    nixosConfigurations.machina = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/machina/configuration.nix
+        ./hosts/sun/configuration.nix
         # Make home manager common? make the users common? Don't reuse full paragraphs
+      ];
+    };
+    nixosConfigurations.moon = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/moon/configuration.nix
+        #TODO make it so that the common is always imported, and the hosts/{name}/ is imported relative to {name}
       ];
     };
   };
