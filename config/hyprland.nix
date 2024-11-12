@@ -9,7 +9,7 @@
     "$menu" = "fuzzel";
 
     decoration = {
-      rounding = 8;
+      rounding = 13;
       blur = {
         enabled = true;
       };
@@ -52,6 +52,10 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
         "$mod SHIFT, P, exec, hyprpicker -a"
         "$mod SHIFT, S, exec, grimblast --notify copy area"
         ",Print, exec, grimblast --notify --cursor copy screen"
