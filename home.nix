@@ -82,6 +82,10 @@
     presenterm # cmd line slideshows
     helix # editor
 
+    #entertainment
+
+    freetube
+
     # system call monitoring
     strace # system call monitoring
     ltrace # library call monitoring
@@ -96,7 +100,7 @@
 
     # window manager related tools
     hyprlock
-    hyprpanel
+    #hyprpanel
     grimblast
     catppuccin-cursors.mochaDark
     gnome-themes-extra
@@ -145,25 +149,11 @@
     bat = import ./config/bat.nix;
     lazygit = {enable = true;};
     bottom = {enable = true;};
+    freetube = {enable = true;};
+    fuzzel = {enable = true;};
     #TODO export this to it's own file
-    spicetify = let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-    in {
-      enable = true;
-      enabledExtensions = with spicePkgs.extensions; [
-        fullAppDisplay
-        keyboardShortcut
-        fullAlbumDate
-        powerBar
-        volumePercentage
-        beautifulLyrics
-      ];
-      theme = spicePkgs.themes.comfy;
-      colorScheme = "catppuccin-mocha";
-    };
+    spicetify = import ./config/spicetify.nix {inherit inputs pkgs;};
     # Let home-manager manage itself
-    home-manager = {
-      enable = true;
-    };
+    home-manager = {enable = true;};
   };
 }

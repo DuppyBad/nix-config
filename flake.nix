@@ -7,7 +7,7 @@
     home-manager,
     catppuccin,
     spicetify-nix,
-    hyprpanel,
+    # hyprpanel,
     nvf,
     ...
   } @ inputs: {
@@ -24,7 +24,7 @@
         # home manager as a module
         home-manager.nixosModules.home-manager
         # hyprpanel test
-        {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
+        #    {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -46,6 +46,7 @@
     };
   };
   inputs = {
+    nixpkgs-master.url = "github:NixOS/nixpkgs";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -56,7 +57,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    #    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    #hyprpanel.inputs.nixpkgs.follows = "nixpkgs-master";
     nvf = {
       url = "github:notashelf/nvf";
     };

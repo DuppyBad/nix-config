@@ -91,7 +91,7 @@
     monitor = DP-3,2560x1440@239.96, 0x0, 1
     monitor = HDMI-A-5,1366x768@59.96400, 2560x0 ,1
     #Autostarting
-    exec-once = hyprpanel
+    #exec-once = hyprpanel
     # horrible gtk force theming, definitely a more elegant solution possible
     exec-once = gsettings set org.gnome.desktop.interface cursor-theme catppuccin-mocha-dark-cursors
     exec-once = gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
