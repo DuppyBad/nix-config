@@ -6,11 +6,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
-
   # Bootloader.
   boot = {
     loader = {
@@ -50,7 +45,6 @@
     clippy
     cargo
     python3
-    python311Packages.ipython
   ];
   programs.fish.enable = true;
   system.stateVersion = "23.11"; # Did you read the comment?
