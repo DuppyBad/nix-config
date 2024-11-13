@@ -106,7 +106,7 @@
     gnome-themes-extra
     fuzzel
     hyprpicker
-
+    greetd.regreet
     # Programming tools
     python3
 

@@ -75,13 +75,12 @@
   # temporary gnome whilst we get setup
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
     xkb.layout = "gb";
   };
 
   programs.hyprland.enable = true;
   programs.steam.enable = true;
+  programs.regreet.enable = true;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
