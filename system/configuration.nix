@@ -74,9 +74,9 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   # temporary gnome whilst we get setup
   services.xserver = {
+    enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    enable = true;
     xkb.layout = "gb";
   };
   programs.hyprland.enable = true;
