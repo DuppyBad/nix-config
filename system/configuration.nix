@@ -66,6 +66,7 @@
   networking = {
     hostName = "mekhanes";
     nameservers = ["9.9.9.9" "1.1.1.1"];
+    networkmanager.enable = true;
   };
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   # Set your time zone.
@@ -74,10 +75,11 @@
   i18n.defaultLocale = "en_GB.UTF-8";
   # temporary gnome whilst we get setup
   services.xserver = {
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     enable = true;
     xkb.layout = "gb";
   };
-
   programs.hyprland.enable = true;
   programs.steam.enable = true;
   programs.regreet.enable = true;
