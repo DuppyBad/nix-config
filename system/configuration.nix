@@ -66,7 +66,6 @@
   networking = {
     hostName = "mekhanes";
     nameservers = ["9.9.9.9" "1.1.1.1"];
-    networkmanager.enable = true;
   };
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   # Set your time zone.
@@ -82,7 +81,6 @@
   };
   programs.hyprland.enable = true;
   programs.steam.enable = true;
-  programs.regreet.enable = true;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
