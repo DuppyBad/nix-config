@@ -81,6 +81,7 @@
     iftop # network monitoring
     presenterm # cmd line slideshows
     helix # editor
+    libreoffice-fresh # gtk version of fresh libreoffice
 
     #entertainment
 
