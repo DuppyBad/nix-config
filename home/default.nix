@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{pkgs}:
 # Contains the full per user configuration
 {
   home = {
@@ -10,6 +6,11 @@
     homeDirectory = "/home/kyrios";
     # Don't you dare change the stateVersion
     stateVersion = "23.11";
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.catppuccin-cursors.mochaDark;
+      size = 28;
+    };
   };
   # colour theming stuff
   catppuccin = {
