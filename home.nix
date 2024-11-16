@@ -17,7 +17,7 @@
     accent = "mauve"; #mauve is default, here for clarity
     flavor = "mocha"; # mocha is also default
   };
-  imports = [./config {inherit pkgs inputs;}];
+  imports = [./config];
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # archives
