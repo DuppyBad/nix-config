@@ -124,23 +124,11 @@
     # gaming
   ];
 
-  wayland.windowManager.hyprland = import ./config/hyprland.nix;
-
   programs = {
-    nix-index = {enable = true;};
-    neovim.defaultEditor = true;
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    nvf = import ./config/nvf.nix;
-    kitty = import ./config/kitty.nix;
-    bat = import ./config/bat.nix;
     lazygit = {enable = true;};
     bottom = {enable = true;};
     freetube = {enable = true;};
     fuzzel = {enable = true;};
-    spicetify = import ./config/spicetify.nix {inherit inputs pkgs;};
     # Let home-manager manage itself
     home-manager = {enable = true;};
   };

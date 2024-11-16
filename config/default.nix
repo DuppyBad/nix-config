@@ -1,42 +1,23 @@
-# default.nix or module.nix
 {
-  lib,
   pkgs,
+  lib,
   config,
-  options,
-}: let
-  # Get all files in the current directory
-  files = builtins.readDir ./.;
-
-  nixFiles =
-    lib.filterAttrs (
-      name: type:
-        type
-        == "regular"
-        && lib.hasSuffix ".nix" name
-        && name != "default.nix"
-        && name != "module.nix"
-    )
-    files;
-
-  # Simply pass the same arguments we received
-  callModule = path:
-    import path {
-      inherit lib pkgs config options;
-    };
-
-  # Import all the filtered files
-  imports =
-    lib.mapAttrsToList (
-      name: _:
-        callModule ./${name}
-    )
-    nixFiles;
-in {
-  inherit imports;
-
-  config = {
-    # Your module-specific configuration
-  };
+  inputs,
+  ...
+}: {
+  imports = [
+    ./alacritty.nix
+    ./bat.nix
+    ./fish.nix
+    {inherit pkgs;}
+    ./foot.nix
+    ./hyprland.nix
+    ./kitty.nix
+    ./nix-index.nix
+    ./nvf.nix
+    ./spicetify.nix
+    {inherit pkgs inputs;}
+    ./starship.nix
+    ./zoxide.nix
+  ];
 }
-

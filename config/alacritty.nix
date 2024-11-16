@@ -1,4 +1,10 @@
 {
+  lib,
+  pkgs,
+  config,
+  options,
+  ...
+}: {
   programs.alacritty = {
     enable = true;
 
