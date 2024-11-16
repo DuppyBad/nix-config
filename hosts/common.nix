@@ -51,8 +51,10 @@
     variables.EDITOR = "nvim";
   };
 
+  security.polkit.enable = true;
+
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+    (nerdfonts.override {fonts = ["IosevkaTerm"];})
     iosevka
     noto-fonts
     noto-fonts-cjk-sans
