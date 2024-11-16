@@ -121,7 +121,7 @@
     pavucontrol
   ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+    (nerdfonts.override {fonts = ["IosevkaTerm"];})
     iosevka
     noto-fonts
     noto-fonts-cjk-sans
@@ -129,14 +129,17 @@
   ];
 
   programs.fish.enable = true;
+  programs.ssh.startAgent = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
