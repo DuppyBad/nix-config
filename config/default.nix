@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}: {
+_: {
   imports = [
     ./alacritty.nix
     ./bat.nix
