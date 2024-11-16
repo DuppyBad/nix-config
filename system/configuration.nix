@@ -103,6 +103,7 @@
       fastfetch
       bottom
       vesktop
+      pwvucontrol
     ];
   };
   nixpkgs.config.allowUnfree = true;
@@ -121,6 +122,7 @@
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+    iosevka
     noto-fonts
     noto-fonts-cjk-sans
     cm_unicode
