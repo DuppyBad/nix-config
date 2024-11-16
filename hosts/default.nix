@@ -13,8 +13,6 @@
     ../modules
   ];
 
-  # Enable flakes
-  nix.settings.experimental-features = ["flakes" "nix-command"];
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {
@@ -41,15 +39,8 @@
   environment.etc.hosts.mode = "0644";
   environment.variables.EDITOR = "nvim";
 
-  # Setting up the garbage collector
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
   # setting hardware time for dual boot config
   time.hardwareClockInLocalTime = true;
-  nix.settings.auto-optimise-store = true;
   virtualisation.docker.enable = true;
   # When we have to run random binaries
   programs.nix-ld.enable = true;
@@ -105,8 +96,6 @@
       bottom
     ];
   };
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
