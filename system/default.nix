@@ -32,7 +32,7 @@
       enable = true;
       font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
       themePackages = [pkgs.catppuccin-plymouth];
-      theme = "catppuccin-macchiato";
+      theme = "catppuccin-mocha";
     };
   };
 
@@ -129,13 +129,14 @@
   ];
 
   programs.fish.enable = true;
+  programs.ssh.startAgent = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 
