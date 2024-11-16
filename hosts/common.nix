@@ -1,4 +1,4 @@
-# Shared config for all machines
+#Shared config for all machines
 {
   config,
   pkgs,
@@ -36,7 +36,12 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    hostPlaform = "x86_64-linux";
+    config = {
+      allowUnfree = true;
+    };
+  };
   time.timeZone = "Europe/London";
   i18n.defaultLocate = "en_GB.UTF-8";
   console.keyMap = "uk";
