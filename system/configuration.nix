@@ -122,7 +122,7 @@
   ];
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
-    Iosevka
+    iosevka
     noto-fonts
     noto-fonts-cjk-sans
     cm_unicode

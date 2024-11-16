@@ -41,15 +41,9 @@
     grc # output colouriser
     lazygit # git tui tools
     tmux # it's tmux
-    docker-compose # to make docker easier
 
     # networking tools
-    mtr # A network diagnostic tool
-    iperf3
     dnsutils # `dig` + `nslookup`
-    ldns # replacement of `dig`, it provide the command `drill`
-    aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
     ipcalc # it is a calculator for IPv4/v6 addresses
     openvpn # standard tunnelling application
@@ -62,6 +56,8 @@
     which
     tree
     du-dust # Rust powered du alternative
+    btop # nicer looking htop
+    bottom # also nicer looking htop
     # yazi # terminal file manager
     zathura # pdf/document reader
 
@@ -75,16 +71,12 @@
     # productivity
     hugo # static site generator
     glow # markdown previewer in terminal
-    vscode-fhs # intermediary while we work on nixvim
-    btop # replacement of htop/nmon
-    iotop # io monitoring
-    iftop # network monitoring
+    vscode-fhs # intermediary for public presentations
     presenterm # cmd line slideshows
     helix # editor
     libreoffice-fresh # gtk version of fresh libreoffice
 
     #entertainment
-
     freetube
 
     # system call monitoring
@@ -96,38 +88,39 @@
     sysstat
     lm_sensors # for `sensors` command
     ethtool
+    iotop # io monitor
+    iftop # network monitor
     pciutils # lspci
     usbutils # lsusb
 
     # window manager related tools
-    hyprlock
+    hyprlock # wayland lock scren, similar to swaylock
     #hyprpanel
-    grimblast
-    catppuccin-cursors.mochaDark
-    gnome-themes-extra
-    fuzzel
-    hyprpicker
+    grimblast # screenshot utility implementing grim and slurp
+    catppuccin-cursors.mochaDark # pretty cursor
+    gnome-themes-extra # for theme compat
+    fuzzel # app launcher etc
+    hyprpicker # colour picker
+
     # Programming tools
     python3
 
     # security tools
-    seclists
-    rustscan
-    feroxbuster
-    john
-    burpsuite
-    hashcat
-    dirb
-    pwntools
-    gdb
-    pwndbg
+    seclists # Useful wordlists for brute-forcing etc.
+    rustscan # For cursory first glances on pentesting operations
+    feroxbuster # my directory buster of choice
+    john # password brute forcing/cpu bound
+    burpsuite # web intermediary proxy
+    hashcat # password brute forcing/gpu bound
+    dirb # auto directory busting
+    pwntools # generally useful python bindings for binary exploit+web automation in ctf
+    gdb # debugger for dynamic analysis
+    pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
 
-    # compat
+    # compatibility
     ungoogled-chromium # so that I can access evil website that mandate chrome
 
     # gaming
-
-    # lutris
   ];
 
   wayland.windowManager.hyprland = import ./config/hyprland.nix;
@@ -151,7 +144,6 @@
     bottom = {enable = true;};
     freetube = {enable = true;};
     fuzzel = {enable = true;};
-    #TODO export this to it's own file
     spicetify = import ./config/spicetify.nix {inherit inputs pkgs;};
     # Let home-manager manage itself
     home-manager = {enable = true;};
