@@ -64,3 +64,22 @@ not entirely solve the problem. Ideally, I would like to expose important
 modules to the global scope no matter where they reside, so that stylistically
 the hierarchy makes sense. This runs the risk of obfuscating the logic flow, but
 this document exists in order to make sure I don't forget said logic flow.
+
+## Important details: config
+
+The `config` namespace is evaluated as if it was the final merge state after all
+processing.
+
+In the code
+
+```nix
+{
+    services.ssh.enable = true;
+    environment.systemPackages = lib.mkIf config.services.ssh.enable [
+        pkgs.openssh
+    ];
+}
+```
+
+we can see that we can run conditional logic based on the values held in
+`config`
