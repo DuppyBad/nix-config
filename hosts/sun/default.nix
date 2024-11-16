@@ -10,7 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../modules
+    ../../modules
   ];
 
   # Use the systemd-boot EFI boot loader.
