@@ -29,4 +29,9 @@
       dates = ["20:00"];
     };
   };
+  # switches to the faster version of switch
+  system = {
+    enable = false;
+    enableNg = true;
+  };
 }
