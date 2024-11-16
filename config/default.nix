@@ -11,5 +11,6 @@ _: {
     ./spicetify.nix
     ./starship.nix
     ./zoxide.nix
+    ./miscpkgs.nix
   ];
 }
