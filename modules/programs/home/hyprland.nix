@@ -5,7 +5,7 @@
   systemd.enable = true;
   settings = {
     "$mod" = "SUPER";
-    "$term" = "kitty";
+    "$term" = "foot";
     "$menu" = "fuzzel";
 
     decoration = {

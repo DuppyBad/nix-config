@@ -15,7 +15,8 @@
       system = "x86_64-linux";
       modules = [
         # We still need the non-flake config so import it
-        ./system/configuration.nix
+        ./system
+
         # module order example
         catppuccin.nixosModules.catppuccin
         inputs.spicetify-nix.nixosModules.default

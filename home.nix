@@ -127,6 +127,7 @@
 
   programs = {
     helix = import ./config/helix.nix;
+    foot = import ./config/foot.nix;
     alacritty = import ./config/alacritty.nix;
     # git = import ./config/git.nix;
     starship = {enable = true;};
