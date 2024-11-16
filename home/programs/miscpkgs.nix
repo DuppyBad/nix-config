@@ -31,6 +31,9 @@
 
     # media
     playerctl # commandline controls for mpris media
+    pwvucontrol
+    # communication
+    vesktop
 
     # misc
     file
