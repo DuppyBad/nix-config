@@ -32,7 +32,7 @@
       enable = true;
       font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
       themePackages = [pkgs.catppuccin-plymouth];
-      theme = "catppuccin-mocha";
+      theme = "catppuccin-macchiato";
     };
   };
 
@@ -130,6 +130,13 @@
 
   programs.fish.enable = true;
   programs.ssh.startAgent = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
