@@ -103,8 +103,6 @@
       firefox
       fastfetch
       bottom
-      vesktop
-      pwvucontrol
     ];
   };
   nixpkgs.config.allowUnfree = true;
