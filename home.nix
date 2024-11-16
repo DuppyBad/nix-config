@@ -128,7 +128,7 @@
   programs = {
     helix = import ./config/helix.nix;
     alacritty = import ./config/alacritty.nix;
-    git = import ./config/git.nix;
+    # git = import ./config/git.nix;
     starship = {enable = true;};
     fish = import ./config/fish.nix {inherit pkgs;};
     nix-index = {enable = true;};

@@ -16,7 +16,6 @@
       modules = [
         # We still need the non-flake config so import it
         ./system/configuration.nix
-
         # module order example
         catppuccin.nixosModules.catppuccin
         inputs.spicetify-nix.nixosModules.default
