@@ -15,7 +15,7 @@
       system = "x86_64-linux";
       modules = [
         # We still need the non-flake config so import it
-        ./system
+        ./hosts/sun
 
         # module order example
         catppuccin.nixosModules.catppuccin
