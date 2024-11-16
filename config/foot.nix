@@ -1,15 +1,17 @@
 {
-  enable = true;
-  settings = {
-    main = {
-      font = "IosevkaTerm Nerd Font:size=13.5";
-      dpi-aware = "yes";
-    };
-    colors = {
-      alpha = 0.8;
-    };
-    cursor = {
-      style = "beam";
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        font = "IosevkaTerm Nerd Font:size=13.5";
+        dpi-aware = "yes";
+      };
+      colors = {
+        alpha = 0.8;
+      };
+      cursor = {
+        style = "beam";
+      };
     };
   };
 }

@@ -1,7 +1,9 @@
 {
-  enable = true;
-  catppuccin = {
+  programs.bat = {
     enable = true;
-    flavor = "mocha";
+    catppuccin = {
+      enable = true;
+      flavor = "mocha";
+    };
   };
 }
