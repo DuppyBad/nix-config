@@ -39,6 +39,9 @@
         }
       ];
     };
+    nixosConfigurations.machina = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+    };
   };
   inputs = {
     nixpkgs-master.url = "github:NixOS/nixpkgs";
@@ -46,7 +49,6 @@
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
-    nixvim-config.url = "github:duppybad/nixvim-config";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
