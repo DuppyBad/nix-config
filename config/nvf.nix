@@ -34,6 +34,8 @@
         markdown.enable = true;
         bash.enable = true;
         html.enable = true;
+        typst.enable = true;
+        typst.format.enable = true;
       };
       visuals = {
         enable = true;
