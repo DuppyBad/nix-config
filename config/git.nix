@@ -2,12 +2,14 @@
 {
   enable = true;
   lfs.enable = true;
-  user = {
-    name = "Iseefa Francis";
-    email = "Iseefa@proton.me";
-    signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEjuzWXJAxCMhRiEvNneHD4iR8hQVR2S0pGK40ogWoWH";
+  config = {
+    user = {
+      name = "Iseefa Francis";
+      email = "Iseefa@proton.me";
+      signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEjuzWXJAxCMhRiEvNneHD4iR8hQVR2S0pGK40ogWoWH";
+    };
+    init.defaultbranch = "main";
+    gpg.format = "ssh";
+    commit.gpgsign = "true";
   };
-  init.defaultbranch = "main";
-  gpg.format = "ssh";
-  commit.gpgsign = "true";
 }

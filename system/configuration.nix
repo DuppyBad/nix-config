@@ -81,6 +81,7 @@
   };
   programs.hyprland.enable = true;
   programs.steam.enable = true;
+  programs.git = import ../config/git.nix;
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
