@@ -83,3 +83,7 @@ In the code
 
 we can see that we can run conditional logic based on the values held in
 `config`
+
+## Important details: _:{}
+
+The `_:{}` syntax allows global variable access.
