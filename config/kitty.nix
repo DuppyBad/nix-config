@@ -1,7 +1,7 @@
 {
   enable = true;
   font = {
-    name = "Iosevka Nerd Font";
+    name = "Iosevka";
     size = 16;
   };
   settings = {
