@@ -2,7 +2,7 @@
   enable = true;
   settings = {
     main = {
-      font = "Iosevka:size=13.5";
+      font = "IosevkaTerm Nerd Font:size=13.5";
       dpi-aware = "yes";
     };
     colors = {

@@ -121,7 +121,7 @@
     pavucontrol
   ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Iosevka" "IosevkaTerm"];})
     iosevka
     noto-fonts
     noto-fonts-cjk-sans
