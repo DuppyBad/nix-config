@@ -10,7 +10,7 @@
     nvf,
     ...
   } @ inputs: {
-    nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.mekhanes = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         # We still need the non-flake config so import it

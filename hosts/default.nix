@@ -1,3 +1,3 @@
 _: {
-  sun = import ./sun;
+  imports = [./sun];
 }

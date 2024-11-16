@@ -30,7 +30,7 @@
     };
   };
   # switches to the faster version of switch
-  system = {
+  system.switch = {
     enable = false;
     enableNg = true;
   };
