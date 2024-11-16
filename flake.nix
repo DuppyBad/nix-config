@@ -44,7 +44,6 @@
     };
   };
   inputs = {
-    nixpkgs-master.url = "github:NixOS/nixpkgs";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-mamager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
