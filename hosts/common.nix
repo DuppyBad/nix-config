@@ -2,6 +2,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   user.users.kyrios = {
@@ -11,14 +12,28 @@
     shell = pkgs.fish;
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = ["flakes" "nix-command"];
+  nix = {
+    package = pkgs.lix;
+    channel.enable = lib.mkForce false;
+    settings = {
+      allowed-users = ["root" "@wheel" "nix-builder"];
+      trusted-users = ["root" "@wheel" "nix-builder"];
+      warn-dirty = false;
+      extra-experimental-features = ["flakes" "nix-command"];
+      http-connections = 50;
+      accept-flake-config = false;
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = false;
+      dates = "19:00";
+      options = "--delete-older-than 1w";
+      persistent = false;
+    };
+    optimise = {
+      automatic = true;
+      dates = "20:00";
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -33,6 +48,7 @@
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "Mononoki" "Iosevka"];})
+    iosevka
     noto-fonts
     noto-fonts-cjk-sans
     cm_unicode
