@@ -25,7 +25,8 @@
     };
     optimise = {
       automatic = true;
-      dates = "20:00";
+      # only takes lists of strings
+      dates = ["20:00"];
     };
   };
 }
