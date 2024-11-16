@@ -17,5 +17,5 @@
     accent = "mauve"; #mauve is default, here for clarity
     flavor = "mocha"; # mocha is also default
   };
-  imports = [./config];
+  imports = [./programs];
 }

@@ -33,7 +33,7 @@
           };
           home-manager.users.kyrios = {
             imports = [
-              ./home.nix
+              ./home
               catppuccin.homeManagerModules.catppuccin
               inputs.spicetify-nix.homeManagerModules.default
               nvf.homeManagerModules.default
