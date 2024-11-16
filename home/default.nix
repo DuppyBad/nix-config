@@ -17,5 +17,14 @@
     accent = "mauve"; #mauve is default, here for clarity
     flavor = "mocha"; # mocha is also default
   };
+
+  gtk = {
+    enable = true;
+
+    font = {
+      name = "Iosevka";
+      size = 13;
+    };
+  };
   imports = [./programs];
 }

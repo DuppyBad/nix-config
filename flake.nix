@@ -7,7 +7,6 @@
     home-manager,
     catppuccin,
     spicetify-nix,
-    # hyprpanel,
     nvf,
     ...
   } @ inputs: {
@@ -23,8 +22,6 @@
         inputs.nvf.nixosModules.default
         # home manager as a module
         home-manager.nixosModules.home-manager
-        # hyprpanel test
-        #    {nixpkgs.overlays = [inputs.hyprpanel.overlay];}
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -39,8 +36,6 @@
               nvf.homeManagerModules.default
             ];
           };
-
-          # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }
       ];
     };
@@ -57,8 +52,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
-    #    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    #hyprpanel.inputs.nixpkgs.follows = "nixpkgs-master";
     nvf = {
       url = "github:notashelf/nvf";
     };
