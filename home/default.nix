@@ -2,6 +2,8 @@
 # Contains the full per user configuration
 {
   home = {
+    # moving to 25.05, home manager is behind
+    enableNixpkgsReleaseCheck = false;
     username = "kyrios";
     homeDirectory = "/home/kyrios";
     # Don't you dare change the stateVersion

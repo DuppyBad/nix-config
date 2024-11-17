@@ -39,7 +39,7 @@
     file
     which
     tree
-    du-dust # Rust powered du alternative
+    dust # Rust powered du alternative(finally got the namespace)
     btop # nicer looking htop
     bottom # also nicer looking htop
     # yazi # terminal file manager
