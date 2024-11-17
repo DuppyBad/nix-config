@@ -8,12 +8,12 @@
     homeDirectory = "/home/kyrios";
     # Don't you dare change the stateVersion
     stateVersion = "23.11";
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.catppuccin-cursors.mochaDark;
-      size = 28;
-      name = "catppuccin-mocha-dark-cursors";
-    };
+    #  pointerCursor = {
+    # gtk.enable = true;
+    # package = pkgs.catppuccin-cursors.mochaDark;
+    # size = 28;
+    # name = "catppuccin-mocha-dark-cursors";
+    #};
   };
   # colour theming stuff
   catppuccin = {

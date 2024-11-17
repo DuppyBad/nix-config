@@ -81,7 +81,7 @@
     hyprlock # wayland lock scren, similar to swaylock
     #hyprpanel
     grimblast # screenshot utility implementing grim and slurp
-    catppuccin-cursors.mochaDark # pretty cursor
+    #catppuccin-cursors.mochaDark # pretty cursor/experiencing problems as of 25.05
     gnome-themes-extra # for theme compat
     fuzzel # app launcher etc
     hyprpicker # colour picker
