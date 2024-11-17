@@ -33,7 +33,7 @@
 
       windowrule = [
         "animation fade 60%, $menu"
-        "opacity 0.85 override 0.8, Spotify"
+        "opacity 0.95, Spotify"
         "float, pwvucontrol"
       ];
 
