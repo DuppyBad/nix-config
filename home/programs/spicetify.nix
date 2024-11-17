@@ -4,7 +4,8 @@
   pkgs,
   ...
 }: let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  # latest unstable forces us to stdenv syntax?
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
   programs.spicetify = {
     enable = true;

@@ -105,7 +105,6 @@
     fish
     acpi
     wireplumber
-    steam-run-native
     pavucontrol
   ];
   fonts.packages = with pkgs; [
