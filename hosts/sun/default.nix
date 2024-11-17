@@ -35,12 +35,14 @@
     };
   };
 
+  security.pam.services.hyprlock = {
+    enable = true;
+  };
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
   environment.variables.EDITOR = "nvim";
 
   # setting hardware time for dual boot config
-  time.hardwareClockInLocalTime = true;
   virtualisation.docker.enable = true;
   # When we have to run random binaries
   programs.nix-ld.enable = true;
