@@ -47,7 +47,7 @@
         force_default_wallpaper = 0;
       };
 
-      monitors = [
+      monitor = [
         "DP-3,2560x1440@144,0x0,1"
         ",preferred,auto,auto"
       ];
