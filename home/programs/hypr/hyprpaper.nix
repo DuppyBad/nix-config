@@ -1,5 +1,5 @@
 {
-  serivces.hyprpaper = {
+  services.hyprpaper = {
     enable = true;
     settings = {
       preload = ["~/Pictures/wallpaper/athena.jpg"];

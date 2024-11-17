@@ -57,11 +57,12 @@
       exec-once = [
         "${pkgs.wlsunset}/bin/wlsunset -S 08:00 -s 21:00"
         "systemctl --user start hyprpolkitagent"
+        "${pkgs.hyprpaper}/bin/hyprpaper"
       ];
 
       monitor = [
         "DP-3,2560x1440@144,0x0,1"
-        ",preferred,auto,auto"
+        ",preferred,auto,1"
       ];
 
       bindm = [
