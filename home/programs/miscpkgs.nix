@@ -111,7 +111,6 @@
     lazygit = {enable = true;};
     bottom = {enable = true;};
     freetube = {enable = true;};
-    fuzzel = {enable = true;};
     ncmpcpp = {enable = true;};
     # Let home-manager manage itself
     home-manager = {enable = true;};

@@ -3,6 +3,7 @@ _: {
     ./alacritty.nix
     ./bat.nix
     ./fish.nix
+    ./fuzzel.nix
     ./foot.nix
     ./hypr
     ./kitty.nix
