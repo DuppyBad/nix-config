@@ -10,7 +10,7 @@
       "$menu" = "fuzzel";
 
       decoration = {
-        rounding = 13;
+        rounding = 8;
         blur = {
           enabled = true;
         };
@@ -31,6 +31,11 @@
         ];
       };
 
+      windowrule = [
+        "animation fade 60%, $menu"
+        "opacity 0.73 override 0.8, Spotify"
+      ];
+
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -43,7 +48,6 @@
 
       misc = {
         disable_autoreload = false;
-
         force_default_wallpaper = 0;
       };
 
@@ -117,7 +121,7 @@
         );
     };
     extraConfig = ''
-            # cringe since it is specific to REAL hardware, breaks when distributed. can we specify via nix variables? TODO
+            # cringe since it is specific to REAL hardware, breaks when distributed. can we specify via nix variables?
             #Autostarting
             #exec-once = hyprpanel
             # horrible gtk force theming, definitely a more elegant solution possible
