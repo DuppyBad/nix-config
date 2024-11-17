@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     catppuccin.enable = true;
@@ -33,7 +33,8 @@
 
       windowrule = [
         "animation fade 60%, $menu"
-        "opacity 0.73 override 0.8, Spotify"
+        "opacity 0.85 override 0.8, Spotify"
+        "float, pwvucontrol"
       ];
 
       dwindle = {
@@ -49,7 +50,14 @@
       misc = {
         disable_autoreload = false;
         force_default_wallpaper = 0;
+        enable_swallow = true;
+        swallow_regex = "foot";
       };
+
+      exec-once = [
+        "${pkgs.wlsunset}/bin/wlsunset -S 08:00 -s 21:00"
+        "systemctl --user start hyprpolkitagent"
+      ];
 
       monitor = [
         "DP-3,2560x1440@144,0x0,1"
@@ -121,22 +129,14 @@
         );
     };
     extraConfig = ''
-            # cringe since it is specific to REAL hardware, breaks when distributed. can we specify via nix variables?
-            #Autostarting
-            #exec-once = hyprpanel
-            # horrible gtk force theming, definitely a more elegant solution possible
-      #      exec-once = gsettings set org.gnome.desktop.interface cursor-theme catppuccin-mocha-dark-cursors
-       #     exec-once = gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-        #    exec-once = gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-
-            env = HYPRCURSOR_THEME, Bibata-Modern-Classic
-            env = HYPRCURSOR_SIZE, 28
-            env = XCURSOR_THEME, Bibata-Modern-Classic
-            env = XCURSOR_SIZE, 28
-            # nvidia hardware cursors are evil
-            cursor {
-              no_hardware_cursors = true
-            }
+      env = HYPRCURSOR_THEME, Bibata-Modern-Classic
+      env = HYPRCURSOR_SIZE, 28
+      env = XCURSOR_THEME, Bibata-Modern-Classic
+      env = XCURSOR_SIZE, 28
+      # nvidia hardware cursors are evil
+      cursor {
+        no_hardware_cursors = true
+      }
 
     '';
   };
