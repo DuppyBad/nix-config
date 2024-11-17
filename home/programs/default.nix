@@ -4,7 +4,7 @@ _: {
     ./bat.nix
     ./fish.nix
     ./foot.nix
-    ./hyprland.nix
+    ./hypr
     ./kitty.nix
     ./nix-index.nix
     ./nvf.nix

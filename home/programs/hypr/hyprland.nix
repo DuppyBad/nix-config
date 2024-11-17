@@ -36,30 +36,60 @@
         preserve_split = true;
       };
 
+      input = {
+        kb_layout = "gb";
+        follow_mouse = 1;
+      };
+
+      misc = {
+        disable_autoreload = false;
+
+        force_default_wallpaper = 0;
+      };
+
+      monitors = [
+        "DP-3,2560x1440@144,0x0,1"
+        ",preferred,auto,auto"
+      ];
+
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
       bind =
         [
+          # General WM controls
           "$mod, return, exec, $term"
+          "$mod, L, exec, hyprlock"
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, D, exec, $menu"
           "$mod, V, togglefloating"
+
+          # tab functionality
           "$mod, Tab, workspace, e+1"
           "$mod SHIFT, Tab, workspace, e-1"
+
+          # moving around without mouse
           "$mod, left, movefocus, l"
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
+
+          # Moving windows around
           "$mod SHIFT, up, movewindow, u"
           "$mod SHIFT, down, movewindow, d"
           "$mod SHIFT, left, movewindow, l"
           "$mod SHIFT, right, movewindow, r"
+
+          # Colour picker
           "$mod SHIFT, P, exec, hyprpicker -a"
+
+          # print screen functions
           "$mod SHIFT, S, exec, grimblast --notify copy area"
           ",Print, exec, grimblast --notify --cursor copy screen"
+
+          # Music/Sound control
           ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
           ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -68,7 +98,6 @@
           ",XF86AudioPrev, exec, playerctl previous"
           ",XF86AudioNext, exec, playerctl next"
         ]
-        # TODO bind media buttons to playerctl
         ++ (
           #functional workspace defintion
           # taken from wiki.hyprland.org
@@ -89,8 +118,6 @@
     };
     extraConfig = ''
             # cringe since it is specific to REAL hardware, breaks when distributed. can we specify via nix variables? TODO
-            monitor = DP-3,2560x1440@239.96, 0x0, 1
-            monitor = , preferred, auto, 1
             #Autostarting
             #exec-once = hyprpanel
             # horrible gtk force theming, definitely a more elegant solution possible
@@ -102,12 +129,6 @@
             env = HYPRCURSOR_SIZE, 28
             env = XCURSOR_THEME, Bibata-Modern-Classic
             env = XCURSOR_SIZE, 28
-
-            input {
-              kb_layout = gb
-              follow_mouse = 1
-            }
-
             # nvidia hardware cursors are evil
             cursor {
               no_hardware_cursors = true

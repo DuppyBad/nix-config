@@ -35,9 +35,8 @@
     };
   };
 
-  security.pam.services.hyprlock = {
-    enable = true;
-  };
+  security.pam.services.hyprlock = {};
+
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
   environment.variables.EDITOR = "nvim";
