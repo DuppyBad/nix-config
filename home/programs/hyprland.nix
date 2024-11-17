@@ -90,7 +90,7 @@
     extraConfig = ''
             # cringe since it is specific to REAL hardware, breaks when distributed. can we specify via nix variables? TODO
             monitor = DP-3,2560x1440@239.96, 0x0, 1
-            monitor = HDMI-A-5,1366x768@59.96400, 2560x0 ,1
+            monitor = , preferred, auto, 1
             #Autostarting
             #exec-once = hyprpanel
             # horrible gtk force theming, definitely a more elegant solution possible
@@ -98,10 +98,10 @@
        #     exec-once = gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
         #    exec-once = gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
-      #      env = HYPRCURSOR_THEME, catppuccin-mocha-dark-cursors
-      #      env = HYPRCURSOR_SIZE, 28
-      #      env = XCURSOR_THEME, catppuccin-mocha-dark-cursors
-      #      env = XCURSOR_SIZE, 28
+            env = HYPRCURSOR_THEME, Bibata-Modern-Classic
+            env = HYPRCURSOR_SIZE, 28
+            env = XCURSOR_THEME, Bibata-Modern-Classic
+            env = XCURSOR_SIZE, 28
 
             input {
               kb_layout = gb
