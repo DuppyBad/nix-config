@@ -4,24 +4,47 @@ _: {
     settings = {
       general = {
         hide_cursor = true;
+        ignore_empty_input = true;
       };
       background = [
         {
           monitor = "";
-          path = "screenshot";
+          path = "~/Pictures/wallpaper/athena.jpg";
           blur_size = 5;
           blur_passes = 4;
         }
       ];
       input-field = [
         {
-          monitor = "DP-3";
-
           size = "300, 50";
           outline_thickness = 1;
-          placeholder_text = ''<span font_family="Iosevka" foreground="##354479">Password please....</span>'';
           dots_spacing = 0.3;
           dots_center = true;
+        }
+      ];
+      label = [
+        {
+          text = "$USER, welcome back.";
+          font_family = "Iosevka";
+          font_size = 24;
+        }
+        {
+          text = "$TIME";
+          text_align = "center";
+          font_family = "Iosevka";
+          font_size = 50;
+          position = "200,300";
+          valign = "center";
+          halign = "center";
+          zindex = 1;
+        }
+        {
+          text = "cmd[update:360000] date +'%a %b %d'";
+          font_family = "Iosevka";
+          font_size = 30;
+          position = "0,100";
+          valign = "center";
+          halign = "center";
         }
       ];
     };
