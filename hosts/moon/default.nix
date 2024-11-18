@@ -52,15 +52,18 @@
   ];
 
   time.timeZone = "Europe/London";
-  i18n.defaultLocate = "en_GB.UTF-8";
+  i18n.defaultLocale = "en_GB.UTF-8";
   console.keyMap = "uk";
 
   environment = {
     etc.hosts.mode = "0644";
     variables.EDITOR = "nvim";
   };
-
-  user.users.kyrios = {
+  programs.hyprland.enable = true;
+  services.xserver.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  users.users.kyrios = {
     isNormalUser = true;
     home = "/home/kyrios";
     extraGroups = ["wheel" "networkmanager" "docker"];
