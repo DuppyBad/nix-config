@@ -33,6 +33,7 @@
           nix.enable = true;
           python.enable = true;
           markdown.enable = true;
+          ts.enable = true;
           bash.enable = true;
           html.enable = true;
           typst.enable = true;
