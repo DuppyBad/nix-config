@@ -35,6 +35,9 @@
         "animation fade 60%, $menu"
         "opacity 0.95, Spotify"
         "float, pwvucontrol"
+        # regex time
+        # makes firefox extensions float natively
+        "float, ^(Extension:)"
       ];
 
       dwindle = {
