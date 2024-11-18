@@ -39,7 +39,7 @@
         }
       ];
     };
-    nixosConfigurations.machina = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.moon = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         # We still need the non-flake config so import it
