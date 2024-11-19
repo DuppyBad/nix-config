@@ -15,7 +15,6 @@
       modules = [
         # We still need the non-flake config so import it
         ./hosts/sun
-
         # module order example
         catppuccin.nixosModules.catppuccin
         inputs.spicetify-nix.nixosModules.default
@@ -44,7 +43,6 @@
       modules = [
         # We still need the non-flake config so import it
         ./hosts/moon
-
         # module order example
         catppuccin.nixosModules.catppuccin
         inputs.spicetify-nix.nixosModules.default

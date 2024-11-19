@@ -20,9 +20,9 @@
     flavor = "mocha"; # mocha is also default
   };
 
+  # gtk is pretty
   gtk = {
     enable = true;
-
     font = {
       name = "Iosevka";
       size = 13;
