@@ -9,7 +9,7 @@ _: {
       background = [
         {
           monitor = "";
-          path = "~/Pictures/wallpaper/athena.jpg";
+          path = "~/.config/nixos/assets/nix_mocha.png";
           blur_size = 5;
           blur_passes = 4;
         }
