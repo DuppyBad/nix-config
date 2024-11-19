@@ -13,7 +13,7 @@
     ../../modules
   ];
 
-  # Use the systemd-boot EFI boot loader.
+  # grub for dualboot
   boot = {
     loader = {
       grub = {
@@ -63,6 +63,8 @@
   # Time + Locale
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
+
+  # One day I can cull you....
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
