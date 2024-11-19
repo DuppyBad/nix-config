@@ -243,22 +243,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1731676054,
-        "narHash": "sha256-OZiZ3m8SCMfh3B6bfGC/Bm4x3qc1m2SVEAlkV6iY7Yg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5e4fbfb6b3de1aa2872b76d49fafc942626e2add",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nmd": {
       "flake": false,
       "locked": {
@@ -2062,8 +2046,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nvf": "nvf",
-        "spicetify-nix": "spicetify-nix",
-        "zen-browser": "zen-browser"
+        "spicetify-nix": "spicetify-nix"
       }
     },
     "rust-overlay": {
@@ -2156,24 +2139,6 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "zen-browser": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1731689384,
-        "narHash": "sha256-L1Aabt+k92BvxH1h/B6SwVwDtglPtQ0yBbSNm3wfUGw=",
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "rev": "9808c80cb90626f0b3f6a58b36892c44daaf24bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
