@@ -2,8 +2,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = ["~/Pictures/wallpaper/athena.jpg"];
-      wallpaper = [", ~/Pictures/wallpaper/athena.jpg"];
+      preload = ["~/.config/nixos/assets/nix_mocha.png"];
+      wallpaper = [", ~/.config/nixos/assets/nix_mocha.png"];
     };
   };
 }
