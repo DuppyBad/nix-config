@@ -1,3 +1,6 @@
 _: {
-  imports = [./sun];
+  imports = [
+    ./sun
+    ./moon
+  ];
 }
