@@ -29,16 +29,6 @@ _: {
           font_size = 24;
         }
         {
-          text = "$TIME";
-          text_align = "center";
-          font_family = "Iosevka";
-          font_size = 50;
-          position = "200,300";
-          valign = "center";
-          halign = "center";
-          zindex = 1;
-        }
-        {
           text = "cmd[update:360000] date +'%a %b %d'";
           font_family = "Iosevka";
           font_size = 30;
