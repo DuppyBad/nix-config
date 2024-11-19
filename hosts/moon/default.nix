@@ -50,7 +50,6 @@
     fish
     wireplumber
     acpi
-    inputs.zen-browser.packages."${system}".specific
   ];
 
   time.timeZone = "Europe/London";
