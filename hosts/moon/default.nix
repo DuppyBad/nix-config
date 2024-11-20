@@ -50,6 +50,7 @@
     fish
     wireplumber
     acpi
+    networkmanagerapplet
   ];
 
   time.timeZone = "Europe/London";
@@ -61,6 +62,7 @@
     variables.EDITOR = "nvim";
   };
   programs.hyprland.enable = true;
+  programs.nm-applet.enable = true;
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.enable = true;
