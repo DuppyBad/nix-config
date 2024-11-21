@@ -36,8 +36,6 @@
         "opacity 0.95, Spotify"
         "float, pwvucontrol"
         # regex time
-        # makes firefox extensions float natively
-        "float, ^(Extension:)"
       ];
 
       dwindle = {
@@ -142,6 +140,9 @@
         no_hardware_cursors = true
       }
 
+      general {
+      col.active_border = rgb(CBA6F7)
+      }
     '';
   };
 }
