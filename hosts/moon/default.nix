@@ -73,14 +73,6 @@
     shell = pkgs.fish;
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["IosevkaTerm"];})
-    iosevka
-    noto-fonts
-    noto-fonts-cjk-sans
-    cm_unicode
-  ];
-
   programs.fish.enable = true;
   system.stateVersion = "23.11"; # Did you read the comment?
 }
