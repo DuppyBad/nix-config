@@ -58,7 +58,6 @@
     vscode-fhs # intermediary for public presentations
     presenterm # cmd line slideshows
     helix # editor
-    libreoffice-bin # gtk office bin
 
     #entertainment
     freetube

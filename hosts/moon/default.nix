@@ -23,6 +23,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules
+    ../common.nix
   ];
   security.pam.services.hyprlock = {};
 
