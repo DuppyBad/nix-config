@@ -13,5 +13,6 @@ _: {
     ./starship.nix
     ./zoxide.nix
     ./miscpkgs.nix
+    ./waybar.nix
   ];
 }

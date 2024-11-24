@@ -82,15 +82,15 @@
     # window manager related tools
     hyprlock # wayland lock scren, similar to swaylock
     hyprpaper # wallpaper setter
-    #hyprpanel
     #hyprsunset # hypr blue light filtering
     wlsunset # blue light filtering
+    waybar # the og bar
     grimblast # screenshot utility implementing grim and slurp
-    #catppuccin-cursors.mochaDark # pretty cursor/experiencing problems as of 25.05
     gnome-themes-extra # for theme compat
     fuzzel # app launcher etc
     hyprpicker # colour picker
     hyprpolkitagent #polkit auth daemon
+
     # Programming tools
     python3
 
