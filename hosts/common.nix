@@ -9,6 +9,8 @@
     iosevka
     noto-fonts
     noto-fonts-cjk-sans
+    material-design-icons
+    cozette
     cm_unicode
   ];
 }
