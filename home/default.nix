@@ -23,6 +23,9 @@
   # gtk is pretty
   gtk = {
     enable = true;
+    theme = {
+      name = "Adwaita-dark";
+    };
     font = {
       name = "Iosevka";
       size = 13;
