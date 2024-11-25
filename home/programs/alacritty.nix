@@ -15,10 +15,10 @@
         opacity = 0.9;
       };
       font = {
-        normal.family = "Iosevka Nerd Font";
-        bold.family = "Iosevka Nerd Font";
-        italic.family = "Iosevka Nerd Font";
-        size = 14;
+        normal.family = "Cozette";
+        bold.family = "Cozette";
+        italic.family = "Cozette";
+        size = 18;
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
