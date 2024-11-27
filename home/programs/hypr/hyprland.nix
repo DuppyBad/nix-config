@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     catppuccin.enable = true;
@@ -6,8 +10,8 @@
     systemd.enable = true;
     settings = {
       "$mod" = "SUPER";
-      "$term" = "foot";
-      "$menu" = "fuzzel";
+      "$term" = "${lib.getExe pkgs.foot}";
+      "$menu" = "${lib.getExe pkgs.fuzzel}";
 
       decoration = {
         rounding = 8;
