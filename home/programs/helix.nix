@@ -1,0 +1,34 @@
+{
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.helix = {
+    enable = true;
+    settings = {
+      editor = {
+        line-number = "relative";
+        color-modes = true;
+        indent-guides.render = true;
+        lsp = {
+          display-inlay-hints = true;
+          display-messages = true;
+        };
+        true-color = true;
+        mouse = true;
+        soft-wrap.enable = true;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+      };
+    };
+    languages = {
+      language-server.nil = {
+        command = lib.getExe pkgs.nil;
+        config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
+      };
+    };
+  };
+}
