@@ -102,6 +102,9 @@
           "$mod SHIFT, left, movewindow, l"
           "$mod SHIFT, right, movewindow, r"
 
+          # powerout menu
+          "$mod SHIFT, E, exec, ${lib.getExe pkgs.wlogout}"
+
           # Colour picker
           "$mod SHIFT, P, exec, hyprpicker -a"
 
