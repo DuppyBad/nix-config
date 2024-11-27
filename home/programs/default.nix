@@ -6,6 +6,7 @@ _: {
     ./fuzzel.nix
     ./foot.nix
     ./hypr
+    ./helix.nix
     ./kitty.nix
     ./nix-index.nix
     ./nvf.nix

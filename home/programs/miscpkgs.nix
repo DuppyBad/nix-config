@@ -8,6 +8,7 @@
 
     # LSPs
     #nvf handles their install for now
+    nil
 
     # utils
     fd # Like find, but good
