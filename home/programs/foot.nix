@@ -11,6 +11,9 @@
       cursor = {
         style = "beam";
       };
+      mouse = {
+        hide-when-typing = "yes";
+      };
     };
   };
 }
