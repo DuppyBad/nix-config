@@ -9,7 +9,16 @@
         margin = "10 10 0 10";
         modules-left = ["hyprland/workspaces" "mpris"];
         modules-center = ["hyprland/window"];
-        modules-right = ["network" "memory" "wireplumber" "clock" "tray" "battery" "custom/wlogout"];
+        modules-right = [
+          "network"
+          "memory"
+          "wireplumber"
+          "clock"
+          "tray"
+          "battery"
+          "custom/notification"
+          "custom/wlogout"
+        ];
 
         "hyprland/workspaces" = {
           on-click = "activate";
@@ -60,6 +69,19 @@
         "custom/wlogout" = {
           format = "";
           on-click = "${pkgs.wlogout}/bin/wlogout";
+        };
+        "custom/notification" = {
+          tooltip = false;
+          format = "{icon} ";
+          format-icons = {
+            notification = "󱥁";
+            none = "󰍥";
+            dnd-notification = "󱅮";
+            dnd-none = "󱅯";
+          };
+          return-type = "json";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t -sw";
         };
       };
     };
