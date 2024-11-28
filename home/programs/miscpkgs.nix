@@ -82,7 +82,8 @@
 
     # window manager related tools
     hyprlock # wayland lock scren, similar to swaylock
-    hyprpaper # wallpaper setter
+    #hyprpaper # wallpaper setter
+    swww
     #hyprsunset # hypr blue light filtering
     wlsunset # blue light filtering
     wlogout #logout
