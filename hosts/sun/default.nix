@@ -50,8 +50,13 @@
   hardware = {
     graphics.enable = true;
     nvidia = {
-      open = false;
+      open = true;
       modesetting.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = false;
+      };
+      nvidiaSettings = false;
     };
   };
   services.xserver.videoDrivers = ["nvidia"];
