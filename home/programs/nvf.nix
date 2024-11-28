@@ -16,7 +16,7 @@
           lspkind.enable = true;
           lightbulb.enable = false;
           lspSignature.enable = true;
-          lsplines.enable = true;
+          lsplines.enable = false;
         };
 
         debugger = {
@@ -74,7 +74,7 @@
         };
         filetree = {
           nvimTree = {
-            enable = true;
+            enable = false;
           };
         };
         tabline = {
