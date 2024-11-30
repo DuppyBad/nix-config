@@ -61,6 +61,7 @@
     helix # editor
 
     #entertainment
+    spotify-player
     freetube
 
     #music
