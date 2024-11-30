@@ -6,7 +6,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     catppuccin.enable = true;
-    xwayland.enable = true;
     systemd.enable = true;
     settings = {
       "$mod" = "SUPER";
