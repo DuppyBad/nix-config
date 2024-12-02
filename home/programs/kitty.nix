@@ -2,8 +2,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "Iosevka";
-      size = 16;
+      name = "IosevkaTerm Nerd Font";
+      size = 12;
     };
     settings = {
       background_opacity = "0.8";
