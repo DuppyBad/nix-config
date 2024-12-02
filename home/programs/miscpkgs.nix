@@ -33,6 +33,7 @@
     # media
     playerctl # commandline controls for mpris media
     pwvucontrol
+
     # communication
     vesktop
 
@@ -111,6 +112,8 @@
     # compatibility
     ungoogled-chromium # so that I can access evil website that mandate chrome
 
+    #office
+    libreoffice-fresh
     # gaming
   ];
 
