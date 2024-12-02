@@ -11,9 +11,9 @@
     antialias = true;
     hinting.enable = true;
   };
-  
+
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["IosevkaTerm"];})
+    nerd-fonts.iosevka-term
     iosevka
     noto-fonts
     noto-fonts-cjk-sans
