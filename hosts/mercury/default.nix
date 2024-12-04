@@ -11,6 +11,8 @@
     };
   };
 
+  boot.kernelParams = ["acpi_backlight=native" "psmouse.synaptics_intertouch=0"];
+
   imports = [
     ./hardware-configuration.nix
     ../../modules
