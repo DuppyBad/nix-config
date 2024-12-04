@@ -66,6 +66,34 @@
         }
       ];
     };
+    nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        # We still need the non-flake config so import it
+        ./hosts/mercury
+        # module order example
+        catppuccin.nixosModules.catppuccin
+        inputs.spicetify-nix.nixosModules.default
+        inputs.nvf.nixosModules.default
+        # home manager as a module
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = {inherit inputs;};
+          };
+          home-manager.users.kyrios = {
+            imports = [
+              ./home
+              catppuccin.homeManagerModules.catppuccin
+              inputs.spicetify-nix.homeManagerModules.default
+              nvf.homeManagerModules.default
+            ];
+          };
+        }
+      ];
+    };
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
