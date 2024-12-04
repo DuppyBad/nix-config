@@ -13,7 +13,6 @@
 
         lsp = {
           formatOnSave = true;
-          lspkind.enable = true;
           lightbulb.enable = false;
           lspSignature.enable = true;
           lsplines.enable = false;
@@ -40,10 +39,9 @@
           typst.format.enable = true;
         };
         visuals = {
-          enable = true;
           nvimWebDevicons.enable = true;
           scrollBar.enable = true;
-          smoothScroll.enable = true;
+          cinnamon-nvim.enable = true;
           fidget-nvim.enable = true;
           indentBlankline.enable = true;
 
@@ -66,12 +64,14 @@
           style = "mocha";
           transparent = false;
         };
-        autopairs.enable = true;
+        autopairs = {
+          nvim-autopairs.enable = true;
+        };
 
         autocomplete = {
-          enable = true;
-          type = "nvim-cmp";
+          nvim-cmp.enable = true;
         };
+
         filetree = {
           nvimTree = {
             enable = false;
