@@ -39,15 +39,15 @@
           typst.format.enable = true;
         };
         visuals = {
-          nvimWebDevicons.enable = true;
-          scrollBar.enable = true;
+          nvim-web-devicons.enable = true;
+          nvim-scrollbar.enable = true;
           cinnamon-nvim.enable = true;
           fidget-nvim.enable = true;
-          indentBlankline.enable = true;
+          indent-blankline.enable = true;
 
-          cursorline = {
+          nvim-cursorline = {
             enable = true;
-            lineTimeout = 0;
+            setupOpts.lineTimeout = 0;
           };
         };
 
