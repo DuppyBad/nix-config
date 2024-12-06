@@ -64,6 +64,7 @@
           style = "mocha";
           transparent = false;
         };
+
         autopairs = {
           nvim-autopairs.enable = true;
         };
@@ -77,6 +78,7 @@
             enable = false;
           };
         };
+
         tabline = {
           nvimBufferline.enable = true;
         };
@@ -87,6 +89,7 @@
           whichKey.enable = true;
           cheatsheet.enable = true;
         };
+
         telescope.enable = true;
 
         git = {
@@ -104,6 +107,7 @@
             lazygit.enable = true;
           };
         };
+
         ui = {
           borders.enable = true;
           noice.enable = true;

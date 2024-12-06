@@ -64,6 +64,7 @@
     #entertainment
     spotify-player
     freetube
+    nuclear
 
     #music
     amberol
