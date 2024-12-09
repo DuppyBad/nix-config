@@ -12,6 +12,10 @@
       size = 28;
       name = "Bibata-Modern-Classic";
     };
+    # sets only usershell env
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
   # colour theming stuff
   catppuccin = {
@@ -25,6 +29,7 @@
     enable = true;
     theme = {
       name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
     font = {
       name = "Iosevka";
