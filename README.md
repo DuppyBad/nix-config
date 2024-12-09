@@ -56,4 +56,5 @@ TODO
 
 - [x] modularise home.nix
 - [x] get a tiling window manager fully functioning
-- [ ] host specfic specifications
+- [x] host specfic specifications
+- [ ] Why doesn't nix set prefer-dark declaratively?
