@@ -11,6 +11,7 @@
     };
   };
 
+  #Thinkpad T14 specifics
   boot.kernelParams = ["acpi_backlight=native" "psmouse.synaptics_intertouch=0"];
 
   imports = [
@@ -43,7 +44,11 @@
     wireplumber
     acpi
     networkmanagerapplet
+    pavucontrol
   ];
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
