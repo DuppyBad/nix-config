@@ -35,6 +35,10 @@
 
   security.pam.services.hyprlock = {};
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   # allows us to easily edit etc/hosts for name resolutions
   environment.etc.hosts.mode = "0644";
   environment.variables.EDITOR = "nvim";
