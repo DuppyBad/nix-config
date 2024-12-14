@@ -68,8 +68,9 @@
   # Pending for removal
   services.xserver = {
     enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = false;
+    displayManager.gdm.enable = false;
+    displayManager.startx.enable = true;
   };
 
   users.users.kyrios = {
