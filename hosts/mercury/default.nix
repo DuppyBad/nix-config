@@ -19,14 +19,20 @@
 
   # ensures hyprlock can access the PAM
   security.pam.services.hyprlock = {};
+  # same for fprintd
+  security.pam.services.hyprlock.fprintAuth = true;
+  services.fprintd.enable = true;
 
   # Polkit for in GUI authentication
   security.polkit.enable = true;
   virtualisation.docker.enable = true;
 
   # Make hostName configured at a higher level
-  networking.hostName = "mercury";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "mercury";
+    networkmanager.enable = true;
+    nameservers = ["9.9.9.9" "1.1.1.1"];
+  };
   users.defaultUserShell = pkgs.fish;
   security.rtkit.enable = true;
   # Is alsa enable needed?
@@ -65,13 +71,6 @@
 
   programs.hyprland.enable = true;
   programs.nm-applet.enable = true;
-  # Pending for removal
-  services.xserver = {
-    enable = true;
-    desktopManager.gnome.enable = false;
-    displayManager.gdm.enable = false;
-    displayManager.startx.enable = true;
-  };
 
   users.users.kyrios = {
     isNormalUser = true;
@@ -80,6 +79,8 @@
     shell = pkgs.fish;
   };
 
+  programs.ssh.startAgent = true;
+  programs.steam.enable = true;
   programs.fish.enable = true;
   system.stateVersion = "24.11"; # structure is built from the first invocation
 }
