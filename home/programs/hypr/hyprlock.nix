@@ -6,6 +6,7 @@ _: {
         hide_cursor = true;
         no_fade_in = true;
         ignore_empty_input = true;
+        enable_fingerprint = true;
       };
       background = [
         {
