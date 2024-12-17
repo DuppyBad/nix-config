@@ -9,90 +9,25 @@
     spicetify-nix,
     nvf,
     ...
-  } @ inputs: {
-    nixosConfigurations.sun = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # We still need the non-flake config so import it
-        ./hosts/sun
-        # module order example
-        catppuccin.nixosModules.catppuccin
-        inputs.spicetify-nix.nixosModules.default
-        inputs.nvf.nixosModules.default
-        # home manager as a module
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {inherit inputs;};
-          };
-          home-manager.users.kyrios = {
-            imports = [
-              ./home
-              catppuccin.homeManagerModules.catppuccin
-              inputs.spicetify-nix.homeManagerModules.default
-              nvf.homeManagerModules.default
-            ];
-          };
-        }
-      ];
-    };
-    nixosConfigurations.moon = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # We still need the non-flake config so import it
-        ./hosts/moon
-        # module order example
-        catppuccin.nixosModules.catppuccin
-        inputs.spicetify-nix.nixosModules.default
-        inputs.nvf.nixosModules.default
-        # home manager as a module
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {inherit inputs;};
-          };
-          home-manager.users.kyrios = {
-            imports = [
-              ./home
-              catppuccin.homeManagerModules.catppuccin
-              inputs.spicetify-nix.homeManagerModules.default
-              nvf.homeManagerModules.default
-            ];
-          };
-        }
-      ];
-    };
-    nixosConfigurations.mercury = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        # We still need the non-flake config so import it
-        ./hosts/mercury
-        # module order example
-        catppuccin.nixosModules.catppuccin
-        inputs.spicetify-nix.nixosModules.default
-        inputs.nvf.nixosModules.default
-        # home manager as a module
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = {inherit inputs;};
-          };
-          home-manager.users.kyrios = {
-            imports = [
-              ./home
-              catppuccin.homeManagerModules.catppuccin
-              inputs.spicetify-nix.homeManagerModules.default
-              nvf.homeManagerModules.default
-            ];
-          };
-        }
-      ];
+  } @ inputs: let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations = {
+      sun = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [./hosts/sun];
+        inherit self inputs;
+      };
+      mercury = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [./hosts/mercury];
+        inherit self inputs;
+      };
+      moon = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [./hosts/moon];
+        inherit self inputs;
+      };
     };
   };
   inputs = {

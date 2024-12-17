@@ -1,8 +1,15 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.catppuccin.nixosModules.catppuccin
+    inputs.spicetify-nix.nixosModules.default
+    inputs.nvf.nixosModules.default
+    inputs.home-manager.nixosModules.home-manager
+  ];
   services.fstrim.enable = lib.mkDefault true;
 
   fonts.fontconfig = {
