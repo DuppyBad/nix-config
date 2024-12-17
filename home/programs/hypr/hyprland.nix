@@ -118,6 +118,9 @@
           ",XF86AudioPlay, exec, playerctl play-pause"
           ",XF86AudioPrev, exec, playerctl previous"
           ",XF86AudioNext, exec, playerctl next"
+          # Brightness control
+          ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
+          ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ]
         ++ (
           #functional workspace defintion

@@ -90,6 +90,7 @@
     waybar # the og bar
     grimblast # screenshot utility implementing grim and slurp
     gnome-themes-extra # for theme compat
+    brightnessctl # for brightness control
     fuzzel # app launcher etc
     hyprpicker # colour picker
     hyprpolkitagent #polkit auth daemon
