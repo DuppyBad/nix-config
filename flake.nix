@@ -17,7 +17,6 @@
       mercury = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [./hosts/mercury];
-        inherit self inputs;
       };
       moon = nixpkgs.lib.nixosSystem {
         inherit system;
