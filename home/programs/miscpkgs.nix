@@ -87,6 +87,7 @@
     hyprlock # wayland lock scren, similar to swaylock
     wlsunset # blue light filtering
     wlogout #logout
+    nautilus #file manager
     waybar # the og bar
     grimblast # screenshot utility implementing grim and slurp
     gnome-themes-extra # for theme compat
