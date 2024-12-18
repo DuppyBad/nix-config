@@ -73,7 +73,6 @@
         ./hosts/mercury
         # module order example
         catppuccin.nixosModules.catppuccin
-        inputs.spicetify-nix.nixosModules.default
         inputs.nvf.nixosModules.default
         # home manager as a module
         home-manager.nixosModules.home-manager
