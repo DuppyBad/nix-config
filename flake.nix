@@ -4,10 +4,6 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
-    catppuccin,
-    spicetify-nix,
-    nvf,
     ...
   } @ inputs: let
     system = "x86_64-linux";
