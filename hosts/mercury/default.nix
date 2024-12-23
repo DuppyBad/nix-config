@@ -17,6 +17,9 @@
     ../common.nix
   ];
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # ensures hyprlock can access the PAM
   security.pam.services.hyprlock = {};
   # same for fprintd
@@ -57,7 +60,8 @@
   ];
   # Sets ozone hinting so xwayland apps with wayland support use wayland instead
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
+    #NIXOS_OZONE_WL = "1";
+    # weird stuttering problems in chromium
   };
 
   time.timeZone = "Europe/London";
