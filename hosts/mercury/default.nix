@@ -60,8 +60,7 @@
   ];
   # Sets ozone hinting so xwayland apps with wayland support use wayland instead
   environment.sessionVariables = {
-    #NIXOS_OZONE_WL = "1";
-    # weird stuttering problems in chromium
+    NIXOS_OZONE_WL = "1";
   };
 
   time.timeZone = "Europe/London";
