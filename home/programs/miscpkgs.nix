@@ -7,7 +7,6 @@
     p7zip
 
     # LSPs
-    #nvf handles their install for now
     nil
 
     # utils
@@ -32,7 +31,7 @@
 
     # media
     playerctl # commandline controls for mpris media
-    pwvucontrol
+    pwvucontrol # pipewire pavucontrol
 
     # communication
     vesktop
@@ -44,7 +43,7 @@
     dust # Rust powered du alternative(finally got the namespace)
     btop # nicer looking htop
     bottom # also nicer looking htop
-    # yazi # terminal file manager
+    yazi # terminal file manager
     zathura # pdf/document reader
 
     # nix related
@@ -52,7 +51,6 @@
     alejandra # formatter
     nvd # for cool diffs
     nh # for nom/nvd integration
-    #cachix # binary cache ; TODO fix why this is being weird on enable
 
     # productivity
     hugo # static site generator
@@ -118,6 +116,8 @@
     #office
     libreoffice-fresh
     # gaming
+    desmume
+    pcsx2
   ];
 
   programs = {
