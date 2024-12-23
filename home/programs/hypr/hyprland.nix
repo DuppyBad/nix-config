@@ -19,6 +19,7 @@
         };
       };
 
+      #TODO add cursor to the nix layout set
       animations = {
         enabled = true;
         bezier = [
@@ -111,6 +112,7 @@
           ",Print, exec, grimblast --notify --cursor copy screen"
 
           # Music/Sound control
+          # Default audio sink makes mute indicators untrustworthy in multimonitor systems
           ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
           ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -118,6 +120,9 @@
           ",XF86AudioPlay, exec, playerctl play-pause"
           ",XF86AudioPrev, exec, playerctl previous"
           ",XF86AudioNext, exec, playerctl next"
+          "$mod SHIFT, L, exec, playerctl next"
+          "$mod SHIFT, H, exec, playerctl previous"
+          "$mod SHIFT, K, exec, playerctl play-pause"
           # Brightness control
           ",XF86MonBrightnessUp, exec, brightnessctl set +5%"
           ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
