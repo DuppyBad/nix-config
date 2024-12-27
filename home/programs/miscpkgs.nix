@@ -118,6 +118,7 @@
     # gaming
     desmume
     pcsx2
+    mgba
   ];
 
   programs = {
