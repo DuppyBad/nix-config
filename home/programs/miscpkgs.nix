@@ -116,7 +116,7 @@
     #office
     libreoffice-fresh
     # gaming
-    desmume
+    # desmume
     pcsx2
     mgba
   ];
