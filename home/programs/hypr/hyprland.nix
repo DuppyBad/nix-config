@@ -109,6 +109,7 @@
           # print screen functions
           "$mod SHIFT, S, exec, grimblast --notify copy area"
           ",Print, exec, grimblast --notify --cursor copy screen"
+          "$mod, Print, exec, grimblast --notify copy active"
 
           # Music/Sound control
           # Default audio sink makes mute indicators untrustworthy in multimonitor systems
