@@ -102,13 +102,14 @@
     seclists # Useful wordlists for brute-forcing etc.
     rustscan # For cursory first glances on pentesting operations
     feroxbuster # my directory buster of choice
-    #john # password brute forcing/cpu bound
+    john # password brute forcing/cpu bound
     burpsuite # web intermediary proxy
     hashcat # password brute forcing/gpu bound
     dirb # auto directory busting
     pwntools # generally useful python bindings for binary exploit+web automation in ctf
     gdb # debugger for dynamic analysis
-    pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
+    #pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
+    # pwn dbg is gone
 
     # compatibility
     ungoogled-chromium # so that I can access evil website that mandate chrome
