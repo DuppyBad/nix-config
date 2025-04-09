@@ -15,7 +15,8 @@
           formatOnSave = true;
           lightbulb.enable = false;
           lspSignature.enable = true;
-          lsplines.enable = false;
+          #          lsplines.enable = false;
+          # need to do it via diagnostics
         };
 
         debugger = {
