@@ -15,7 +15,13 @@
           formatOnSave = true;
           lightbulb.enable = false;
           lspSignature.enable = true;
-          lsplines.enable = false;
+          #          lsplines.enable = false;
+          # need to do it via diagnostics
+        };
+        diagnostics = {
+          config = {
+            virtual_lines = true;
+          };
         };
 
         debugger = {
@@ -29,6 +35,7 @@
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
+          rust.enable = true;
           nix.enable = true;
           python.enable = true;
           markdown.enable = true;

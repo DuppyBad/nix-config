@@ -9,7 +9,7 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = "${lib.getExe pkgs.foot}";
-      "$menu" = "${lib.getExe pkgs.fuzzel}";
+      "$menu" = "fuzzel";
 
       decoration = {
         rounding = 8;
@@ -36,8 +36,6 @@
 
       windowrule = [
         "animation fade 60%, $menu"
-        "opacity 0.95, Spotify"
-        "float, pwvucontrol"
         # regex time
       ];
 
