@@ -18,6 +18,11 @@
           #          lsplines.enable = false;
           # need to do it via diagnostics
         };
+        diagnostics = {
+          config = {
+            virtual_lines = true;
+          };
+        };
 
         debugger = {
           nvim-dap = {
@@ -30,6 +35,7 @@
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
+          rust.enable = true;
           nix.enable = true;
           python.enable = true;
           markdown.enable = true;
