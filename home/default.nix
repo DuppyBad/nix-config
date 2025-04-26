@@ -8,13 +8,14 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = ".bak";
     extraSpecialArgs = {inherit inputs;};
     users.kyrios = {
       imports = [
         inputs.spicetify-nix.homeManagerModules.default
         inputs.nvf.homeManagerModules.default
         ./programs
-        inputs.catppuccin.homeManagerModules.catppuccin
+        inputs.catppuccin.homeModules.catppuccin
       ];
       home = {
         username = "kyrios";
