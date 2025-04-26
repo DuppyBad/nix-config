@@ -32,9 +32,10 @@
   };
 
   security.pam.services.hyprlock = {};
-
+  # sets ozone for xwayland, portal enables darkmode on gtk4 adwaita
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    ADW_DISABLE_PORTAL = "1";
   };
 
   # allows us to easily edit etc/hosts for name resolutions
@@ -109,6 +110,7 @@
     acpi
     wireplumber
     pavucontrol
+    xdg-desktop-portal-gtk
   ];
   programs.fish.enable = true;
   programs.ssh.startAgent = true;
