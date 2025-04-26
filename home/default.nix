@@ -51,6 +51,13 @@
           size = 13;
         };
       };
+      xdg.portal.enable = true;
+      xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+      dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
     };
   };
 }
