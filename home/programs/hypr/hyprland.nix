@@ -35,7 +35,6 @@
       };
 
       windowrule = [
-        "animation fade 60%, $menu"
         # regex time
       ];
 
