@@ -12,6 +12,7 @@
         };
 
         lsp = {
+          enable = true;
           formatOnSave = true;
           lightbulb.enable = false;
           lspSignature.enable = true;
@@ -31,7 +32,6 @@
           };
         };
         languages = {
-          enableLSP = true;
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
