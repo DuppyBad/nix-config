@@ -18,7 +18,7 @@
         normal.family = "Cozette";
         bold.family = "Cozette";
         italic.family = "Cozette";
-        size = 18;
+        size = 16;
       };
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
