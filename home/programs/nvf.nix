@@ -16,7 +16,7 @@
           formatOnSave = true;
           lightbulb.enable = false;
           lspSignature.enable = true;
-          #          lsplines.enable = false;
+          # lsplines.enable = false;
           # need to do it via diagnostics
         };
         diagnostics = {
@@ -35,7 +35,10 @@
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
-          rust.enable = true;
+          rust = {
+            enable = true;
+            crates.enable = true;
+          };
           nix.enable = true;
           python.enable = true;
           markdown.enable = true;
@@ -43,7 +46,6 @@
           bash.enable = true;
           html.enable = true;
           typst.enable = true;
-          typst.format.enable = true;
         };
         visuals = {
           nvim-web-devicons.enable = true;
