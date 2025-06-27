@@ -30,8 +30,9 @@
     };
   };
   # switches to the faster version of switch
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
+  # ng is now the only switch, can probably remove section
+  # system.switch = {
+  #enable = false;
+  #enableNg = true;
+  #};
 }
