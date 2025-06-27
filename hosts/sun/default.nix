@@ -113,7 +113,8 @@
     xdg-desktop-portal-gtk
   ];
   programs.fish.enable = true;
-  programs.ssh.startAgent = true;
+  # on by default due to gnome
+  #programs.ssh.startAgent = true;
   services.openssh = {
     enable = true;
     settings = {
