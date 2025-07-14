@@ -82,7 +82,8 @@
     shell = pkgs.fish;
   };
 
-  programs.ssh.startAgent = true;
+  #programs.ssh.startAgent = true;
+  #clashes with some phantasmal gnome interface?
   programs.steam.enable = true;
   programs.fish.enable = true;
   system.stateVersion = "24.11"; # structure is built from the first invocation
