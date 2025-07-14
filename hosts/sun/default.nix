@@ -77,6 +77,7 @@
     desktopManager.gnome.enable = true;
     xkb.layout = "gb";
   };
+  programs.niri.enable = true;
   programs.hyprland.enable = true;
   programs.steam.enable = true;
 
