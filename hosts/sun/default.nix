@@ -63,6 +63,7 @@
 
   networking = {
     hostName = "sun";
+    #quadnine, cloudflare fallback
     nameservers = ["9.9.9.9" "1.1.1.1"];
   };
 
@@ -73,9 +74,15 @@
   # One day I can cull you....
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
     xkb.layout = "gb";
+  };
+  services = {
+    displayManager = {
+      gdm.enable = true;
+    };
+    desktopManager = {
+      gnome.enable = true;
+    };
   };
   programs.niri.enable = true;
   programs.hyprland.enable = true;
