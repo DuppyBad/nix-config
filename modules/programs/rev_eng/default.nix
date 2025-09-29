@@ -1,6 +1,4 @@
 _: {
   imports = [
-    ./dev
-    ./rev_eng
   ];
 }

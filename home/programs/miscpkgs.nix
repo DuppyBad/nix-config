@@ -107,6 +107,7 @@
     dirb # auto directory busting
     pwntools # generally useful python bindings for binary exploit+web automation in ctf
     gdb # debugger for dynamic analysis
+    ghidra # NSA's decompiler and associated tools
     #pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
     # pwn dbg is gone
 
