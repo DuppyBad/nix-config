@@ -21,4 +21,8 @@
     cozette
     cm_unicode
   ];
+  # For patching binaries for dynamic analysis
+  programs.nix-ld = {
+    enable = true;
+  };
 }
