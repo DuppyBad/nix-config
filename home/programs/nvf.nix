@@ -37,7 +37,7 @@
           enableExtraDiagnostics = true;
           rust = {
             enable = true;
-            crates.enable = true;
+            crates.enable = false; #annoying null-ls popup
           };
           nix.enable = true;
           python.enable = true;
