@@ -12,6 +12,7 @@
   ];
 
   # grub for dualboot
+  # Revise this setup soon, check for pretter versions of the bootloader
   boot = {
     loader = {
       grub = {
@@ -43,8 +44,6 @@
   environment.variables.EDITOR = "nvim";
 
   virtualisation.docker.enable = true;
-  # When we have to run random binaries
-  programs.nix-ld.enable = true;
 
   # Nvidia pain
   hardware = {
@@ -90,6 +89,7 @@
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
+  #TODO: add prettier audio module so that headless don't have to load this when we abstract
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
