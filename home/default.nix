@@ -15,6 +15,7 @@
         inputs.spicetify-nix.homeManagerModules.default
         inputs.nvf.homeManagerModules.default
         ./programs
+        ./system
         inputs.catppuccin.homeModules.catppuccin
       ];
       home = {
