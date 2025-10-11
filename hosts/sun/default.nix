@@ -107,19 +107,8 @@
     packages = with pkgs; [
       firefox
       fastfetch
-      bottom
     ];
   };
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    fish
-    acpi
-    wireplumber
-    pavucontrol
-    xdg-desktop-portal-gtk
-  ];
   programs.fish.enable = true;
   # on by default due to gnome
   #programs.ssh.startAgent = true;
