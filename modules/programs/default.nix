@@ -3,6 +3,7 @@ _: {
     ./dev
     ./rev_eng
     ./offsec
+    ./window_managers
     ./syspkgs.nix
   ];
 }

@@ -17,6 +17,7 @@
         ./programs
         ./system
         inputs.catppuccin.homeModules.catppuccin
+        inputs.niri.homeModules.niri
       ];
       home = {
         username = "kyrios";

@@ -1,4 +1,4 @@
-_: {
+{inputs, ...}: {
   nixpkgs = {
     hostPlatform = "x86_64-linux";
     config = {
@@ -8,5 +8,6 @@ _: {
       # confused enough as things are, make things explicit
       allowAliases = false;
     };
+    overlays = [inputs.niri.overlays.niri];
   };
 }
