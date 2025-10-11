@@ -47,16 +47,7 @@
   };
   # We should separate the pkgs so that we can enable via gui.enable, tui.enable, laptop.enable, desktop.enable....
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    neovim
     firefox
-    git
-    fish
-    wireplumber
-    acpi
-    networkmanagerapplet
-    pavucontrol
   ];
   # Sets ozone hinting so xwayland apps with wayland support use wayland instead
   environment.sessionVariables = {
