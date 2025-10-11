@@ -60,11 +60,13 @@
     helix # editor
 
     #entertainment
-    spotify-player
     freetube
+    yt-dlp
+    qbittorrent
 
     #music
     amberol
+    strawberry
 
     # system call monitoring
     strace # system call monitoring
