@@ -18,9 +18,9 @@
       auto-optimise-store = true;
     };
     gc = {
-      automatic = false;
-      dates = "19:00";
-      options = "--delete-older-than 1w";
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
       persistent = false;
     };
     optimise = {
