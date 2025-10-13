@@ -8,7 +8,7 @@ _: {
         ignore_empty_input = true;
       };
       auth = {
-        fingerprint.enable = true;
+        fingerprint.enable = false;
       };
       background = [
         {
