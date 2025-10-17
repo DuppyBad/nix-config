@@ -34,6 +34,7 @@
     pwvucontrol # pipewire pavucontrol
 
     # communication
+    signal-desktop
     vesktop
 
     # misc
