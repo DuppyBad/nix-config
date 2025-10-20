@@ -28,6 +28,16 @@
     options = ["fmask=0077" "dmask=0077"];
   };
 
+  fileSystems."/mnt/windows" = {
+    device = "/dev/disk/by-uuid/6288792A8878FE3B";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-uuid/ACAC1513AC14D9A2";
+    fsType = "ntfs";
+  };
+
   swapDevices = [
     {device = "/dev/disk/by-uuid/74b5530f-41cd-451d-a2de-ae0890ed5c26";}
   ];
