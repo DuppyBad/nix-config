@@ -68,6 +68,7 @@
     #music
     amberol
     strawberry
+    easyeffects # for eq
 
     # system call monitoring
     strace # system call monitoring
