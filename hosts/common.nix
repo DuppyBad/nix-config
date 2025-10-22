@@ -24,5 +24,8 @@
   # For patching binaries for dynamic analysis
   programs.nix-ld = {
     enable = true;
+    libraries = with pkgs; [
+      elfutils
+    ];
   };
 }
