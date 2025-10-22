@@ -5,7 +5,6 @@
   ...
 }: {
   programs.niri = {
-    enable = true;
     settings = {
       binds = {
       };
