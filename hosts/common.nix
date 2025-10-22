@@ -24,5 +24,10 @@
   # For patching binaries for dynamic analysis
   programs.nix-ld = {
     enable = true;
+    libraries = with pkgs; [
+      elfutils
+    ];
   };
+  programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
 }
