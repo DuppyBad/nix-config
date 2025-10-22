@@ -2,11 +2,13 @@
   pkgs,
   lib,
   inputs,
+  config,
   ...
 }: {
   programs.niri = {
     settings = {
-      binds = {
+      binds = with config.lib.niri.actions; {
+        "Mod+Return".action = spawn "kitty";
       };
     };
   };
