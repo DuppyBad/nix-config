@@ -67,6 +67,11 @@
         ",preferred,auto,1"
       ];
 
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
+      };
+
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
