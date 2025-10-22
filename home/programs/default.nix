@@ -17,5 +17,6 @@ _: {
     ./miscpkgs.nix
     ./waybar
     ./swaync
+    ./window_managers
   ];
 }
