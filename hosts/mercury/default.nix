@@ -69,7 +69,7 @@
   users.users.kyrios = {
     isNormalUser = true;
     home = "/home/kyrios";
-    extraGroups = ["wheel" "networkmanager" "docker"];
+    extraGroups = ["wheel" "networkmanager" "docker" "kvm" "libvirtd"];
     shell = pkgs.fish;
   };
 
