@@ -112,6 +112,7 @@
     pwntools # generally useful python bindings for binary exploit+web automation in ctf
     gdb # debugger for dynamic analysis
     ghidra # NSA's decompiler and associated tools
+    (cutter.withPlugins (p: with p; [rz-ghidra])) # cutter with decompiler
     #pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
     # pwn dbg is gone
 
@@ -120,9 +121,12 @@
 
     #office
     libreoffice-fresh
+
     # gaming
     # desmume
-    pcsx2
+    #pcsx2
+    # melonDS
+    # both melon and pcsx2 fail due to some qpl compilation error
     mgba
   ];
 
