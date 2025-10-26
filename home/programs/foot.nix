@@ -3,10 +3,10 @@
     enable = true;
     settings = {
       main = {
-        font = "IosevkaTerm Nerd Font:size=13.5";
+        font = "IosevkaTerm Nerd Font:size=14";
       };
       colors = {
-        alpha = 0.8;
+        alpha = 0.9;
       };
       cursor = {
         style = "beam";
