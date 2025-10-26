@@ -14,7 +14,6 @@
         lsp = {
           enable = true;
           formatOnSave = true;
-          lightbulb.enable = false;
           lspSignature.enable = true;
           # lsplines.enable = false;
           # need to do it via diagnostics
