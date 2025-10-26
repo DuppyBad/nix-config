@@ -9,10 +9,13 @@
     settings = {
       "$mod" = "SUPER";
       "$term" = "${lib.getExe pkgs.foot}";
-      "$menu" = "fuzzel";
+      "$menu" = "${lib.getExe pkgs.fuzzel}";
 
+      general = {
+        border_size = 2;
+      };
       decoration = {
-        rounding = 8;
+        rounding = 4;
         blur = {
           enabled = true;
         };
