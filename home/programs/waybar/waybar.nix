@@ -7,8 +7,8 @@
         position = "top";
         spacing = 14;
         margin = "10 10 0 10";
-        modules-left = ["hyprland/workspaces" "mpris"];
-        modules-center = ["hyprland/window"];
+        modules-left = ["hyprland/workspaces"];
+        modules-center = ["mpris"];
         modules-right = [
           "network"
           "memory"
@@ -35,7 +35,7 @@
           show-passive-items = true;
         };
         "clock" = {
-          format = "{:%H:%M, %a %b %y}";
+          format = "{:%H:%M, %a %d %b}";
           timezone = "Europe/London";
         };
         "memory" = {
