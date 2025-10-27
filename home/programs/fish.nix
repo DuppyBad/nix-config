@@ -3,6 +3,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # greeting becomes empty string
+      fish_vi_key_bindings # vi time
     '';
     shellAliases = {
       "..." = "cd ../..";
