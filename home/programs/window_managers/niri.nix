@@ -6,6 +6,7 @@
 }: {
   programs.niri = {
     settings = {
+      xwayland-satellite.enable = true;
       outputs = {
         "DP-3" = {
           mode = {
@@ -26,6 +27,15 @@
           scale = 1;
         };
       };
+      layout = {
+        default-column-width = {proportion = 0.5;};
+        border = {
+          enable = true;
+          width = 0.5;
+        };
+        focus-ring.enable = true;
+      };
+
       input = {
         focus-follows-mouse.enable = true;
         touchpad = {
@@ -59,6 +69,8 @@
         "XF86AudioMute".action = spawn ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
         "XF86AudioRaiseVolume".action = spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "5%+"];
         "XF86AudioLowerVolume".action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
+        "Shift+XF86AudioRaiseVolume".action = spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "1%+"];
+        "Shift+XF86AudioLowerVolume".action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"];
 
         #Brightness Control
         "XF86MonBrightnessUp".action = spawn ["brightnessctl" "set" "+5%"];
