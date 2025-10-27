@@ -54,8 +54,6 @@
       misc = {
         disable_autoreload = false;
         force_default_wallpaper = 0;
-        enable_swallow = true;
-        swallow_regex = "foot";
       };
 
       exec-once = [
