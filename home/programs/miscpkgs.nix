@@ -129,6 +129,7 @@
     # desmume
     #pcsx2
     # both melon and pcsx2 fail due to some qpl compilation error
+    melonDS
     mgba
   ];
 
