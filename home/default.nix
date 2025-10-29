@@ -39,6 +39,7 @@
         enable = true;
         accent = "mauve"; #mauve is default, here for clarity
         flavor = "mocha"; # mocha is also default
+        wlogout.iconStyle = "wlogout";
       };
 
       # gtk is pretty
@@ -52,6 +53,10 @@
           name = "Iosevka";
           size = 13;
         };
+      };
+      qt = {
+        enable = true;
+        style.name = "kvantum";
       };
       xdg.portal.enable = true;
       xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
