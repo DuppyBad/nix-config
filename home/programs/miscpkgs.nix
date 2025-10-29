@@ -66,9 +66,9 @@
     qbittorrent
 
     #music
-    amberol
-    strawberry
     easyeffects # for eq
+    euphonica # gtk mpd, in dev
+    beets # auto-tagger
 
     # system call monitoring
     strace # system call monitoring
@@ -97,6 +97,7 @@
     hyprpicker # colour picker
     hyprpolkitagent #polkit auth daemon
     swaynotificationcenter # it is what it says
+    swww # we are back sisters
 
     # Programming tools
     python3
