@@ -4,7 +4,9 @@
   ...
 }: {
   services.fstrim.enable = lib.mkDefault true;
-
+  environment.sessionVariables = {
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+  };
   fonts.fontconfig = {
     allowBitmaps = true;
     enable = true;
