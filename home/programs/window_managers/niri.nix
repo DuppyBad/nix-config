@@ -13,8 +13,7 @@
         {command = ["${lib.getExe pkgs.waybar}"];}
         {command = ["${lib.getExe pkgs.hypridle}"];}
         {command = ["systemctl" "--user" "start" "hyprpolkitagent"];}
-        {command = ["${lib.getExe' pkgs.swww "swww-daemon"}"];}
-        {command = ["${lib.getExe pkgs.swww}" "img" "~/.config/nixos/assets/topography-mocha.png"];}
+        # {command = ["${lib.getExe pkgs.swww}" "img" "~/.config/nixos/assets/topography-mocha.png"];}
       ];
       outputs = {
         "DP-3" = {
@@ -103,6 +102,8 @@
 
         # Movement controls
         "Mod+1".action = focus-workspace 1;
+        "Mod+2".action = focus-workspace 2;
+        "Mod+3".action = focus-workspace 3;
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
         "Mod+Up".action = focus-window-or-workspace-up;
