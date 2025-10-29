@@ -19,9 +19,9 @@
         "DP-3" = {
           mode = {
             # can do 240 but no need(we're doing 240)
-            refresh = 240.0;
-            height = 2560;
-            width = 1440;
+            refresh = 239.958;
+            height = 1440;
+            width = 2560;
           };
           position = {
             x = 0;
@@ -34,7 +34,7 @@
         "eDP-1" = {
           scale = 1;
         };
-        "HDMI-1" = {
+        "HDMI-A-5" = {
           scale = 1;
         };
       };
