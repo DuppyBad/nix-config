@@ -53,6 +53,7 @@
     firefox
   ];
   # Sets ozone hinting so xwayland apps with wayland support use wayland instead
+  # Move this to some wayland subdir?
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -69,6 +70,8 @@
   programs.hyprland.enable = true;
   programs.nm-applet.enable = true;
 
+  # the libvirtd group should be better defined
+  # can we set just login sh to bash?
   users.users.kyrios = {
     isNormalUser = true;
     home = "/home/kyrios";
