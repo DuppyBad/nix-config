@@ -4,6 +4,7 @@ _: {
     settings = {
       main = {
         font = "Iosevka:size 15";
+        dpi-aware = "auto";
       };
     };
   };
