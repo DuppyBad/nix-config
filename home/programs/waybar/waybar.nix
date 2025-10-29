@@ -7,8 +7,8 @@
         position = "top";
         spacing = 14;
         margin = "10 10 0 10";
-        modules-left = ["hyprland/workspaces"];
-        modules-center = ["mpris"];
+        modules-left = ["hyprland/workspaces" "niri/workspaces"];
+        modules-center = ["mpris" "wlr/taskbar"];
         modules-right = [
           "network"
           "memory"
@@ -26,6 +26,18 @@
           on-scroll-down = "hyprctl dispatch workspace e+1";
           format = "{name}";
         };
+
+        "wlr/taskbar" = {
+          all-outputs = false;
+          format = "{icon}";
+          icon-theme = "Papirus-Dark";
+          icon-size = 16;
+          tooltip = true;
+          tooltip-format = "{title}";
+          active-first = true;
+          on-click = "activate";
+        };
+
         "hyprland/window" = {
           format = "{}";
         };
