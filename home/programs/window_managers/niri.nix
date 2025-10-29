@@ -4,13 +4,22 @@
   config,
   ...
 }: {
+  # Needs to be in-scope for the auto-integration to function (it doesn't get autocalled by the switch)
+  home.packages = [pkgs.xwayland-satellite];
   programs.niri = {
     settings = {
-      xwayland-satellite.enable = true;
+      spawn-at-startup = [
+        {command = ["${lib.getExe pkgs.wlsunset}" "-S" "08:00" "-s" "21:00"];}
+        {command = ["${lib.getExe pkgs.waybar}"];}
+        {command = ["${lib.getExe pkgs.hypridle}"];}
+        {command = ["systemctl" "--user" "start" "hyprpolkitagent"];}
+        {command = ["${lib.getExe' pkgs.swww "swww-daemon"}"];}
+        {command = ["${lib.getExe pkgs.swww}" "img" "~/.config/nixos/assets/topography-mocha.png"];}
+      ];
       outputs = {
         "DP-3" = {
           mode = {
-            # can do 240 but no need
+            # can do 240 but no need(we're doing 240)
             refresh = 240.0;
             height = 2560;
             width = 1440;
@@ -72,7 +81,13 @@
       animations = {
         enable = true;
       };
-      binds = with config.lib.niri.actions; {
+      overview = {
+        # mocha base #1e1e2e
+        backdrop-color = "#1e1e2e";
+      };
+      binds = with config.lib.niri.actions; let
+        playerctl = spawn "${lib.getExe pkgs.playerctl}";
+      in {
         # General Controls that I use in all WM
         "Mod+Return".action = spawn "${lib.getExe pkgs.foot}";
         "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}";
@@ -90,7 +105,15 @@
         "Mod+1".action = focus-workspace 1;
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
+        "Mod+Up".action = focus-window-or-workspace-up;
+        "Mod+Down".action = focus-window-or-workspace-down;
         "Mod+Tab".action = focus-workspace-previous;
+        "Mod+Shift+Left".action = move-column-left;
+        "Mod+Shift+Right".action = move-column-right;
+        "Mod+Shift+Up".action = move-column-to-workspace-up;
+        "Mod+Shift+Down".action = move-column-to-workspace-down;
+        "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
+        "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
 
         # Audio control
         "XF86AudioMute".action = spawn ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
@@ -98,10 +121,21 @@
         "XF86AudioLowerVolume".action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
         "Shift+XF86AudioRaiseVolume".action = spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "1%+"];
         "Shift+XF86AudioLowerVolume".action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"];
+        "XF86AudioPlay".action = playerctl "play-pause";
+        "XF86AudioStop".action = playerctl "pause";
+        "XF86AudioPrev".action = playerctl "previous";
+        "XF86AudioNext".action = playerctl "next";
 
         # Brightness Control
         "XF86MonBrightnessUp".action = spawn ["brightnessctl" "set" "+5%"];
         "XF86MonBrightnessDown".action = spawn ["brightnessctl" "set" "5%-"];
+
+        # Print Control
+        "Mod+Shift+S".action.screenshot = {show-pointer = false;};
+        "Print".action.screenshot-screen = {write-to-disk = false;};
+
+        # Misc
+        "Mod+P".action = spawn ["${lib.getExe pkgs.hyprpicker}" "-a"];
       };
       prefer-no-csd = true;
       hotkey-overlay = {
