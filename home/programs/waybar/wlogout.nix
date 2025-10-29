@@ -9,7 +9,7 @@
       }
       {
         label = "logout";
-        action = "hyprctl dispatch exit";
+        action = "loginctl terminate-session";
         text = "Logout";
       }
       {
