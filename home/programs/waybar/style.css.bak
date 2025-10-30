@@ -1,0 +1,201 @@
+* {
+  border: none;
+  border-radius: 4px;
+  /* `ttf-font-awesome` is required to be installed for icons */
+  font-family: "Cozette", Helvetica, Arial, sans-serif;
+
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 0;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0 1.5px;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  background-color: #1e1e2e;
+  color: #ffffff;
+  border-radius: 4px;
+  box-shadow: inset 0 -3px #585b70;
+}
+
+#workspaces button:hover {
+  background: #181825;
+  box-shadow: inset 0 -3px #cdd6f4;
+}
+
+#workspaces button.active {
+  background-color: #1e1e2e;
+  box-shadow: inset 0 -3px #cba6f7;
+}
+
+#workspaces button.urgent {
+  color: #1e1e2e;
+  background-color: #f9e2af;
+}
+
+#mode {
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#wireplumber,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-wlogout {
+  padding: 0 10px;
+  margin: 6px 3px;
+  color: #cdd6f4;
+}
+
+#custom-wlogout {
+  padding: 0 14px 0 10px;
+  margin: 6px 7px 6px 3px;
+}
+
+#window {
+  margin: 0 4px;
+}
+
+#clock,
+#tray,
+#custom-wlogout {
+  background-color: #1e1e2e;
+}
+
+#battery {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#battery.charging {
+  color: #1e1e2e;
+  background-color: #a6e3a1;
+}
+
+@keyframes blink {
+  to {
+    background-color: #cdd6f4;
+    color: #cdd6f4;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f38ba8;
+  color: #cdd6f4;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#memory {
+  background-color: #1e1e2e;
+}
+
+#backlight {
+  background-color: #1e1e2e;
+}
+
+#network {
+  background-color: #1e1e2e;
+}
+
+#network.disconnected {
+  background-color: #f38ba8;
+}
+
+#wireplumber {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#wireplumber.muted {
+  background-color: #1e1e2e;
+  color: rgb(243, 139, 168);
+}
+
+#temperature {
+  background-color: #1e1e2e;
+}
+
+#temperature.critical {
+  background-color: #f38ba8;
+}
+
+#mpris {
+  padding: 5 15px;
+  border-radius: 12px;
+  background: rgba(30, 30, 46, 0.6);
+  color: rgb(180, 190, 254);
+  /*  box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px; */
+  margin-right: 2px;
+  margin-left: 2px;
+  transition: all 0.3s ease;
+}
+#mpris {
+  margin-left: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 3px;
+  color: rgba(180, 190, 254, 0.329);
+  background-color: rgba(30, 30, 46, 0.6);
+  box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
+  transition: all 0.3s ease;
+}
+
+#mpris.playing {
+  color: rgb(180, 190, 254);
+  background: rgba(30, 30, 46, 0.6);
+  background: linear-gradient(
+    90deg,
+    rgb(49, 50, 68),
+    rgba(30, 30, 46, 0.6),
+    rgba(30, 30, 46, 0.6),
+    rgba(30, 30, 46, 0.6),
+    rgba(30, 30, 46, 0.6),
+    rgb(49, 50, 68)
+  );
+  background-size: 400% 100%;
+  animation: grey-gradient 3s linear infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes grey-gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -33% 50%;
+  }
+}
