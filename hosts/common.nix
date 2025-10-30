@@ -30,6 +30,9 @@
       elfutils
     ];
   };
+
+  security.soteria.enable = true;
+  # polkit client
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
 }
