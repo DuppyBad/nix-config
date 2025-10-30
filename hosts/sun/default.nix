@@ -24,6 +24,7 @@
       efi.efiSysMountPoint = "/boot/efi";
       efi.canTouchEfiVariables = true;
     };
+    # its just annoying really
     #plymouth = {
     #  enable = true;
     #  font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
@@ -72,15 +73,15 @@
 
   # One day I can cull you....
   services.xserver = {
-    enable = true;
+    enable = false;
     xkb.layout = "gb";
   };
   services = {
     displayManager = {
-      gdm.enable = true;
+      gdm.enable = false;
     };
     desktopManager = {
-      gnome.enable = true;
+      gnome.enable = false;
     };
   };
   programs.hyprland.enable = true;
