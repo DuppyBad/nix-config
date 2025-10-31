@@ -135,7 +135,7 @@ window * {
 }
 
 #tray menu {
-  background-color: rgba(30, 30, 46, 0.6);
+  background-color: rgba(30, 30, 46, 1);
   opacity: 1;
 }
 
