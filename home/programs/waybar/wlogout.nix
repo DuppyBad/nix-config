@@ -20,7 +20,7 @@
       {
         label = "suspend";
         action = "systemctl suspend";
-        text = "Bedtime";
+        text = "Suspend";
       }
       {
         label = "reboot";
