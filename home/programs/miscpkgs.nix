@@ -95,7 +95,6 @@
     brightnessctl # for brightness control
     fuzzel # app launcher etc
     hyprpicker # colour picker
-    hyprpolkitagent #polkit auth daemon
     swaynotificationcenter # it is what it says
     swww # we are back sisters
 
@@ -139,6 +138,7 @@
     bottom = {enable = true;};
     freetube = {enable = true;};
     ncmpcpp = {enable = true;};
+    floorp = {enable = true;};
     # Let home-manager manage itself
     home-manager = {enable = true;};
   };
