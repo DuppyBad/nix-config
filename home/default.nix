@@ -39,7 +39,6 @@
         enable = true;
         accent = "mauve"; #mauve is default, here for clarity
         flavor = "mocha"; # mocha is also default
-        wlogout.iconStyle = "wlogout";
       };
 
       # gtk is pretty
