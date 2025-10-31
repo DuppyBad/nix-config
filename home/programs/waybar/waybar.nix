@@ -7,10 +7,11 @@
         position = "top";
         spacing = 14;
         margin = "10 10 0 10";
-        modules-left = ["hyprland/workspaces" "niri/workspaces"];
-        modules-center = ["mpris" "wlr/taskbar"];
+        modules-left = ["niri/workspaces"];
+        modules-center = ["wlr/taskbar"];
         modules-right = [
           #"network"
+          "mpris"
           "memory"
           "wireplumber"
           "clock"
