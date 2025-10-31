@@ -17,7 +17,7 @@ in {
       volumePercentage
       beautifulLyrics
     ];
-    theme = spicePkgs.themes.comfy;
-    colorScheme = "catppuccin-mocha";
+    theme = spicePkgs.themes.text;
+    colorScheme = "RosePine";
   };
 }
