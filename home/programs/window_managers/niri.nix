@@ -9,11 +9,10 @@
   programs.niri = {
     settings = {
       spawn-at-startup = [
-        {command = ["${lib.getExe pkgs.wlsunset}" "-S" "08:00" "-s" "21:00"];}
+        {command = ["${lib.getExe pkgs.wlsunset}" "-d" "4" "-S" "08:00" "-s" "21:00"];}
         {command = ["${lib.getExe pkgs.waybar}"];}
         {command = ["${lib.getExe pkgs.hypridle}"];}
-        {command = ["systemctl" "--user" "start" "hyprpolkitagent"];}
-        # {command = ["${lib.getExe' pkgs.swww "swww-daemon"}" "img" "~/.config/nixos/assets/topography-mocha.png"];}
+        {command = ["${lib.getExe' pkgs.swww "swww-daemon"}"];}
       ];
       outputs = {
         "DP-3" = {
@@ -99,6 +98,8 @@
         "Mod+Period".action = expel-window-from-column;
         "Mod+V".action = toggle-window-floating;
         "Mod+L".action = spawn "${lib.getExe pkgs.hyprlock}";
+        "Mod+L".allow-when-locked = true;
+        "Mod+Shift+E".action = spawn "${lib.getExe pkgs.wlogout}";
 
         # Movement controls
         "Mod+1".action = focus-workspace 1;
