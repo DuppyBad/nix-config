@@ -10,14 +10,14 @@
         modules-left = ["hyprland/workspaces" "niri/workspaces"];
         modules-center = ["mpris" "wlr/taskbar"];
         modules-right = [
-          "network"
+          #"network"
           "memory"
           "wireplumber"
           "clock"
           "tray"
           "battery"
           "custom/notification"
-          "custom/wlogout"
+          #"custom/wlogout"
         ];
 
         "hyprland/workspaces" = {
@@ -25,6 +25,14 @@
           on-scroll-up = "hyprctl dispatch workspace e-1";
           on-scroll-down = "hyprctl dispatch workspace e+1";
           format = "{name}";
+        };
+
+        "niri/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            active = "";
+            default = "";
+          };
         };
 
         "wlr/taskbar" = {

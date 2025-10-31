@@ -54,18 +54,23 @@ window * {
 
 #workspaces {
   background-color: transparent;
+  border-radius: 17px;
+  padding: 2 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 #workspaces button {
   box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
   background-color: rgba(30, 30, 46, 0.6);
-  border-radius: 8px; /* Reduced from 15px for less rounded corners */
+  border-radius: 15px;
+  margin-left: 10px;
+
   transition: all 0.3s ease;
-  margin: 0 2px; /* Add small margin to control spacing */
 }
 
 #workspaces button.active {
-  min-width: 5px;
+  min-width: 15px;
   box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
   background-color: rgb(245, 194, 231);
   background-size: 400% 400%;
@@ -82,7 +87,6 @@ window * {
   );
   background-size: 300% 300%;
   animation: colored-gradient 10s ease infinite;
-  border-radius: 8px; /* Match the non-active border-radius */
 }
 
 @keyframes colored-gradient {
@@ -136,7 +140,7 @@ window * {
 
 #tray menu {
   background-color: rgba(30, 30, 46, 0.6);
-  opacity: 1;
+  opacity: 0.8;
 }
 
 #wireplumber.muted {
