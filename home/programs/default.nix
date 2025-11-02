@@ -18,5 +18,6 @@ _: {
     ./waybar
     ./swaync
     ./window_managers
+    ./emulation.nix
   ];
 }
