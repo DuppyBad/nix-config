@@ -37,7 +37,7 @@
   # sets ozone for xwayland, portal enables darkmode on gtk4 adwaita
   environment.sessionVariables = {
     # NIXOS_OZONE_WL = "1";
-    # ADW_DISABLE_PORTAL = "1";
+    ADW_DISABLE_PORTAL = "1";
   };
 
   # allows us to easily edit etc/hosts for name resolutions
@@ -85,7 +85,14 @@
     };
   };
   programs.hyprland.enable = true;
-  programs.steam.enable = true;
+
+  programs.gamescope = {
+    enable = false;
+    capSysNice = false;
+  };
+  programs.steam = {
+    enable = true;
+  };
 
   console.keyMap = "uk";
   users.defaultUserShell = pkgs.fish;
