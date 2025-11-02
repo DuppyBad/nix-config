@@ -58,7 +58,6 @@
 
       exec-once = [
         "${pkgs.wlsunset}/bin/wlsunset -S 08:00 -s 21:00"
-        "systemctl --user start hyprpolkitagent"
         "${lib.getExe pkgs.waybar}"
         "${pkgs.hypridle}/bin/hypridle"
       ];
