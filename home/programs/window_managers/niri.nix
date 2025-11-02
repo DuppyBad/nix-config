@@ -11,7 +11,6 @@
       spawn-at-startup = [
         {command = ["${lib.getExe pkgs.wlsunset}" "-d" "4" "-S" "08:00" "-s" "21:00"];}
         {command = ["${lib.getExe pkgs.waybar}"];}
-        {command = ["${lib.getExe pkgs.hypridle}"];}
         {command = ["${lib.getExe' pkgs.swww "swww-daemon"}"];}
       ];
       outputs = {
