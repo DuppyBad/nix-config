@@ -9,8 +9,8 @@
     package = pkgs.lix;
     channel.enable = lib.mkForce false;
     settings = {
-      allowed-users = ["root" "@wheel" "nix-builder"];
-      trusted-users = ["root" "@wheel" "nix-builder"];
+      allowed-users = ["root" "@wheel"];
+      trusted-users = ["root" "@wheel"];
       warn-dirty = false;
       extra-experimental-features = ["flakes" "nix-command"];
       http-connections = 50;
@@ -31,8 +31,4 @@
   };
   # switches to the faster version of switch
   # ng is now the only switch, can probably remove section
-  # system.switch = {
-  #enable = false;
-  #enableNg = true;
-  #};
 }
