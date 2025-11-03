@@ -111,8 +111,9 @@
     pwntools # generally useful python bindings for binary exploit+web automation in ctf
     gdb # debugger for dynamic analysis
     ghidra # NSA's decompiler and associated tools
-    (cutter.withPlugins (p: with p; [rz-ghidra])) # cutter with decompiler
+    (cutter.withPlugins (p: with p; [rz-ghidra jsdec sigdb])) # cutter with decompiler
     #pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
+    #TODO import pwndbg here so I don't have to rebuild every gc interval
     # pwn dbg is gone
 
     # compatibility
@@ -131,6 +132,13 @@
     freetube = {enable = true;};
     ncmpcpp = {enable = true;};
     floorp = {enable = true;};
+    ghostty = {
+      enable = true;
+      enableFishIntegration = true;
+      settings = {
+        font-family = "IosevkaTerm Nerd Font";
+      };
+    };
     # Let home-manager manage itself
     home-manager = {enable = true;};
   };
