@@ -1,60 +1,19 @@
 # NixOS Config
 
-## Kyrios' personal device config as a flake
+## Kyrios' personal device configs as a flake
 
-Current Flake Structure
+Currently supports 2 hosts actively:
 
-```
-.
-├── flake.lock
-├── flake.nix
-├── home
-│   ├── default.nix
-│   └── programs
-│       ├── alacritty.nix
-│       ├── bat.nix
-│       ├── default.nix
-│       ├── fish.nix
-│       ├── foot.nix
-│       ├── hypr
-│       │   ├── default.nix
-│       │   ├── hyprland.nix
-│       │   └── hyprlock.nix
-│       ├── kitty.nix
-│       ├── miscpkgs.nix
-│       ├── nix-index.nix
-│       ├── nvf.nix
-│       ├── spicetify.nix
-│       ├── starship.nix
-│       ├── waybar.nix
-│       └── zoxide.nix
-├── hosts
-│   ├── default.nix
-│   └── sun
-│       ├── default.nix
-│       └── hardware-configuration.nix
-├── LICENSE
-├── modules
-│   ├── default.nix
-│   ├── programs
-│   │   ├── default.nix
-│   │   └── dev
-│   │       ├── default.nix
-│   │       └── git.nix
-│   └── system
-│       ├── default.nix
-│       └── nix
-│           ├── default.nix
-│           └── nixpkgs.nix
-└── README.md
-```
+- `sun`, Desktop NVIDIA Machine
 
-when paths randomly break(?!)
-`sudo nix-store --repair --verify --check-contents`
+- `mercury`, Thinkpad T14
 
-TODO
+- `moon` is deprecated
 
-- [x] modularise home.nix
-- [x] get a tiling window manager fully functioning
-- [x] host specfic specifications
-- [ ] Why doesn't nix set prefer-dark declaratively?
+Current aims:
+
+- [ ] Automate the use of default.nix to avoid human error in imports
+
+- [ ] Configure options so each host can be configured eg, `gui.enable`
+
+- [ ] Universalise the user config
