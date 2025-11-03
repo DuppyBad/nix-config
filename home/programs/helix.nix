@@ -4,6 +4,7 @@
   ...
 }: {
   programs.helix = {
+    package = pkgs.evil-helix;
     enable = true;
     settings = {
       editor = {
