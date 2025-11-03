@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./rmpc.nix
+    ./htop.nix
     ./alacritty.nix
     ./bat.nix
     ./fish.nix
