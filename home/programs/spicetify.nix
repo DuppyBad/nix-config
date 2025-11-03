@@ -4,11 +4,12 @@
   pkgs,
   ...
 }: let
-  # latest unstable forces us to stdenv syntax?
+  # stdenv.system superceded system
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
   programs.spicetify = {
     enable = true;
+    wayland = false;
     enabledExtensions = with spicePkgs.extensions; [
       fullAppDisplay
       keyboardShortcut
