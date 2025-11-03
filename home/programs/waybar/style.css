@@ -143,3 +143,35 @@ window * {
   color: rgb(243, 139, 168);
   padding-right: 16px;
 }
+
+#battery {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#battery.charging {
+  color: #1e1e2e;
+  background-color: #a6e3a1;
+}
+
+@keyframes blink {
+  to {
+    background-color: #cdd6f4;
+    color: #cdd6f4;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f38ba8;
+  color: #cdd6f4;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
