@@ -132,13 +132,7 @@
     freetube = {enable = true;};
     ncmpcpp = {enable = true;};
     floorp = {enable = true;};
-    ghostty = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        font-family = "IosevkaTerm Nerd Font";
-      };
-    };
+
     # Let home-manager manage itself
     home-manager = {enable = true;};
   };

@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "IosevkaTerm Nerd Font";
+      name = "IosevkaTerm Nerd Font Mono";
       size = 14;
     };
     settings = {
