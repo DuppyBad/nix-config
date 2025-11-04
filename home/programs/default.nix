@@ -20,5 +20,6 @@ _: {
     ./swaync
     ./window_managers
     ./emulation.nix
+    ./ghostty.nix
   ];
 }
