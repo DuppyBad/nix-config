@@ -22,6 +22,7 @@
     grc # output colouriser
     lazygit # git tui tools
     tmux # it's tmux
+    delta # better diff output
 
     # networking tools
     dnsutils # `dig` + `nslookup`
@@ -114,7 +115,7 @@
     (cutter.withPlugins (p: with p; [rz-ghidra jsdec sigdb])) # cutter with decompiler
     #pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
     #TODO import pwndbg here so I don't have to rebuild every gc interval
-    # pwn dbg is gone
+    # pwndbg is gone :<
 
     # compatibility
     ungoogled-chromium # so that I can access evil website that mandate chrome
@@ -127,7 +128,10 @@
   ];
 
   programs = {
-    lazygit = {enable = true;};
+    lazygit = {
+      enable = true;
+      settings.git.paging.pager = "delta";
+    };
     bottom = {enable = true;};
     freetube = {enable = true;};
     ncmpcpp = {enable = true;};
