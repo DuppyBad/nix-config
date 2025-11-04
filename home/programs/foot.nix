@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "IosevkaTerm Nerd Font Mono:size=14";
+        font = "Iosevka:size=14";
       };
       colors = {
         alpha = 0.9;

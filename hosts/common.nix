@@ -15,13 +15,17 @@
   };
 
   fonts.packages = with pkgs; [
-    nerd-fonts.iosevka-term
+    # this way, any font can fall back to the symbols, without us having to patch each font
+    nerd-fonts.symbols-only
+    # saves 1gb of disk
+    #nerd-fonts.iosevka-term
     iosevka
+    noto-fonts-color-emoji
     noto-fonts
     noto-fonts-cjk-sans
     material-design-icons
     cozette
-    cm_unicode
+    #cm_unicode
   ];
   # For patching binaries for dynamic analysis
   programs.nix-ld = {
