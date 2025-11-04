@@ -86,7 +86,7 @@
         playerctl = spawn "${lib.getExe pkgs.playerctl}";
       in {
         # General Controls that I use in all WM
-        "Mod+Return".action = spawn "${lib.getExe pkgs.foot}";
+        "Mod+Return".action = spawn "${lib.getExe pkgs.ghostty}" "+new-window";
         "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}";
         "Mod+Q".action = close-window;
         "Mod+Shift+F".action = fullscreen-window;
