@@ -1,3 +1,3 @@
 _: {
-  import = [./gui];
+  imports = [./gui];
 }

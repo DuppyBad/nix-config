@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   services.greetd = {
-    enable = true;
+    enable = false;
     useTextGreeter = true;
     settings = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --greeting 'Please leave my computer alone' -r --cmd niri-session";
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --greeting 'Please leave my computer alone' -r --cmd niri-session";
     };
   };
 }
