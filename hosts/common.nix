@@ -14,11 +14,15 @@
     hinting.enable = true;
   };
 
+  # look in /nix/var/nix/profiles/system/sw/share/X11/fonts
+  # fc-query * | grep '^\s\+family:' | cut -d'"' -f2 | grep
+
   fonts.packages = with pkgs; [
     # this way, any font can fall back to the symbols, without us having to patch each font
+    # this was actually untrue?
     nerd-fonts.symbols-only
-    # saves 1gb of disk
-    #nerd-fonts.iosevka-term
+    # saves 1gb of disk if gone
+    nerd-fonts.iosevka-term
     iosevka
     noto-fonts-color-emoji
     noto-fonts
