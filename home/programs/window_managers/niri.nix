@@ -87,7 +87,7 @@
       in {
         # General Controls that I use in all WM
         "Mod+Return".action = spawn "${lib.getExe pkgs.ghostty}" "+new-window";
-        "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}";
+        "Mod+D".action = spawn "${lib.getExe pkgs.anyrun}";
         "Mod+Q".action = close-window;
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+F".action = maximize-column;

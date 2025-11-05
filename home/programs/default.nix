@@ -17,6 +17,7 @@ _: {
     ./miscpkgs.nix
     ./waybar
     ./swaync
+    ./anyrun
     ./window_managers
     ./emulation.nix
     ./ghostty.nix
