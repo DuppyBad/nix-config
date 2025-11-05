@@ -14,11 +14,12 @@ in {
       fullAppDisplay
       keyboardShortcut
       fullAlbumDate
+      shuffle
       powerBar
       volumePercentage
       beautifulLyrics
     ];
     theme = spicePkgs.themes.text;
-    colorScheme = "RosePine";
+    colorScheme = "CatppuccinMocha";
   };
 }
