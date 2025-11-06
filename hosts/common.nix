@@ -22,6 +22,11 @@
     # this was actually untrue?
     nerd-fonts.symbols-only
     # saves 1gb of disk if gone
+    font-awesome # for typst compilation
+    roboto
+    source-sans
+    source-sans-pro
+
     nerd-fonts.iosevka-term
     iosevka
     noto-fonts-color-emoji
