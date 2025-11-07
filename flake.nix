@@ -47,7 +47,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvf = {
-      url = "github:notashelf/nvf/main";
+      url = "github:notashelf/nvf/v0.8";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
       url = "github:sodiboo/niri-flake";
