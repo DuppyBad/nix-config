@@ -135,7 +135,6 @@
     };
     lazygit = {
       enable = true;
-      settings.git.paging.pager = "delta --paging=never";
     };
     bottom = {enable = true;};
     freetube = {enable = true;};
