@@ -26,6 +26,17 @@
       };
     };
     languages = {
+      # this has to be the worst possible format to do this
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter = {
+            command = "${lib.getExe pkgs.alejandra}";
+            args = ["-q"];
+          };
+        }
+      ];
       language-server = {
         nil = {
           command = lib.getExe pkgs.nil;
