@@ -22,7 +22,7 @@
     grc # output colouriser
     lazygit # git tui tools
     tmux # it's tmux
-    delta # better diff output
+    #delta # better diff output
 
     # networking tools
     dnsutils # `dig` + `nslookup`
@@ -91,15 +91,16 @@
     nautilus #file manager
     waybar # the og bar
     grimblast # screenshot utility implementing grim and slurp
-    gnome-themes-extra # for theme compat
     brightnessctl # for brightness control
     fuzzel # app launcher etc
     hyprpicker # colour picker
     swaynotificationcenter # it is what it says
     swww # we are back sisters
 
-    # Programming tools
+    # Programming tools (literally just python)
     python3
+    python313Packages.ipython
+    uv
 
     # security tools
     #seclists # Useful wordlists for brute-forcing etc.
@@ -127,7 +128,11 @@
     cliphist
   ];
 
+  # Some of these are here solely for theming purposes
   programs = {
+    delta = {
+      enable = true;
+    };
     lazygit = {
       enable = true;
       settings.git.paging.pager = "delta --paging=never";
