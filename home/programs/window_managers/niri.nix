@@ -9,6 +9,7 @@
   programs.niri = {
     settings = {
       spawn-at-startup = [
+        # TODO: more elegant systemd spawn via normal options?
         # {command = ["systemctl enable --user app-com.mitchellh.ghostty.service"];}
         {command = ["${lib.getExe pkgs.wlsunset}" "-d" "4" "-S" "08:00" "-s" "21:00"];}
         {command = ["${lib.getExe pkgs.waybar}"];}
@@ -79,6 +80,16 @@
       animations = {
         enable = true;
       };
+      window-rules = [
+        {
+          matches = [
+            {
+              app-id = "kitty";
+            }
+          ];
+          draw-border-with-background = false;
+        }
+      ];
       overview = {
         # mocha base #1e1e2e
         backdrop-color = "#1e1e2e";
@@ -87,7 +98,7 @@
         playerctl = spawn "${lib.getExe pkgs.playerctl}";
       in {
         # General Controls that I use in all WM
-        "Mod+Return".action = spawn ["${lib.getExe pkgs.foot}"];
+        "Mod+Return".action = spawn ["${lib.getExe pkgs.kitty}"];
         "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}";
         "Mod+Q".action = close-window;
         "Mod+Shift+F".action = fullscreen-window;
