@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Iosevka:size=14";
+        font = "Geist Mono:size=14";
       };
       colors = {
         alpha = 0.9;

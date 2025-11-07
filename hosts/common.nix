@@ -4,6 +4,7 @@
   ...
 }: {
   services.fstrim.enable = lib.mkDefault true;
+  # should definitely be moved to Niri
   environment.sessionVariables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
   };
@@ -12,6 +13,9 @@
     enable = true;
     antialias = true;
     hinting.enable = true;
+    defaultFonts = {
+      monospace = ["Iosevka" "Symbols Nerd Font"];
+    };
   };
 
   # look in /nix/var/nix/profiles/system/sw/share/X11/fonts
@@ -19,15 +23,16 @@
 
   fonts.packages = with pkgs; [
     # this way, any font can fall back to the symbols, without us having to patch each font
-    # this was actually untrue?
     nerd-fonts.symbols-only
-    # saves 1gb of disk if gone
-    font-awesome # for typst compilation
+    # typst compilation fonts
+    font-awesome
     roboto
     source-sans
     source-sans-pro
-
-    nerd-fonts.iosevka-term
+    # typst fonts end
+    # saves 1gb of disk if gone
+    # nerd-fonts.iosevka-term
+    geist-font
     iosevka
     noto-fonts-color-emoji
     noto-fonts

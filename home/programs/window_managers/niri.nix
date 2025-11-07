@@ -9,6 +9,7 @@
   programs.niri = {
     settings = {
       spawn-at-startup = [
+        # {command = ["systemctl enable --user app-com.mitchellh.ghostty.service"];}
         {command = ["${lib.getExe pkgs.wlsunset}" "-d" "4" "-S" "08:00" "-s" "21:00"];}
         {command = ["${lib.getExe pkgs.waybar}"];}
         {command = ["${lib.getExe' pkgs.swww "swww-daemon"}"];}
@@ -86,8 +87,8 @@
         playerctl = spawn "${lib.getExe pkgs.playerctl}";
       in {
         # General Controls that I use in all WM
-        "Mod+Return".action = spawn "${lib.getExe pkgs.ghostty}" "+new-window";
-        "Mod+D".action = spawn "${lib.getExe pkgs.anyrun}";
+        "Mod+Return".action = spawn ["${lib.getExe pkgs.foot}"];
+        "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}";
         "Mod+Q".action = close-window;
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+F".action = maximize-column;
