@@ -8,10 +8,13 @@
       width.fraction = 0.25;
       layer = "overlay";
       showResultsImmediately = true;
+      hidePluginInfo = true;
+      closeOnClick = true;
       plugins = [
         "applications"
         "niri-focus"
         "rink"
+        "shell"
       ];
     };
     extraCss = builtins.readFile ./style.css;
