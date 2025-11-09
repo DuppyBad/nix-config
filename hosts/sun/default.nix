@@ -65,6 +65,8 @@
     hostName = "sun";
     #quadnine, cloudflare fallback
     nameservers = ["9.9.9.9" "1.1.1.1"];
+    # needed for some VPN applications
+    networkmanager.enable = true;
   };
 
   # Time + Locale
@@ -114,6 +116,7 @@
     packages = with pkgs; [
       firefox
       fastfetch
+      protonvpn-gui
     ];
   };
   programs.fish.enable = true;
