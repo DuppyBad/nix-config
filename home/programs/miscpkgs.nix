@@ -64,6 +64,7 @@
     freetube
     yt-dlp
     qbittorrent
+    nicotine-plus
 
     #music
     easyeffects # for eq
