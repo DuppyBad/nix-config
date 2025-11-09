@@ -13,6 +13,7 @@
       # blur would be cool, maybe on the WM end?
       confirm_os_window_close = "0";
       hide_window_decorations = "yes";
+      enable_audio_bell = "no";
     };
     shellIntegration = {
       enableFishIntegration = true;
