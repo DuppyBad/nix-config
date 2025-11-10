@@ -14,7 +14,7 @@
     antialias = true;
     hinting.enable = true;
     defaultFonts = {
-      monospace = ["Iosevka" "Symbols Nerd Font"];
+      monospace = ["Iosevka" "Symbols Nerd Font Mono"];
     };
   };
 
@@ -32,6 +32,7 @@
     # typst fonts end
     # saves 1gb of disk if gone
     # nerd-fonts.iosevka-term
+    maple-mono.variable
     geist-font
     iosevka
     noto-fonts-color-emoji
