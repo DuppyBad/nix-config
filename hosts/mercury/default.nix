@@ -21,8 +21,10 @@
     enable = true;
     powerOnBoot = false;
   };
-  services.blueman.enable = true;
-
+  environment.systemPackages = with pkgs; [
+    bluetuith
+    firefox
+  ];
   # ensures hyprlock can access the PAM
   security.pam.services.hyprlock = {};
   # same for fprintd
@@ -49,9 +51,6 @@
     pulse.enable = true;
   };
   # We should separate the pkgs so that we can enable via gui.enable, tui.enable, laptop.enable, desktop.enable....
-  environment.systemPackages = with pkgs; [
-    firefox
-  ];
   # Sets ozone hinting so xwayland apps with wayland support use wayland instead
   # Move this to some wayland subdir?
   environment.sessionVariables = {
