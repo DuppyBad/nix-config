@@ -100,7 +100,7 @@
         # General Controls that I use in all WM
         "Mod+Return".action = spawn ["${lib.getExe pkgs.kitty}"];
         # TODO: modify this so that fuzzel spawns via niri msg action spawn --
-        "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}" "--launch-prefix=" "niri" "msg" "action" "spawn" "-- ";
+        "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}" "--launch-prefix=niri msg action spawn -- ";
         "Mod+Q".action = close-window;
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+F".action = maximize-column;
