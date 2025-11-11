@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     bluetuith
     firefox
+    protonvpn-gui
   ];
   # ensures hyprlock can access the PAM
   security.pam.services.hyprlock = {};
