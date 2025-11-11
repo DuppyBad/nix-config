@@ -12,4 +12,9 @@
       }
     '';
   };
+  # go implementation of mprisv2 for mpd
+  services.mpd-mpris = {
+    enable = true;
+    mpd.useLocal = true;
+  };
 }
