@@ -3,7 +3,7 @@
     enable = true;
     font = {
       name = "Maple Mono";
-      size = 15;
+      size = 13;
     };
     settings = {
       # we specify colour to be 1 bit out so that the opacity masking doesn't apply
