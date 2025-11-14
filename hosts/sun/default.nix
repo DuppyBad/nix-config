@@ -116,7 +116,7 @@
     packages = with pkgs; [
       firefox
       fastfetch
-      protonvpn-gui
+      #protonvpn-gui
     ];
   };
   programs.fish.enable = true;
