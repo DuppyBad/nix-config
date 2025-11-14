@@ -90,6 +90,16 @@
           draw-border-with-background = false;
         }
       ];
+      layer-rules = [
+        {
+          matches = [
+            {
+              namespace = "^sway";
+            }
+          ];
+          block-out-from = "screen-capture";
+        }
+      ];
       overview = {
         # mocha base #1e1e2e
         backdrop-color = "#1e1e2e";

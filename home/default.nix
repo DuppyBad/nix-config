@@ -17,6 +17,7 @@
         ./programs
         ./system
         inputs.catppuccin.homeModules.catppuccin
+        inputs.noctalia.homeModules.default
       ];
       home = {
         username = "kyrios";

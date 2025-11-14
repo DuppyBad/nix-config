@@ -1,5 +1,6 @@
 _: {
   imports = [
+    ./quickshell
     ./rmpc.nix
     ./alacritty.nix
     ./bat.nix

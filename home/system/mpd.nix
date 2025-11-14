@@ -13,6 +13,7 @@
     '';
   };
   # go implementation of mprisv2 for mpd
+  # sigsegv playerctld due to parsing NULL wrong (playerctld error)
   services.mpd-mpris = {
     enable = false;
     mpd.useLocal = true;
