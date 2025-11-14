@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Geist Mono:size=14";
+        font = "Maple Mono:size=14";
       };
       colors = {
         alpha = 0.9;
