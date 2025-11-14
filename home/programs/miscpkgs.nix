@@ -59,6 +59,7 @@
     glow # markdown previewer in terminal
     vscode-fhs # intermediary for public presentations
     presenterm # cmd line slideshows
+    zotero # research collector
 
     #entertainment
     freetube
