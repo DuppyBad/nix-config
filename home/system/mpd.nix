@@ -14,7 +14,7 @@
   };
   # go implementation of mprisv2 for mpd
   services.mpd-mpris = {
-    enable = false;
+    enable = true;
     mpd.useLocal = true;
   };
 }
