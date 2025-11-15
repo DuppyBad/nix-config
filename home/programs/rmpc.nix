@@ -9,6 +9,14 @@
             theme: Some("test"),
             cache_dir: Some("/home/kyrios/.cache/rmpc"),
             )
+            keybinds: (
+                navigation : {
+                   "<CR>": Confirm,
+                },
+                queue: {
+                 "<CR>": Play,
+                },
+            ),
             tabs: [
           (
               name: "Queue",
