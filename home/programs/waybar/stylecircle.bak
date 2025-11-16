@@ -21,55 +21,53 @@
   margin-left: 2px;
   transition: all 0.3s ease;
 }
-#battery:hover,
-#clock:hover,
-#memory:hover,
-#network:hover,
-#wireplumber:hover,
-#tray:hover {
-  background: rgba(40, 40, 60, 0.8);
-  box-shadow: rgba(180, 190, 254, 0.3) 0 0 0 1px;
-}
+
 #window {
   background-color: transparent;
   box-shadow: none;
 }
+
 window#waybar {
   background-color: rgba(24, 24, 37, 0.7);
   /* background-color: rgb(255, 255, 255); */
-  border-radius: 0px;
+  border-radius: 17px;
 }
+
 window * {
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 17px;
 }
+
 #workspaces button label {
   color: rgb(180, 190, 254);
 }
+
 #workspaces button.active label {
-  color: #1e1e2e;
+  color: rgba(30, 30, 46, 0.6);
   font-weight: bolder;
 }
+
 #workspaces button:hover {
   box-shadow: rgb(180, 190, 254) 0 0 0 1.5px;
-  background-color: rgba(40, 40, 60, 0.8);
+  min-width: 50px;
 }
+
 #workspaces {
   background-color: transparent;
 }
+
 #workspaces button {
   box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
   background-color: rgba(30, 30, 46, 0.6);
-  border-radius: 4px;
+  border-radius: 8px; /* Reduced from 15px for less rounded corners */
   transition: all 0.3s ease;
-  margin: 0 2px;
-  min-width: 20px;
-  min-height: 20px;
+  margin: 0 2px; /* Add small margin to control spacing */
 }
+
 #workspaces button.active {
-  min-width: 20px;
+  min-width: 5px;
   box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
-  background-color: #f5c2e7;
+  background-color: rgb(245, 194, 231);
   background-size: 400% 400%;
   transition: all 0.5s ease;
   background: linear-gradient(
@@ -80,28 +78,25 @@ window * {
     #eba0ac,
     #fab387,
     #f9e2af,
-    #a6e3a1,
-    #94e2d5,
-    #89dceb,
-    #74c7ec,
-    #89b4fa,
-    #b4befe
+    #a6e3a1
   );
   background-size: 300% 300%;
-  animation: mocha-gradient 12s ease infinite;
-  border-radius: 4px;
+  animation: colored-gradient 10s ease infinite;
+  border-radius: 8px; /* Match the non-active border-radius */
 }
-@keyframes mocha-gradient {
+
+@keyframes colored-gradient {
   0% {
-    background-position: 0% 50%;
+    background-position: 71% 0%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 30% 100%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 71% 0%;
   }
 }
+
 #mpris {
   margin-left: 2px;
   padding-left: 15px;
@@ -112,6 +107,7 @@ window * {
   box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
   transition: all 0.3s ease;
 }
+
 #mpris.playing {
   color: rgb(180, 190, 254);
   background: rgba(30, 30, 46, 0.6);
@@ -128,6 +124,7 @@ window * {
   animation: grey-gradient 3s linear infinite;
   transition: all 0.3s ease;
 }
+
 @keyframes grey-gradient {
   0% {
     background-position: 100% 50%;
@@ -136,28 +133,34 @@ window * {
     background-position: -33% 50%;
   }
 }
+
 #tray menu {
   background-color: rgba(30, 30, 46, 1);
   opacity: 1;
 }
+
 #wireplumber.muted {
   color: rgb(243, 139, 168);
   padding-right: 16px;
 }
+
 #battery {
   background-color: #1e1e2e;
   color: #cdd6f4;
 }
+
 #battery.charging {
   color: #1e1e2e;
   background-color: #a6e3a1;
 }
+
 @keyframes blink {
   to {
     background-color: #cdd6f4;
     color: #cdd6f4;
   }
 }
+
 #battery.critical:not(.charging) {
   background-color: #f38ba8;
   color: #cdd6f4;
@@ -167,6 +170,8 @@ window * {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
 label:focus {
   background-color: #000000;
 }
+

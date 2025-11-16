@@ -6,7 +6,7 @@
         layer = "top";
         position = "top";
         spacing = 14;
-        margin = "10 10 0 10";
+        margin = "10 0 0 0";
         modules-left = ["niri/workspaces"];
         modules-center = ["wlr/taskbar"];
         modules-right = [
