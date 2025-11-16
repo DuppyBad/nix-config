@@ -67,6 +67,10 @@
     nameservers = ["9.9.9.9" "1.1.1.1"];
     # needed for some VPN applications
     networkmanager.enable = true;
+    firewall = {
+      checkReversePath = "loose";
+      trustedInterfaces = ["tailscale0"];
+    };
   };
 
   # Time + Locale

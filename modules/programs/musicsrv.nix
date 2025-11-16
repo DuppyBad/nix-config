@@ -1,7 +1,12 @@
 {
+  config,
+  lib,
+  ...
+}: {
   services.tailscale.enable = true;
 
-  services.navidrome = {
+  systemd.services.navidrome.serviceConfig.ProtectHome = lib.mkForce false;
+  services.navidrome = lib.mkIf (config.networking.hostName == "sun") {
     enable = true;
     settings = {
       MusicFolder = "/home/kyrios/Music";

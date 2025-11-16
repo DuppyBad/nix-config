@@ -5,5 +5,6 @@ _: {
     ./offsec
     ./window_managers
     ./syspkgs.nix
+    ./musicsrv.nix
   ];
 }
