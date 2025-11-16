@@ -100,6 +100,8 @@
   users.defaultUserShell = pkgs.fish;
   #TODO: add prettier audio module so that headless don't have to load this when we abstract
   security.rtkit.enable = true;
+  # audio delays on HDMI occur due to aggressive NVIDIA powerManagement
+  # we can remove suspend here but there is no need
   services.pipewire = {
     enable = true;
     alsa = {

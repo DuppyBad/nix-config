@@ -4,7 +4,7 @@
   config,
   ...
 }: {
-  # Needs to be in-scope for the auto-integration to function (it doesn't get autocalled by the switch)
+  # Needs to be in-scope for the auto-integration to function (it doesn't get autocalled by the option)
   home.packages = [pkgs.xwayland-satellite];
   programs.niri = {
     settings = {
