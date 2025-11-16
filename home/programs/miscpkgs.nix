@@ -126,6 +126,9 @@
     #office
     libreoffice-fresh
 
+    # gaming
+    prismlauncher
+
     # misc
     cliphist
   ];
