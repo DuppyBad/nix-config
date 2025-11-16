@@ -14,6 +14,8 @@
       imports = [
         inputs.spicetify-nix.homeManagerModules.default
         inputs.nvf.homeManagerModules.default
+        inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+        inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
         ./programs
         ./system
         inputs.catppuccin.homeModules.catppuccin

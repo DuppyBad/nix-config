@@ -142,6 +142,17 @@
     freetube = {enable = true;};
     ncmpcpp = {enable = true;};
     floorp = {enable = true;};
+    ######testing time#########
+    dankMaterialShell = {
+      enable = true;
+      niri = {
+        enableSpawn = false;
+      };
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+    };
 
     # Let home-manager manage itself
     home-manager = {enable = true;};
