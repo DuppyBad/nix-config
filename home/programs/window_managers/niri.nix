@@ -70,6 +70,8 @@
         focus-follows-mouse.enable = true;
         touchpad = {
           natural-scroll = false;
+          # disable when typing is true
+          dwt = true;
         };
         keyboard = {
           xkb = {

@@ -24,8 +24,10 @@
   environment.systemPackages = with pkgs; [
     bluetuith
     firefox
-    protonvpn-gui
+    #protonvpn-gui
   ];
+
+  services.upower.enable = true;
   # ensures hyprlock can access the PAM
   security.pam.services.hyprlock = {};
   # same for fprintd
