@@ -12,7 +12,14 @@
     allowBitmaps = true;
     enable = true;
     antialias = true;
-    hinting.enable = true;
+    hinting = {
+      enable = true;
+      style = "medium";
+    };
+    # attempt to clean up font rendering on 1440p
+    subpixel = {
+      rgba = "rgb";
+    };
     defaultFonts = {
       monospace = ["Iosevka" "Symbols Nerd Font Mono"];
     };
