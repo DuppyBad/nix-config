@@ -106,64 +106,72 @@
         # mocha base #1e1e2e
         backdrop-color = "#1e1e2e";
       };
+
       binds = with config.lib.niri.actions; let
         playerctl = spawn "${lib.getExe pkgs.playerctl}";
-      in {
-        # General Controls that I use in all WM
-        "Mod+Return".action = spawn ["${lib.getExe pkgs.kitty}"];
-        # TODO: modify this so that fuzzel spawns via niri msg action spawn --
-        "Mod+D".action = spawn "${lib.getExe pkgs.fuzzel}" "--launch-prefix=niri msg action spawn -- ";
-        "Mod+Q".action = close-window;
-        "Mod+Shift+F".action = fullscreen-window;
-        "Mod+F".action = maximize-column;
-        "Mod+C".action = center-column;
-        "Mod+R".action = switch-preset-column-width;
-        "Mod+Comma".action = consume-window-into-column;
-        "Mod+Period".action = expel-window-from-column;
-        "Mod+V".action = toggle-window-floating;
-        "Mod+L".action = spawn "${lib.getExe pkgs.hyprlock}";
-        "Mod+L".allow-when-locked = true;
-        "Mod+Shift+E".action = spawn "${lib.getExe pkgs.wlogout}";
+      in
+        {
+          "Mod+Return".action = spawn ["${lib.getExe pkgs.kitty}"];
+          "Mod+D".action =
+            spawn "${lib.getExe pkgs.fuzzel}" "--launch-prefix=niri msg action spawn -- ";
+          "Mod+Q".action = close-window;
+          "Mod+Shift+F".action = fullscreen-window;
+          "Mod+F".action = maximize-column;
+          "Mod+C".action = center-column;
+          "Mod+R".action = switch-preset-column-width;
+          "Mod+Comma".action = consume-window-into-column;
+          "Mod+Period".action = expel-window-from-column;
+          "Mod+V".action = toggle-window-floating;
+          "Mod+L".action = spawn "${lib.getExe pkgs.hyprlock}";
+          "Mod+L".allow-when-locked = true;
+          "Mod+Shift+E".action = spawn "${lib.getExe pkgs.wlogout}";
 
-        # Movement controls
-        "Mod+1".action = focus-workspace 1;
-        "Mod+2".action = focus-workspace 2;
-        "Mod+3".action = focus-workspace 3;
-        "Mod+4".action = focus-workspace 4;
-        "Mod+Left".action = focus-column-left;
-        "Mod+Right".action = focus-column-right;
-        "Mod+Up".action = focus-window-or-workspace-up;
-        "Mod+Down".action = focus-window-or-workspace-down;
-        "Mod+Tab".action = focus-workspace-previous;
-        "Mod+Shift+Left".action = move-column-left;
-        "Mod+Shift+Right".action = move-column-right;
-        "Mod+Shift+Up".action = move-column-to-workspace-up;
-        "Mod+Shift+Down".action = move-column-to-workspace-down;
-        "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
-        "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
+          "Mod+Left".action = focus-column-left;
+          "Mod+Right".action = focus-column-right;
+          "Mod+Up".action = focus-window-or-workspace-up;
+          "Mod+Down".action = focus-window-or-workspace-down;
+          "Mod+Tab".action = focus-workspace-previous;
 
-        # Audio control
-        "XF86AudioMute".action = spawn ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
-        "XF86AudioRaiseVolume".action = spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "5%+"];
-        "XF86AudioLowerVolume".action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
-        "Shift+XF86AudioRaiseVolume".action = spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "1%+"];
-        "Shift+XF86AudioLowerVolume".action = spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"];
-        "XF86AudioPlay".action = playerctl "play-pause";
-        "XF86AudioStop".action = playerctl "pause";
-        "XF86AudioPrev".action = playerctl "previous";
-        "XF86AudioNext".action = playerctl "next";
+          "Mod+Shift+Left".action = move-column-left;
+          "Mod+Shift+Right".action = move-column-right;
+          "Mod+Shift+Up".action = move-column-to-workspace-up;
+          "Mod+Shift+Down".action = move-column-to-workspace-down;
+          "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
+          "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
+        }
+        // (
+          lib.genAttrs
+          (map (n: "Mod+${toString n}") (lib.range 1 4))
+          (key: {
+            action = focus-workspace (lib.toInt (lib.removePrefix "Mod+" key));
+          })
+        )
+        // {
+          "XF86AudioMute".action =
+            spawn ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+          "XF86AudioRaiseVolume".action =
+            spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "5%+"];
+          "XF86AudioLowerVolume".action =
+            spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
+          "Shift+XF86AudioRaiseVolume".action =
+            spawn ["wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "1%+"];
+          "Shift+XF86AudioLowerVolume".action =
+            spawn ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"];
+          "XF86AudioPlay".action = playerctl "play-pause";
+          "XF86AudioStop".action = playerctl "pause";
+          "XF86AudioPrev".action = playerctl "previous";
+          "XF86AudioNext".action = playerctl "next";
 
-        # Brightness Control
-        "XF86MonBrightnessUp".action = spawn ["brightnessctl" "set" "+5%"];
-        "XF86MonBrightnessDown".action = spawn ["brightnessctl" "set" "5%-"];
+          "XF86MonBrightnessUp".action = spawn ["brightnessctl" "set" "+5%"];
+          "XF86MonBrightnessDown".action =
+            spawn ["brightnessctl" "set" "5%-"];
 
-        # Print Control
-        "Mod+Shift+S".action.screenshot = {show-pointer = false;};
-        "Print".action.screenshot-screen = {write-to-disk = false;};
+          "Mod+Shift+S".action.screenshot = {show-pointer = false;};
+          "Print".action.screenshot-screen = {write-to-disk = false;};
 
-        # Misc
-        "Mod+P".action = spawn ["${lib.getExe pkgs.hyprpicker}" "-a"];
-      };
+          "Mod+P".action = spawn ["${lib.getExe pkgs.hyprpicker}" "-a"];
+        };
+
       prefer-no-csd = true;
       hotkey-overlay = {
         skip-at-startup = true;
