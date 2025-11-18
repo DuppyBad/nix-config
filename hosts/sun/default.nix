@@ -59,6 +59,7 @@
       nvidiaSettings = false;
     };
   };
+  # upstream should really rename this to services.video.drivers or something
   services.xserver.videoDrivers = ["nvidia"];
 
   networking = {
@@ -68,7 +69,9 @@
     # needed for some VPN applications
     networkmanager.enable = true;
     firewall = {
+      # for tailnet advertising
       checkReversePath = "loose";
+      # I should probably do port by port but if the tailnet is compromised I'm finished
       trustedInterfaces = ["tailscale0"];
     };
   };
@@ -77,25 +80,8 @@
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  # One day I can cull you....
-  services.xserver = {
-    enable = false;
-    xkb.layout = "gb";
-  };
-  services = {
-    displayManager = {
-      gdm.enable = false;
-    };
-    desktopManager = {
-      gnome.enable = false;
-    };
-  };
   programs.hyprland.enable = true;
 
-  programs.gamescope = {
-    enable = false;
-    capSysNice = false;
-  };
   programs.steam = {
     enable = true;
   };
@@ -105,7 +91,6 @@
   #TODO: add prettier audio module so that headless don't have to load this when we abstract
   security.rtkit.enable = true;
   # audio delays on HDMI occur due to aggressive NVIDIA powerManagement
-  # we can remove suspend here but there is no need
   services.pipewire = {
     enable = true;
     alsa = {
@@ -126,7 +111,7 @@
     ];
   };
   programs.fish.enable = true;
-  # on by default due to gnome
+  # conflicts with gnome keyring
   #programs.ssh.startAgent = true;
   services.openssh = {
     enable = true;

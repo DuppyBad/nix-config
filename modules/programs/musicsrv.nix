@@ -5,7 +5,14 @@
 }: {
   services.tailscale.enable = true;
 
-  systemd.services.navidrome.serviceConfig.ProtectHome = lib.mkForce false;
+  # allows the symlink to be followed
+  systemd.services.navidrome.serviceConfig = {
+    BindReadOnlyPaths = [
+      "/home/kyrios/Music"
+      "/mnt/windows/Users/Ghost/Music"
+    ];
+    ProtectHome = lib.mkForce false; # please don't destroy my home dir dear navidrome...
+  };
   services.navidrome = lib.mkIf (config.networking.hostName == "sun") {
     enable = true;
     settings = {
