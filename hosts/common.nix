@@ -21,7 +21,7 @@
       rgba = "rgb";
     };
     defaultFonts = {
-      monospace = ["Iosevka" "Symbols Nerd Font Mono"];
+      monospace = ["Maple Mono" "Symbols Nerd Font Mono"];
     };
   };
 
