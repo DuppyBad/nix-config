@@ -68,9 +68,11 @@
     nicotine-plus
 
     #music
+    supersonic-wayland # subsonic client
     easyeffects # for eq
     euphonica # gtk mpd, in dev
     beets # auto-tagger
+    picard # semi-auto tagger
 
     # system call monitoring
     strace # system call monitoring

@@ -15,7 +15,7 @@
   # go implementation of mprisv2 for mpd
   # causes playerctld to segfault, we manually work around this on boot. FIXME
   services.mpd-mpris = {
-    enable = true;
+    enable = false;
     mpd.useLocal = true;
   };
 }
