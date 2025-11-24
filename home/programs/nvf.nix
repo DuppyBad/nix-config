@@ -38,6 +38,8 @@
             enable = true;
             # crates.enable = false; now in languages.rust.extensions
           };
+          #c/c++ are under clang
+          clang.enable = true;
           nix.enable = true;
           python.enable = true;
           markdown.enable = true;
