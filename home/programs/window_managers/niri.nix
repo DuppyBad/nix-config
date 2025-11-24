@@ -11,7 +11,7 @@
       spawn-at-startup = [
         # TODO: more elegant systemd spawn via normal options?
         # {command = ["systemctl enable --user app-com.mitchellh.ghostty.service"];}
-        {command = ["${lib.getExe pkgs.wlsunset}" "-d" "120" "-l" "51.1" "-L" "0.07"];}
+        {command = ["${lib.getExe pkgs.wlsunset}" "-l" "51.1" "-L" "0.07"];}
         # timezone general lL, sorry to disappoint
         {command = ["${lib.getExe pkgs.waybar}"];}
         {command = ["${lib.getExe' pkgs.swww "swww-daemon"}"];}
