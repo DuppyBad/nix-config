@@ -149,7 +149,7 @@
     bottom = {enable = true;};
     freetube = {enable = true;};
     ncmpcpp = {enable = true;};
-    floorp = {enable = true;};
+    # floorp = {enable = true;};
 
     # Let home-manager manage itself
     home-manager = {enable = true;};
