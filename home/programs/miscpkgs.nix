@@ -101,10 +101,11 @@
     swaynotificationcenter # it is what it says
     swww # we are back sisters
 
-    # Programming tools (literally just python)
+    # Programming tools
     python3
     python313Packages.ipython
     uv
+    gcc
 
     # security tools
     #seclists # Useful wordlists for brute-forcing etc.
@@ -116,6 +117,7 @@
     dirb # auto directory busting
     pwntools # generally useful python bindings for binary exploit+web automation in ctf
     gdb # debugger for dynamic analysis
+    gef # gdb plugin that is in nixpkgs, unlike pwndbg
     ghidra # NSA's decompiler and associated tools
     (cutter.withPlugins (p: with p; [rz-ghidra jsdec sigdb])) # cutter with decompiler
     #pwndbg # gdb extension that adds more functionality to binary exploitation type tasks
@@ -127,6 +129,7 @@
 
     #office
     libreoffice-fresh
+    typst
 
     # gaming
     prismlauncher
