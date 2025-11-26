@@ -7,7 +7,7 @@ _: {
     ./fuzzel.nix
     ./foot.nix
     ./hypr
-    ./helix.nix
+    ./helix
     ./kitty.nix
     ./nix-index.nix
     ./nvf.nix

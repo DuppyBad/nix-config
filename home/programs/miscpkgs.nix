@@ -6,9 +6,6 @@
     unzip
     p7zip
 
-    # LSPs
-    nil
-
     # utils
     fd # Like find, but good
     ripgrep # recursively searches directories for a regex pattern
@@ -41,7 +38,6 @@
     # misc
     file
     which
-    tree
     dust # Rust powered du alternative(finally got the namespace)
     btop # nicer looking htop
     bottom # also nicer looking htop

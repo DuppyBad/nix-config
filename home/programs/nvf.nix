@@ -23,7 +23,6 @@
             virtual_lines = true;
           };
         };
-
         debugger = {
           nvim-dap = {
             enable = true;
