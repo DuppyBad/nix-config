@@ -15,6 +15,7 @@
       "la" = "eza --all --icons --git";
       "gc" = "git commit";
       "lgit" = "lazygit";
+      "tree" = "eza --tree --icons";
     };
     shellAbbrs = {
       nhs = "nh os switch /home/kyrios/.config/nixos/";
